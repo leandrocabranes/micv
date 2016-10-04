@@ -9,7 +9,7 @@ const Navbar = React.createClass({
   render: function () {
     return (
       <nav>
-        <div className="nav-wrapper light-green darken-1">
+        <div className="nav-wrapper indigo darken-3">
           <a href="#" className="brand-logo right">Mi CV</a>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li><Link to="/">Inicio</Link></li>

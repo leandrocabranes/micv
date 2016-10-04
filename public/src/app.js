@@ -75,7 +75,7 @@
 	      null,
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'nav-wrapper light-green darken-1' },
+	        { className: 'nav-wrapper indigo darken-3' },
 	        _react2.default.createElement(
 	          'a',
 	          { href: '#', className: 'brand-logo right' },
@@ -27187,9 +27187,13 @@
 
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'h1',
-	      null,
-	      'Creador de CV\'s'
+	      'div',
+	      { className: 'container' },
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        '\xA1Hac\xE9 tu CV!'
+	      )
 	    );
 	  }
 	});
@@ -27216,14 +27220,44 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var BuscadorOficio = _react2.default.createClass({
+	  displayName: 'BuscadorOficio',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'input-field col s6' },
+	      _react2.default.createElement('input', { type: 'text', id: 'buscador' }),
+	      _react2.default.createElement(
+	        'label',
+	        { htmlFor: 'buscador' },
+	        'Buscar por oficio'
+	      )
+	    );
+	  }
+	});
+
 	var Empresas = _react2.default.createClass({
 	  displayName: 'Empresas',
 
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'h1',
-	      null,
-	      'P\xE1gina para empresas'
+	      'div',
+	      { className: 'container' },
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Empresas'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'form',
+	          { className: 'col s12' },
+	          _react2.default.createElement(BuscadorOficio, null)
+	        )
+	      )
 	    );
 	  }
 	});
