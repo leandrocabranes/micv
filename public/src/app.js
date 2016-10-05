@@ -27182,10 +27182,74 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var NombresPersona = _react2.default.createClass({
-		displayName: 'NombresPersona',
+	var InformacionPersona = _react2.default.createClass({
+		displayName: 'InformacionPersona',
 
+		getInitialState: function getInitialState() {
+			return {
+				persona: {
+					nombre: '',
+					apellido: '',
+					dni: ''
+				}
+			};
+		},
+		cambiarDNI: function cambiarDNI(e) {
+			this.setState({
+				persona: {
+					dni: e.target.value.substring(0, 7)
+				}
+			});
+		},
+		cambiarNombre: function cambiarNombre(e) {
+			this.setState({
+				persona: {
+					nombre: e.target.value.toUpperCase()
+				}
+			});
+		},
+		cambiarApellido: function cambiarApellido(e) {
+			this.setState({
+				persona: {
+					apellido: e.target.value.toUpperCase()
+				}
+			});
+		},
 		render: function render() {
+			// variable de años
+			var anios = [1920];
+			for (var i = 1921; i < 2001; i++) {
+				anios.push(i);
+			}
+			var fechaNacimientoA = anios.map(function (ai) {
+				return _react2.default.createElement(
+					'option',
+					{ key: ai, defaultValue: ai },
+					ai
+				);
+			});
+
+			// variable de meses
+			var meses = [{ mes: "Enero", valor: 1 }];
+			meses.push({ mes: "Febrero", valor: 2 });
+			meses.push({ mes: "Marzo", valor: 3 });
+			meses.push({ mes: "Abril", valor: 4 });
+			meses.push({ mes: "Mayo", valor: 5 });
+			meses.push({ mes: "Junio", valor: 6 });
+			meses.push({ mes: "Julio", valor: 7 });
+			meses.push({ mes: "Agosto", valor: 8 });
+			meses.push({ mes: "Septiembre", valor: 9 });
+			meses.push({ mes: "Octubre", valor: 10 });
+			meses.push({ mes: "Noviembre", valor: 11 });
+			meses.push({ mes: "Diciembre", valor: 12 });
+			var fechaNacimientoM = meses.map(function (ms) {
+				return _react2.default.createElement(
+					'option',
+					{ key: ms.valor, defaultValue: ms.valor },
+					ms.mes
+				);
+			});
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'row' },
@@ -27195,7 +27259,12 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text', id: 'nombre', placeholder: 'Juan' }),
+						_react2.default.createElement('input', { type: 'text',
+							id: 'nombre',
+							placeholder: 'Juan',
+							value: this.state.persona.nombre,
+							onChange: this.cambiarNombre
+						}),
 						_react2.default.createElement(
 							'label',
 							{ htmlFor: 'nombre' },
@@ -27209,44 +27278,31 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text', id: 'apellido', placeholder: 'Gonzalez' }),
+						_react2.default.createElement('input', { type: 'text',
+							id: 'apellido',
+							placeholder: 'Gonzalez',
+							value: this.state.persona.apellido,
+							onChange: this.cambiarApellido
+						}),
 						_react2.default.createElement(
 							'label',
 							{ htmlFor: 'apellido' },
 							'Apellido'
 						)
 					)
-				)
-			);
-		}
-	});
-
-	var InformacionPersona = _react2.default.createClass({
-		displayName: 'InformacionPersona',
-
-		render: function render() {
-			var anios = [1990];
-			for (var i = 1921; i > 2001; i++) {
-				anios.push(i);
-			}
-			console.log(anios);
-			var fechaNacimientoA = anios.map(function (ai) {
-				return _react2.default.createElement(
-					'option',
-					{ defaultValue: ai },
-					ai
-				);
-			});
-			return _react2.default.createElement(
-				'div',
-				{ className: 'row' },
+				),
 				_react2.default.createElement(
 					'div',
 					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text', id: 'dni', placeholder: '99999999' }),
+						_react2.default.createElement('input', { type: 'text',
+							id: 'dni',
+							placeholder: '99999999',
+							value: this.state.persona.dni,
+							onChange: this.cambiarDNI
+						}),
 						_react2.default.createElement(
 							'label',
 							{ htmlFor: 'dni' },
@@ -27259,16 +27315,40 @@
 					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'input-field col s6' },
+						{ className: 'col m2 s4' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'A\xF1o en que naci\xF3'
+						),
 						_react2.default.createElement(
 							'select',
-							null,
+							{ className: 'browser-default' },
 							_react2.default.createElement(
 								'option',
-								{ disabled: true },
-								'A\xF1o'
+								{ disabled: true, defaultValue: '' },
+								'Elija el a\xF1o'
 							),
 							fechaNacimientoA
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m2 s4' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'Mes en que naci\xF3'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default' },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, defaultValue: '' },
+								'Elija el mes'
+							),
+							fechaNacimientoM
 						)
 					)
 				),
@@ -27311,7 +27391,6 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'row' },
-							_react2.default.createElement(NombresPersona, null),
 							_react2.default.createElement(InformacionPersona, null)
 						)
 					)
