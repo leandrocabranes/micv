@@ -27169,7 +27169,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -27182,20 +27182,142 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var CrearCV = _react2.default.createClass({
-	  displayName: 'CrearCV',
+	var NombresPersona = _react2.default.createClass({
+		displayName: 'NombresPersona',
 
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'container' },
-	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        '\xA1Hac\xE9 tu CV!'
-	      )
-	    );
-	  }
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'row' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text', id: 'nombre', placeholder: 'Juan' }),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'nombre' },
+							'Nombre'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text', id: 'apellido', placeholder: 'Gonzalez' }),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'apellido' },
+							'Apellido'
+						)
+					)
+				)
+			);
+		}
+	});
+
+	var InformacionPersona = _react2.default.createClass({
+		displayName: 'InformacionPersona',
+
+		render: function render() {
+			var anios = [1990];
+			for (var i = 1921; i > 2001; i++) {
+				anios.push(i);
+			}
+			console.log(anios);
+			var fechaNacimientoA = anios.map(function (ai) {
+				return _react2.default.createElement(
+					'option',
+					{ defaultValue: ai },
+					ai
+				);
+			});
+			return _react2.default.createElement(
+				'div',
+				{ className: 'row' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text', id: 'dni', placeholder: '99999999' }),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'dni' },
+							'DNI'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement(
+							'select',
+							null,
+							_react2.default.createElement(
+								'option',
+								{ disabled: true },
+								'A\xF1o'
+							),
+							fechaNacimientoA
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text', id: 'apellido', placeholder: 'Gonzalez' }),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'apellido' },
+							'Apellido'
+						)
+					)
+				)
+			);
+		}
+	});
+
+	var CrearCV = _react2.default.createClass({
+		displayName: 'CrearCV',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'container' },
+				_react2.default.createElement(
+					'h2',
+					null,
+					'Empresas'
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'form',
+						{ className: 'col s12' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'row' },
+							_react2.default.createElement(NombresPersona, null),
+							_react2.default.createElement(InformacionPersona, null)
+						)
+					)
+				)
+			);
+		}
 	});
 
 	exports.default = CrearCV;
