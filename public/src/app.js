@@ -27190,7 +27190,22 @@
 				persona: {
 					nombre: '',
 					apellido: '',
-					dni: ''
+					dni: '',
+					anio: '',
+					mes: '',
+					dia: '',
+					direccion: '',
+					numero: '',
+					piso: '',
+					dpto: '',
+					localidad: '',
+					codpostal: '',
+					nacionalidad: '',
+					estadocivil: '',
+					hijos: '',
+					celular: '',
+					telefono: '',
+					otrotel: ''
 				}
 			};
 		},
@@ -27215,6 +27230,125 @@
 				}
 			});
 		},
+		cambiarAnio: function cambiarAnio(e) {
+			this.setState({
+				persona: {
+					anio: e.target.value
+				}
+			});
+		},
+		cambiarMes: function cambiarMes(e) {
+			this.setState({
+				persona: {
+					mes: e.target.value
+				}
+			});
+		},
+		cambiarDia: function cambiarDia(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					dia: e.target.value
+				}
+			});
+		},
+		cambiarDir: function cambiarDir(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					direccion: e.target.value
+				}
+			});
+		},
+		cambiarNum: function cambiarNum(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					numero: e.target.value
+				}
+			});
+		},
+		cambiarPiso: function cambiarPiso(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					piso: e.target.value
+				}
+			});
+		},
+		cambiarLocal: function cambiarLocal(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					localidad: e.target.value
+				}
+			});
+		},
+		cambiarPostal: function cambiarPostal(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					codpostal: e.target.value
+				}
+			});
+		},
+		cambiarDpto: function cambiarDpto(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					dpto: e.target.value
+				}
+			});
+		},
+		cambiarNac: function cambiarNac(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					nacionalidad: e.target.value
+				}
+			});
+		},
+		cambiarCiv: function cambiarCiv(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					estadocivil: e.target.value
+				}
+			});
+		},
+		cambiarHijos: function cambiarHijos(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					hijos: e.target.value.substring(0, 2)
+				}
+			});
+		},
+		cambiarCel: function cambiarCel(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					celular: e.target.value.substring(0, 18)
+				}
+			});
+		},
+		cambiarTel: function cambiarTel(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					telefono: e.target.value.substring(0, 18)
+				}
+			});
+		},
+		cambiarOTel: function cambiarOTel(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					otrotel: e.target.value.substring(0, 18)
+				}
+			});
+		},
+
 		render: function render() {
 			// variable de años
 			var anios = [1920];
@@ -27224,7 +27358,7 @@
 			var fechaNacimientoA = anios.map(function (ai) {
 				return _react2.default.createElement(
 					'option',
-					{ key: ai, defaultValue: ai },
+					{ key: ai, value: ai },
 					ai
 				);
 			});
@@ -27245,8 +27379,20 @@
 			var fechaNacimientoM = meses.map(function (ms) {
 				return _react2.default.createElement(
 					'option',
-					{ key: ms.valor, defaultValue: ms.valor },
+					{ key: ms.valor, value: ms.valor },
 					ms.mes
+				);
+			});
+
+			var dias = [1];
+			for (var _i = 2; _i <= 31; _i++) {
+				dias.push(_i);
+			}
+			var fechaNacimientoD = dias.map(function (di) {
+				return _react2.default.createElement(
+					'option',
+					{ key: di, value: di },
+					di
 				);
 			});
 
@@ -27319,17 +27465,17 @@
 						_react2.default.createElement(
 							'label',
 							null,
-							'A\xF1o en que naci\xF3'
+							'D\xEDa en que naci\xF3'
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default' },
+							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
 							_react2.default.createElement(
 								'option',
-								{ disabled: true, defaultValue: '' },
-								'Elija el a\xF1o'
+								{ disabled: true, value: '' },
+								'Elija el d\xEDa'
 							),
-							fechaNacimientoA
+							fechaNacimientoD
 						)
 					),
 					_react2.default.createElement(
@@ -27342,13 +27488,32 @@
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default' },
+							{ className: 'browser-default', value: this.state.persona.mes, onChange: this.cambiarMes },
 							_react2.default.createElement(
 								'option',
-								{ disabled: true, defaultValue: '' },
+								{ disabled: true, value: '' },
 								'Elija el mes'
 							),
 							fechaNacimientoM
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m2 s4' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'A\xF1o en que naci\xF3'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.persona.anio, onChange: this.cambiarAnio },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija el a\xF1o'
+							),
+							fechaNacimientoA
 						)
 					)
 				),
@@ -27357,12 +27522,253 @@
 					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text', id: 'apellido', placeholder: 'Gonzalez' }),
+						{ className: 'input-field col m4 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'calle-dir',
+							placeholder: 'Av. San Martin',
+							value: this.state.persona.direccion,
+							onChange: this.cambiarDir
+						}),
 						_react2.default.createElement(
 							'label',
-							{ htmlFor: 'apellido' },
-							'Apellido'
+							{ htmlFor: 'calle-dir' },
+							'Calle'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m2 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'numero-dir',
+							placeholder: '101',
+							value: this.state.persona.numero,
+							onChange: this.cambiarNum
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'numero-dir' },
+							'N\xFAmero'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m3 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'piso-dir',
+							placeholder: '2',
+							value: this.state.persona.piso,
+							onChange: this.cambiarPiso
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'calle-dir' },
+							'Piso (en caso de vivir en departamento)'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m3 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'dpto-dir',
+							placeholder: '321',
+							value: this.state.persona.dpto,
+							onChange: this.cambiarDpto
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'dpto-dir' },
+							'N\xFAmero del departamento (en caso de vivir en departamento)'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m3 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'localidad-dir',
+							placeholder: 'Necochea',
+							value: this.state.persona.localidad,
+							onChange: this.cambiarLocal
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'localidad-dir' },
+							'Nombre de la ciudad'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m3 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'codpost-dir',
+							placeholder: '7630',
+							value: this.state.persona.codpostal,
+							onChange: this.cambiarPostal
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'codpost-dir' },
+							'C\xF3digo postal'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m4 s6' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'Nacionalidad'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.persona.nacionalidad, onChange: this.cambiarNac },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija una opci\xF3n'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'sin especificar' },
+								'Sin especificar'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'argentina' },
+								'Argentina'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: 'otro' },
+								'Otro'
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m4 s6' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'Estado civil'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.persona.estadocivil, onChange: this.cambiarCiv },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija una opci\xF3n'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '0' },
+								'Hij@'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '1' },
+								'Padre/Madre'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '2' },
+								'Solter@'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '3' },
+								'Casad@'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '4' },
+								'Viud@'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '5' },
+								'Divorsiad@'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m2 s6' },
+						_react2.default.createElement('input', { type: 'number',
+							id: 'hijos',
+							placeholder: '2',
+							value: this.state.persona.hijos,
+							onChange: this.cambiarHijos
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'hijos' },
+							'Cantidad de hijos'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m2 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'tel',
+							placeholder: '2262 654321',
+							value: this.state.persona.telefono,
+							onChange: this.cambiarTel
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'tel' },
+							'N\xFAmero de tel\xE9fono'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m2 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'cel',
+							placeholder: '2262 654321',
+							value: this.state.persona.celular,
+							onChange: this.cambiarCel
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'cel' },
+							'N\xFAmero de celular'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m2 s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'otrotel',
+							placeholder: '2262 654321',
+							value: this.state.persona.otrotel,
+							onChange: this.cambiarOTel
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'otrotel' },
+							'Otro n\xFAmero de tel\xE9fono'
 						)
 					)
 				)

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class CVController extends Controller
 {
     /**
@@ -19,4 +21,8 @@ class CVController extends Controller
 			$resultado = app('db')->select("SELECT * FROM curriculums");
 			return $resultado;
 		}
+
+    public function crear_cv (Request $request) {
+      $cv = $request->all();
+    }
 }
