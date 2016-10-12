@@ -27318,9 +27318,10 @@
 		},
 		cambiarHijos: function cambiarHijos(e) {
 			console.log(e.target.value);
+			var hjs = e.target.value > 0 ? e.target.value.substr(0, 2) : "";
 			this.setState({
 				persona: {
-					hijos: e.target.value.substring(0, 2)
+					hijos: hjs
 				}
 			});
 		},
@@ -27399,6 +27400,11 @@
 			return _react2.default.createElement(
 				'div',
 				{ className: 'row' },
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Informaci\xF3n personal:'
+				),
 				_react2.default.createElement(
 					'div',
 					{ className: 'row' },
@@ -27565,7 +27571,7 @@
 						}),
 						_react2.default.createElement(
 							'label',
-							{ htmlFor: 'calle-dir' },
+							{ htmlFor: 'piso-dir' },
 							'Piso (en caso de vivir en departamento)'
 						)
 					),
@@ -27771,6 +27777,25 @@
 							'Otro n\xFAmero de tel\xE9fono'
 						)
 					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col m6 s6' },
+						_react2.default.createElement('input', { type: 'email',
+							id: 'email',
+							placeholder: 'minombre@correo.com',
+							value: this.state.persona.email,
+							onChange: this.cambiarEmail
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'email' },
+							'Correo electr\xF3nico'
+						)
+					)
 				)
 			);
 		}
@@ -27780,13 +27805,20 @@
 		displayName: 'CrearCV',
 
 		render: function render() {
+			var texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
+			texto += "deberá seguir todos los pasos hasta el último de ellos. No podrá saltar ningún procedimiendo";
 			return _react2.default.createElement(
 				'div',
 				{ className: 'container' },
 				_react2.default.createElement(
 					'h2',
 					null,
-					'Empresas'
+					'\xA1Crear mi CV!'
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					texto
 				),
 				_react2.default.createElement(
 					'div',
@@ -27797,7 +27829,8 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'row' },
-							_react2.default.createElement(InformacionPersona, null)
+							_react2.default.createElement(InformacionPersona, null),
+							_react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
 						)
 					)
 				)

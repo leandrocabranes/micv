@@ -135,9 +135,10 @@ let InformacionPersona = React.createClass({
 	},
 	cambiarHijos: function (e) {
 		console.log(e.target.value);
+		let hjs = e.target.value > 0 ? e.target.value.substr(0,2) : "";
 		this.setState({
 			persona: {
-				hijos: e.target.value.substring(0,2)
+				hijos: hjs
 			}
 		});
 	},
@@ -203,6 +204,7 @@ let InformacionPersona = React.createClass({
 
 		return (
 			<div className="row">
+				<h4>Información personal:</h4>
 				<div className="row">
 					<div className="input-field col s6">
 						<input type="text"
@@ -287,7 +289,7 @@ let InformacionPersona = React.createClass({
 							value={this.state.persona.piso}
 							onChange={this.cambiarPiso}
 						/>
-						<label htmlFor="calle-dir">Piso (en caso de vivir en departamento)</label>
+					<label htmlFor="piso-dir">Piso (en caso de vivir en departamento)</label>
 					</div>
 					<div className="input-field col m3 s6">
 						<input type="text"
@@ -382,6 +384,17 @@ let InformacionPersona = React.createClass({
 					<label htmlFor="otrotel">Otro número de teléfono</label>
 					</div>
 				</div>
+				<div className="row">
+					<div className="input-field col m6 s6">
+						<input type="email"
+							id="email"
+							placeholder="minombre@correo.com"
+							value={this.state.persona.email}
+							onChange={this.cambiarEmail}
+						/>
+					<label htmlFor="email">Correo electrónico</label>
+					</div>
+				</div>
 			</div>
 		);
 	}
@@ -389,13 +402,17 @@ let InformacionPersona = React.createClass({
 
 const CrearCV = React.createClass({
   render: function () {
+		let texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
+		texto += "deberá seguir todos los pasos hasta el último de ellos. No podrá saltar ningún procedimiendo";
     return (
       <div className="container">
-        <h2>Empresas</h2>
+        <h2>¡Crear mi CV!</h2>
+				<p>{texto}</p>
         <div className="row">
           <form className="col s12">
 						<div className="row">
 							<InformacionPersona />
+							<input type="submit" value="Crear CV" className="btn-large"/>
 						</div>
           </form>
         </div>
