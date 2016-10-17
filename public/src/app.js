@@ -27169,6 +27169,133 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _InfoPersona = __webpack_require__(237);
+
+	var _InfoPersona2 = _interopRequireDefault(_InfoPersona);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var CrearCV = _react2.default.createClass({
+	  displayName: 'CrearCV',
+
+	  render: function render() {
+	    var texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
+	    texto += "deberá seguir todos los pasos hasta el último de ellos. No podrá saltar ningún procedimiendo";
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'container' },
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        '\xA1Crear mi CV!'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        texto
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'form',
+	          { className: 'col s12' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(_InfoPersona2.default, null),
+	            _react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = CrearCV;
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var BuscadorOficio = _react2.default.createClass({
+	  displayName: 'BuscadorOficio',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'input-field col s6' },
+	      _react2.default.createElement('input', { type: 'text', id: 'buscador' }),
+	      _react2.default.createElement(
+	        'label',
+	        { htmlFor: 'buscador' },
+	        'Buscar por oficio'
+	      )
+	    );
+	  }
+	});
+
+	var Empresas = _react2.default.createClass({
+	  displayName: 'Empresas',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'container' },
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Empresas'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'form',
+	          { className: 'col s12' },
+	          _react2.default.createElement(BuscadorOficio, null)
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Empresas;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
@@ -27205,7 +27332,8 @@
 					hijos: '',
 					celular: '',
 					telefono: '',
-					otrotel: ''
+					otrotel: '',
+					email: ''
 				}
 			};
 		},
@@ -27346,6 +27474,14 @@
 			this.setState({
 				persona: {
 					otrotel: e.target.value.substring(0, 18)
+				}
+			});
+		},
+		cambiarEmail: function cambiarEmail(e) {
+			console.log(e.target.value);
+			this.setState({
+				persona: {
+					email: e.target.value.substring(0, 50)
 				}
 			});
 		},
@@ -27801,108 +27937,7 @@
 		}
 	});
 
-	var CrearCV = _react2.default.createClass({
-		displayName: 'CrearCV',
-
-		render: function render() {
-			var texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
-			texto += "deberá seguir todos los pasos hasta el último de ellos. No podrá saltar ningún procedimiendo";
-			return _react2.default.createElement(
-				'div',
-				{ className: 'container' },
-				_react2.default.createElement(
-					'h2',
-					null,
-					'\xA1Crear mi CV!'
-				),
-				_react2.default.createElement(
-					'p',
-					null,
-					texto
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'form',
-						{ className: 'col s12' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'row' },
-							_react2.default.createElement(InformacionPersona, null),
-							_react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
-						)
-					)
-				)
-			);
-		}
-	});
-
-	exports.default = CrearCV;
-
-/***/ },
-/* 236 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var BuscadorOficio = _react2.default.createClass({
-	  displayName: 'BuscadorOficio',
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'input-field col s6' },
-	      _react2.default.createElement('input', { type: 'text', id: 'buscador' }),
-	      _react2.default.createElement(
-	        'label',
-	        { htmlFor: 'buscador' },
-	        'Buscar por oficio'
-	      )
-	    );
-	  }
-	});
-
-	var Empresas = _react2.default.createClass({
-	  displayName: 'Empresas',
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'container' },
-	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        'Empresas'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
-	        _react2.default.createElement(
-	          'form',
-	          { className: 'col s12' },
-	          _react2.default.createElement(BuscadorOficio, null)
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports.default = Empresas;
+	exports.default = InformacionPersona;
 
 /***/ }
 /******/ ]);
