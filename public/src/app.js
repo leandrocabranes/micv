@@ -60,7 +60,7 @@
 
 	var _CrearCV2 = _interopRequireDefault(_CrearCV);
 
-	var _Empresas = __webpack_require__(236);
+	var _Empresas = __webpack_require__(238);
 
 	var _Empresas2 = _interopRequireDefault(_Empresas);
 
@@ -27180,14 +27180,74 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _InfoPersona = __webpack_require__(237);
+	var _InfoPersona = __webpack_require__(236);
 
 	var _InfoPersona2 = _interopRequireDefault(_InfoPersona);
+
+	var _ExpLaboral = __webpack_require__(237);
+
+	var _ExpLaboral2 = _interopRequireDefault(_ExpLaboral);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CrearCV = _react2.default.createClass({
 	  displayName: 'CrearCV',
+
+	  getInitialState: function getInitialState() {
+	    // hace falta agregar todos los demas estados
+	    // de la persona, como formacion academica y demas
+	    return {
+	      persona: {
+	        nombre: '',
+	        apellido: '',
+	        dni: '',
+	        anio: '',
+	        mes: '',
+	        dia: '',
+	        direccion: '',
+	        numero: '',
+	        piso: '',
+	        dpto: '',
+	        localidad: '',
+	        codpostal: '',
+	        nacionalidad: '',
+	        estadocivil: '',
+	        hijos: '',
+	        celular: '',
+	        telefono: '',
+	        otrotel: '',
+	        email: ''
+	      }
+	    };
+	  },
+
+	  handleDNI: function handleDNI(dni) {
+	    this.setState({
+	      persona: { dni: dni }
+	    });
+	  },
+
+	  handleInfoSubmit: function handleInfoSubmit(pers) {
+	    // falta hacer subir la info de la persona
+	    // aunque se podría hacer que se asigne al state
+	    // de este componente
+	  },
+
+	  handleSubmit: function handleSubmit() {
+	    console.log(this.state.persona);
+	    $.ajax({
+	      url: '/cv/crear',
+	      dataType: 'json',
+	      type: 'POST',
+	      data: data,
+	      success: function (data) {
+	        console.log(data);
+	      }.bind(this),
+	      error: function (xhr, status, err) {
+	        console.error('/pokemon/subir', status, err.toString());
+	      }.bind(this)
+	    });
+	  },
 
 	  render: function render() {
 	    var texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
@@ -27210,11 +27270,12 @@
 	        { className: 'row' },
 	        _react2.default.createElement(
 	          'form',
-	          { className: 'col s12' },
+	          { className: 'col s12', onSubmit: this.handleSubmit },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'row' },
-	            _react2.default.createElement(_InfoPersona2.default, null),
+	            _react2.default.createElement(_InfoPersona2.default, { onInfoSubmit: this.handleInfoSubmit, getDNI: this.handleDNI }),
+	            _react2.default.createElement(_ExpLaboral2.default, { personaDNI: this.state.persona.dni }),
 	            _react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
 	          )
 	        )
@@ -27227,70 +27288,6 @@
 
 /***/ },
 /* 236 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var BuscadorOficio = _react2.default.createClass({
-	  displayName: 'BuscadorOficio',
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'input-field col s6' },
-	      _react2.default.createElement('input', { type: 'text', id: 'buscador' }),
-	      _react2.default.createElement(
-	        'label',
-	        { htmlFor: 'buscador' },
-	        'Buscar por oficio'
-	      )
-	    );
-	  }
-	});
-
-	var Empresas = _react2.default.createClass({
-	  displayName: 'Empresas',
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'container' },
-	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        'Empresas'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
-	        _react2.default.createElement(
-	          'form',
-	          { className: 'col s12' },
-	          _react2.default.createElement(BuscadorOficio, null)
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports.default = Empresas;
-
-/***/ },
-/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27337,12 +27334,16 @@
 				}
 			};
 		},
+		cambiarInfoPersona: function cambiarInfoPersona() {
+			this.props.onInfoSubmit(this.state.persona);
+		},
 		cambiarDNI: function cambiarDNI(e) {
 			this.setState({
 				persona: {
 					dni: e.target.value.substring(0, 7)
 				}
 			});
+			this.props.getDNI(this.state.dni);
 		},
 		cambiarNombre: function cambiarNombre(e) {
 			this.setState({
@@ -27588,6 +27589,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'dni',
 							placeholder: '99999999',
+							ref: 'dni',
 							value: this.state.persona.dni,
 							onChange: this.cambiarDNI
 						}),
@@ -27932,12 +27934,124 @@
 							'Correo electr\xF3nico'
 						)
 					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'button',
+						{ className: 'btn-large', onClick: this.cambiarInfoPersona },
+						'Siguiente'
+					)
 				)
 			);
 		}
 	});
 
 	exports.default = InformacionPersona;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ExperienciaLaboral = _react2.default.createClass({
+	  displayName: 'ExperienciaLaboral',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      persona: {}
+	    };
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement('input', { type: 'text' })
+	    );
+	  }
+	});
+
+	exports.default = ExperienciaLaboral;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var BuscadorOficio = _react2.default.createClass({
+	  displayName: 'BuscadorOficio',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'input-field col s6' },
+	      _react2.default.createElement('input', { type: 'text', id: 'buscador' }),
+	      _react2.default.createElement(
+	        'label',
+	        { htmlFor: 'buscador' },
+	        'Buscar por oficio'
+	      )
+	    );
+	  }
+	});
+
+	var Empresas = _react2.default.createClass({
+	  displayName: 'Empresas',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'container' },
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Empresas'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'form',
+	          { className: 'col s12' },
+	          _react2.default.createElement(BuscadorOficio, null)
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Empresas;
 
 /***/ }
 /******/ ]);

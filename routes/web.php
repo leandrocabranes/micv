@@ -17,6 +17,8 @@ $app->get('/', function () use ($app) {
 
 $app->get('/cv/todos', 'CVController@dar_todos');
 
+$app->post('/cv/crear', 'CVController@crear_cv');
+
 
 //Indicamos que toda ruta será manejada por React JS
 $app->get('/{path:.+}', function () {
