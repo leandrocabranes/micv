@@ -37,6 +37,7 @@ let CrearCV = React.createClass({
     this.setState({
       persona: { dni: dni }
     });
+    console.log(this.state.persona.dni);
   },
 
   handleInfoSubmit: function (pers) {

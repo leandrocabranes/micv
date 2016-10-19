@@ -27225,6 +27225,7 @@
 	    this.setState({
 	      persona: { dni: dni }
 	    });
+	    console.log(this.state.persona.dni);
 	  },
 
 	  handleInfoSubmit: function handleInfoSubmit(pers) {
@@ -27335,15 +27336,16 @@
 			};
 		},
 		cambiarInfoPersona: function cambiarInfoPersona() {
-			this.props.onInfoSubmit(this.state.persona);
+			// this.props.onInfoSubmit(this.state.persona);
+			this.props.getDNI(this.state.persona.dni);
 		},
 		cambiarDNI: function cambiarDNI(e) {
 			this.setState({
 				persona: {
-					dni: e.target.value.substring(0, 7)
+					dni: e.target.value.substring(0, 8)
 				}
 			});
-			this.props.getDNI(this.state.dni);
+			// this.props.getDNI(this.state.persona.dni);
 		},
 		cambiarNombre: function cambiarNombre(e) {
 			this.setState({
@@ -27939,7 +27941,7 @@
 					'div',
 					{ className: 'row' },
 					_react2.default.createElement(
-						'button',
+						'div',
 						{ className: 'btn-large', onClick: this.cambiarInfoPersona },
 						'Siguiente'
 					)
@@ -27957,7 +27959,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -27971,20 +27973,172 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var ExperienciaLaboral = _react2.default.createClass({
-	  displayName: 'ExperienciaLaboral',
+		displayName: 'ExperienciaLaboral',
 
-	  getInitialState: function getInitialState() {
-	    return {
-	      persona: {}
-	    };
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement('input', { type: 'text' })
-	    );
-	  }
+		getInitialState: function getInitialState() {
+			return {
+				persona: {}
+			};
+		},
+		render: function render() {
+
+			var anios = [1920];
+			for (var i = 1921; i < 2016; i++) {
+				anios.push(i);
+			}
+			var aniosExp = anios.map(function (ai) {
+				return _react2.default.createElement(
+					'option',
+					{ key: ai, value: ai },
+					ai
+				);
+			});
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'row' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m2 s4' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'A\xF1o de inicio'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija el a\xF1o'
+							),
+							aniosExp
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m2 s4' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'A\xF1o de finalizaci\xF3n'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija el a\xF1o'
+							),
+							aniosExp
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m4 s12' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'Rubro'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija el rubro'
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'puesto',
+							placeholder: 'cajero',
+							value: this.state.persona.dni,
+							onChange: this.cambiarDNI
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'puesto' },
+							'Puesto'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'referencia',
+							placeholder: 'Juan Juanes',
+							value: this.state.persona.dni,
+							onChange: this.cambiarDNI
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'referencia' },
+							'Nombre de la persona a contactar'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'tel-ref',
+							placeholder: '2262 665544',
+							value: this.state.persona.dni,
+							onChange: this.cambiarDNI
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'tel-ref' },
+							'Tel\xE9fono para contactar al contacto de referencia'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'input-field col s6' },
+						_react2.default.createElement('input', { type: 'text',
+							id: 'carg-ref',
+							placeholder: 'gerente de la galaxia',
+							value: this.state.persona.dni,
+							onChange: this.cambiarDNI
+						}),
+						_react2.default.createElement(
+							'label',
+							{ htmlFor: 'carg-ref' },
+							'Cargo de contacto de referencia'
+						)
+					)
+				)
+			);
+		}
 	});
 
 	exports.default = ExperienciaLaboral;

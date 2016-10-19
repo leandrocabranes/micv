@@ -28,15 +28,16 @@ let InformacionPersona = React.createClass({
 		};
 	},
 	cambiarInfoPersona: function () {
-		this.props.onInfoSubmit(this.state.persona);
+		// this.props.onInfoSubmit(this.state.persona);
+		this.props.getDNI(this.state.persona.dni);
 	},
 	cambiarDNI: function (e) {
 		this.setState({
 			persona: {
-				dni: e.target.value.substring(0,7)
+				dni: e.target.value.substring(0,8)
 			}
 		});
-		this.props.getDNI(this.state.dni);
+		// this.props.getDNI(this.state.persona.dni);
 	},
 	cambiarNombre: function (e) {
 		this.setState({
@@ -410,7 +411,7 @@ let InformacionPersona = React.createClass({
 					</div>
 				</div>
 				<div className="row">
-					<button className="btn-large" onClick={this.cambiarInfoPersona}>Siguiente</button>
+					<div className="btn-large" onClick={this.cambiarInfoPersona}>Siguiente</div>
 				</div>
 			</div>
 		);
