@@ -1,0 +1,22 @@
+let RUBROS = [{ num: 1, rub: 'informática'}];
+RUBROS.push({ num: 2, rub: 'costrucción'});
+RUBROS.push({ num: 3, rub: 'ventas'});
+RUBROS.push({ num: 4, rub: 'cosmética'});
+RUBROS.push({ num: 5, rub: 'docencia'});
+RUBROS.push({ num: 6, rub: 'periodismo'});
+RUBROS.push({ num: 7, rub: 'cocina'});
+RUBROS.push({ num: 8, rub: 'telemarketing'});
+RUBROS.push({ num: 9, rub: 'producción multimedial'});
+RUBROS.push({ num: 10, rub: 'arte'});
+RUBROS.push({ num: 11, rub: 'música'});
+RUBROS.push({ num: 12, rub: 'finanzas'});
+RUBROS.push({ num: 13, rub: 'administración'});
+RUBROS.push({ num: 14, rub: 'atención al cliente'});
+RUBROS.push({ num: 15, rub: 'diseño de interiores'});
+RUBROS.push({ num: 16, rub: 'agricultura'});
+RUBROS.push({ num: 17, rub: 'mecánica'});
+RUBROS.push({ num: 18, rub: 'medicina'});
+RUBROS.push({ num: 19, rub: 'astrofísica'});
+RUBROS.push({ num: 20, rub: 'contabilidad'});
+
+export default RUBROS;

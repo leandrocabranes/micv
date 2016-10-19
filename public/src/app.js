@@ -60,7 +60,7 @@
 
 	var _CrearCV2 = _interopRequireDefault(_CrearCV);
 
-	var _Empresas = __webpack_require__(238);
+	var _Empresas = __webpack_require__(239);
 
 	var _Empresas2 = _interopRequireDefault(_Empresas);
 
@@ -27959,7 +27959,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -27970,181 +27970,292 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _rubros = __webpack_require__(238);
+
+	var _rubros2 = _interopRequireDefault(_rubros);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var ExperienciaLaboral = _react2.default.createClass({
-		displayName: 'ExperienciaLaboral',
+	  displayName: 'ExperienciaLaboral',
 
-		getInitialState: function getInitialState() {
-			return {
-				persona: {}
-			};
-		},
-		render: function render() {
+	  getInitialState: function getInitialState() {
+	    return {
+	      persona: {
+	        dni: '',
+	        fechaIn: '',
+	        fechaFn: '',
+	        rubro: '',
+	        puesto: '',
+	        lugar: '',
+	        nomRef: '',
+	        telRef: '',
+	        puestoRef: ''
+	      }
+	    };
+	  },
+	  cambiarInicio: function cambiarInicio(e) {
+	    this.setState({
+	      persona: {
+	        fechaIn: e.target.value
+	      }
+	    });
+	  },
+	  cambiarFin: function cambiarFin(e) {
+	    this.setState({
+	      persona: {
+	        fechaFn: e.target.value
+	      }
+	    });
+	  },
+	  cambiarRubro: function cambiarRubro(e) {
+	    this.setState({
+	      persona: {
+	        rubro: e.target.value
+	      }
+	    });
+	  },
+	  cambiarPuesto: function cambiarPuesto(e) {
+	    this.setState({
+	      persona: {
+	        puesto: e.target.value.substr(0, 25)
+	      }
+	    });
+	  },
+	  cambiarLugar: function cambiarLugar(e) {
+	    this.setState({
+	      persona: {
+	        lugar: e.target.value.substr(0, 30)
+	      }
+	    });
+	  },
+	  cambiarNomRef: function cambiarNomRef(e) {
+	    this.setState({
+	      persona: {
+	        nomRef: e.target.value.substr(0, 30)
+	      }
+	    });
+	  },
+	  cambiarTelRef: function cambiarTelRef(e) {
+	    this.setState({
+	      persona: {
+	        telRef: e.target.value.substr(0, 20)
+	      }
+	    });
+	  },
+	  cambiarPuestoRef: function cambiarPuestoRef(e) {
+	    this.setState({
+	      persona: {
+	        puestoRef: e.target.value.substr(0, 20)
+	      }
+	    });
+	  },
+	  render: function render() {
+	    // Años de experiencia
+	    var anios = [1920];
+	    for (var i = 1921; i < 2016; i++) {
+	      anios.push(i);
+	    }
+	    var aniosExp = anios.map(function (ai) {
+	      return _react2.default.createElement(
+	        'option',
+	        { key: ai, value: ai },
+	        ai
+	      );
+	    });
 
-			var anios = [1920];
-			for (var i = 1921; i < 2016; i++) {
-				anios.push(i);
-			}
-			var aniosExp = anios.map(function (ai) {
-				return _react2.default.createElement(
-					'option',
-					{ key: ai, value: ai },
-					ai
-				);
-			});
+	    var rubExp = _rubros2.default.map(function (rb) {
+	      return _react2.default.createElement(
+	        'option',
+	        { key: rb.num, value: rb.num },
+	        rb.rub
+	      );
+	    });
 
-			return _react2.default.createElement(
-				'div',
-				{ className: 'row' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col m2 s4' },
-						_react2.default.createElement(
-							'label',
-							null,
-							'A\xF1o de inicio'
-						),
-						_react2.default.createElement(
-							'select',
-							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
-							_react2.default.createElement(
-								'option',
-								{ disabled: true, value: '' },
-								'Elija el a\xF1o'
-							),
-							aniosExp
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col m2 s4' },
-						_react2.default.createElement(
-							'label',
-							null,
-							'A\xF1o de finalizaci\xF3n'
-						),
-						_react2.default.createElement(
-							'select',
-							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
-							_react2.default.createElement(
-								'option',
-								{ disabled: true, value: '' },
-								'Elija el a\xF1o'
-							),
-							aniosExp
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col m4 s12' },
-						_react2.default.createElement(
-							'label',
-							null,
-							'Rubro'
-						),
-						_react2.default.createElement(
-							'select',
-							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
-							_react2.default.createElement(
-								'option',
-								{ disabled: true, value: '' },
-								'Elija el rubro'
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text',
-							id: 'puesto',
-							placeholder: 'cajero',
-							value: this.state.persona.dni,
-							onChange: this.cambiarDNI
-						}),
-						_react2.default.createElement(
-							'label',
-							{ htmlFor: 'puesto' },
-							'Puesto'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text',
-							id: 'referencia',
-							placeholder: 'Juan Juanes',
-							value: this.state.persona.dni,
-							onChange: this.cambiarDNI
-						}),
-						_react2.default.createElement(
-							'label',
-							{ htmlFor: 'referencia' },
-							'Nombre de la persona a contactar'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text',
-							id: 'tel-ref',
-							placeholder: '2262 665544',
-							value: this.state.persona.dni,
-							onChange: this.cambiarDNI
-						}),
-						_react2.default.createElement(
-							'label',
-							{ htmlFor: 'tel-ref' },
-							'Tel\xE9fono para contactar al contacto de referencia'
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'input-field col s6' },
-						_react2.default.createElement('input', { type: 'text',
-							id: 'carg-ref',
-							placeholder: 'gerente de la galaxia',
-							value: this.state.persona.dni,
-							onChange: this.cambiarDNI
-						}),
-						_react2.default.createElement(
-							'label',
-							{ htmlFor: 'carg-ref' },
-							'Cargo de contacto de referencia'
-						)
-					)
-				)
-			);
-		}
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m2 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'A\xF1o de inicio'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.fechaIn, onChange: this.cambiarInicio },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el a\xF1o'
+	            ),
+	            aniosExp
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m2 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'A\xF1o de finalizaci\xF3n'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.fechaFn, onChange: this.cambiarFin },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el a\xF1o'
+	            ),
+	            aniosExp
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m4 s12' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Rubro'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.rubro, onChange: this.cambiarRubro },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el rubro'
+	            ),
+	            rubExp
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'puesto',
+	            placeholder: 'cajero',
+	            value: this.state.persona.puesto,
+	            onChange: this.cambiarPuesto
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'puesto' },
+	            'Puesto'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'referencia',
+	            placeholder: 'Juan Juanes',
+	            value: this.state.persona.nomRef,
+	            onChange: this.cambiarNomRef
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'referencia' },
+	            'Nombre de la persona a contactar'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'tel-ref',
+	            placeholder: '2262 665544',
+	            value: this.state.persona.telRef,
+	            onChange: this.cambiarTelRef
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'tel-ref' },
+	            'Tel\xE9fono para contactar al contacto de referencia'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'carg-ref',
+	            placeholder: 'gerente de la galaxia',
+	            value: this.state.persona.puestoRef,
+	            onChange: this.cambiarPuestoRef
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'carg-ref' },
+	            'Cargo de contacto de referencia'
+	          )
+	        )
+	      )
+	    );
+	  }
 	});
 
 	exports.default = ExperienciaLaboral;
 
 /***/ },
 /* 238 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var RUBROS = [{ num: 1, rub: 'informática' }];
+	RUBROS.push({ num: 2, rub: 'costrucción' });
+	RUBROS.push({ num: 3, rub: 'ventas' });
+	RUBROS.push({ num: 4, rub: 'cosmética' });
+	RUBROS.push({ num: 5, rub: 'docencia' });
+	RUBROS.push({ num: 6, rub: 'periodismo' });
+	RUBROS.push({ num: 7, rub: 'cocina' });
+	RUBROS.push({ num: 8, rub: 'telemarketing' });
+	RUBROS.push({ num: 9, rub: 'producción multimedial' });
+	RUBROS.push({ num: 10, rub: 'arte' });
+	RUBROS.push({ num: 11, rub: 'música' });
+	RUBROS.push({ num: 12, rub: 'finanzas' });
+	RUBROS.push({ num: 13, rub: 'administración' });
+	RUBROS.push({ num: 14, rub: 'atención al cliente' });
+	RUBROS.push({ num: 15, rub: 'diseño de interiores' });
+	RUBROS.push({ num: 16, rub: 'agricultura' });
+	RUBROS.push({ num: 17, rub: 'mecánica' });
+	RUBROS.push({ num: 18, rub: 'medicina' });
+	RUBROS.push({ num: 19, rub: 'astrofísica' });
+	RUBROS.push({ num: 20, rub: 'contabilidad' });
+
+	exports.default = RUBROS;
+
+/***/ },
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
