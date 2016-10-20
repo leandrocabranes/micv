@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import RUBROS from './variables/rubros.js';
 
@@ -159,6 +158,9 @@ let ExperienciaLaboral = React.createClass({
 						/>
           <label htmlFor="carg-ref">Cargo de contacto de referencia</label>
 					</div>
+        </div>
+        <div className="row">
+          <div className="btn-large">Siguiente</div>
         </div>
       </div>
     );

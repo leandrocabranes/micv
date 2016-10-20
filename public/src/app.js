@@ -60,7 +60,7 @@
 
 	var _CrearCV2 = _interopRequireDefault(_CrearCV);
 
-	var _Empresas = __webpack_require__(239);
+	var _Empresas = __webpack_require__(240);
 
 	var _Empresas2 = _interopRequireDefault(_Empresas);
 
@@ -27188,6 +27188,10 @@
 
 	var _ExpLaboral2 = _interopRequireDefault(_ExpLaboral);
 
+	var _FormAcademica = __webpack_require__(239);
+
+	var _FormAcademica2 = _interopRequireDefault(_FormAcademica);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CrearCV = _react2.default.createClass({
@@ -27277,6 +27281,7 @@
 	            { className: 'row' },
 	            _react2.default.createElement(_InfoPersona2.default, { onInfoSubmit: this.handleInfoSubmit, getDNI: this.handleDNI }),
 	            _react2.default.createElement(_ExpLaboral2.default, { personaDNI: this.state.persona.dni }),
+	            _react2.default.createElement(_FormAcademica2.default, null),
 	            _react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
 	          )
 	        )
@@ -27966,10 +27971,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _rubros = __webpack_require__(238);
 
 	var _rubros2 = _interopRequireDefault(_rubros);
@@ -28215,6 +28216,15 @@
 	            'Cargo de contacto de referencia'
 	          )
 	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'btn-large' },
+	          'Siguiente'
+	        )
 	      )
 	    );
 	  }
@@ -28256,6 +28266,252 @@
 
 /***/ },
 /* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var FormacionAcademica = _react2.default.createClass({
+	  displayName: 'FormacionAcademica',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      persona: {
+	        dni: '',
+	        primIn: '',
+	        primEst: '',
+	        primInst: '',
+	        secIn: '',
+	        secFin: '',
+	        secInst: '',
+	        secEst: ''
+	      }
+	    };
+	  },
+	  cambiarPrimEst: function cambiarPrimEst(e) {
+	    this.setState({
+	      persona: {
+	        primEst: e.target.value
+	      }
+	    });
+	    // console.log(this.state.persona.primEst);
+	    console.log(e.target.value);
+	  },
+	  render: function render() {
+	    var anios = [1920];
+	    for (var i = 1921; i < 2016; i++) {
+	      anios.push(i);
+	    }
+	    var aniosEd = anios.map(function (ai) {
+	      return _react2.default.createElement(
+	        'option',
+	        { key: ai, value: ai },
+	        ai
+	      );
+	    });
+
+	    function secundario(est) {
+	      if (est == 'completo') {
+	        return _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col m3 s4' },
+	              _react2.default.createElement(
+	                'label',
+	                null,
+	                'A\xF1o en que inicio su educaci\xF3n Secundaria'
+	              ),
+	              _react2.default.createElement(
+	                'select',
+	                { className: 'browser-default', value: '' },
+	                _react2.default.createElement(
+	                  'option',
+	                  { disabled: true, value: '' },
+	                  'Elija el a\xF1o'
+	                ),
+	                aniosEd
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col m3 s4' },
+	              _react2.default.createElement(
+	                'label',
+	                null,
+	                'A\xF1o en que finaliz\xF3 su educaci\xF3n Secundaria'
+	              ),
+	              _react2.default.createElement(
+	                'select',
+	                { className: 'browser-default', value: '' },
+	                _react2.default.createElement(
+	                  'option',
+	                  { disabled: true, value: '' },
+	                  'Elija el a\xF1o'
+	                ),
+	                aniosEd
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col m6 s4' },
+	              _react2.default.createElement(
+	                'label',
+	                null,
+	                'Estado de su educaci\xF3n Secundaria'
+	              ),
+	              _react2.default.createElement(
+	                'select',
+	                { className: 'browser-default', value: '' },
+	                _react2.default.createElement(
+	                  'option',
+	                  { disabled: true, value: '' },
+	                  'Elija su estado'
+	                ),
+	                _react2.default.createElement(
+	                  'option',
+	                  { value: 'completo' },
+	                  'Completo'
+	                ),
+	                _react2.default.createElement(
+	                  'option',
+	                  { value: 'incompleto' },
+	                  'Incompleto'
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'input-field col s6' },
+	              _react2.default.createElement('input', { type: 'text',
+	                id: 'nombreSecundaria',
+	                placeholder: 'E.E.S.T. N\xB03',
+	                value: ''
+	              }),
+	              _react2.default.createElement(
+	                'label',
+	                { htmlFor: 'nombreSecundaria' },
+	                'Nombre de la escuela secundaria'
+	              )
+	            )
+	          )
+	        );
+	      } else {
+	        return;
+	      }
+	    };
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m3 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'A\xF1o de inicio de Primaria'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.fechaIn, onChange: this.cambiarInicio },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el a\xF1o'
+	            ),
+	            aniosEd
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m3 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Estado de su educaci\xF3n primaria'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.primEst, onChange: this.cambiarPrimEst },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija su estado'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'completo' },
+	              'Completo'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'incompleto' },
+	              'Incompleto'
+	            )
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'nombreEscuela',
+	            placeholder: 'Escuela N\xB07',
+	            value: this.state.persona.puesto,
+	            onChange: this.cambiarPuesto
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'nombreEscuela' },
+	            'Nombre de la escuela primaria'
+	          )
+	        )
+	      ),
+	      secundario(this.state.persona.primEst),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'btn-large' },
+	          'Siguiente'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = FormacionAcademica;
+
+/***/ },
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
