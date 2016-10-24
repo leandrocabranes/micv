@@ -60,7 +60,7 @@
 
 	var _CrearCV2 = _interopRequireDefault(_CrearCV);
 
-	var _Empresas = __webpack_require__(240);
+	var _Empresas = __webpack_require__(241);
 
 	var _Empresas2 = _interopRequireDefault(_Empresas);
 
@@ -27192,7 +27192,7 @@
 
 	var _FormAcademica2 = _interopRequireDefault(_FormAcademica);
 
-	var _InfoAdicional = __webpack_require__(241);
+	var _InfoAdicional = __webpack_require__(240);
 
 	var _InfoAdicional2 = _interopRequireDefault(_InfoAdicional);
 
@@ -28302,15 +28302,31 @@
 	      }
 	    };
 	  },
+	  cambiarPrimIn: function cambiarPrimIn(e) {
+	    this.setState({
+	      persona: {
+	        primIn: e.target.value
+	      }
+	    });
+	    console.log(e.target.value);
+	  },
 	  cambiarPrimEst: function cambiarPrimEst(e) {
 	    this.setState({
 	      persona: {
 	        primEst: e.target.value
 	      }
 	    });
-	    // console.log(this.state.persona.primEst);
 	    console.log(e.target.value);
 	  },
+	  cambiarPrimInst: function cambiarPrimInst(e) {
+	    this.setState({
+	      persona: {
+	        primInst: e.target.value
+	      }
+	    });
+	    console.log(e.target.value);
+	  },
+
 	  render: function render() {
 	    var anios = [1920];
 	    for (var i = 1921; i < 2016; i++) {
@@ -28324,7 +28340,39 @@
 	      );
 	    });
 
-	    function secundario(est) {
+	    function secundario(est, secin, secfin, secest, secinst) {
+	      function cambiarSecIn(e) {
+	        this.this.setState({
+	          persona: {
+	            secIn: e.target.value
+	          }
+	        });
+	        console.log(e.target.value);
+	      }
+	      function cambiarSecFin(e) {
+	        this.this.setState({
+	          persona: {
+	            secFin: e.target.value
+	          }
+	        });
+	        console.log(e.target.value);
+	      }
+	      function cambiarSecEst(e) {
+	        this.setState({
+	          persona: {
+	            secEst: e.target.value
+	          }
+	        });
+	        console.log(e.target.value);
+	      }
+	      function cambiarSecInst(e) {
+	        this.setState({
+	          persona: {
+	            secInst: e.target.value
+	          }
+	        });
+	        console.log(e.target.value);
+	      }
 	      if (est == 'completo') {
 	        return _react2.default.createElement(
 	          'div',
@@ -28342,7 +28390,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'select',
-	                { className: 'browser-default', value: '' },
+	                { className: 'browser-default', value: secin, onChange: cambiarSecIn },
 	                _react2.default.createElement(
 	                  'option',
 	                  { disabled: true, value: '' },
@@ -28361,7 +28409,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'select',
-	                { className: 'browser-default', value: '' },
+	                { className: 'browser-default', value: secfin, onChange: cambiarSecFin },
 	                _react2.default.createElement(
 	                  'option',
 	                  { disabled: true, value: '' },
@@ -28384,7 +28432,7 @@
 	              ),
 	              _react2.default.createElement(
 	                'select',
-	                { className: 'browser-default', value: '' },
+	                { className: 'browser-default', value: secest, onChange: cambiarSecEst },
 	                _react2.default.createElement(
 	                  'option',
 	                  { disabled: true, value: '' },
@@ -28412,7 +28460,8 @@
 	              _react2.default.createElement('input', { type: 'text',
 	                id: 'nombreSecundaria',
 	                placeholder: 'E.E.S.T. N\xB03',
-	                value: ''
+	                value: secinst,
+	                onChange: cambiarSecInst
 	              }),
 	              _react2.default.createElement(
 	                'label',
@@ -28442,7 +28491,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.fechaIn, onChange: this.cambiarInicio },
+	            { className: 'browser-default', value: this.state.persona.primIn, onChange: this.cambiarPrimIn },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -28489,8 +28538,8 @@
 	          _react2.default.createElement('input', { type: 'text',
 	            id: 'nombreEscuela',
 	            placeholder: 'Escuela N\xB07',
-	            value: this.state.persona.puesto,
-	            onChange: this.cambiarPuesto
+	            value: this.state.persona.primInst,
+	            onChange: this.cambiarPrimInst
 	          }),
 	          _react2.default.createElement(
 	            'label',
@@ -28499,7 +28548,7 @@
 	          )
 	        )
 	      ),
-	      secundario(this.state.persona.primEst),
+	      secundario(this.state.persona.primEst, this.state.persona.secIn, this.state.persona.secFin, this.state.persona.secEst, this.state.persona.secInst),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'row' },
@@ -28517,6 +28566,334 @@
 
 /***/ },
 /* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var InfoAdicional = _react2.default.createClass({
+	  displayName: 'InfoAdicional',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      persona: {
+	        dni: '',
+	        ingles: '',
+	        informatica: '',
+	        movA: '',
+	        movM: '',
+	        movB: '',
+	        movO: '',
+	        carnet: 0,
+	        disp: '',
+	        acla: ''
+	      }
+	    };
+	  },
+	  cambiarIngles: function cambiarIngles(e) {
+	    console.log(e.target.value);
+	    this.setState({
+	      persona: {
+	        ingles: e.target.value
+	      }
+	    });
+	  },
+	  cambiarInform: function cambiarInform(e) {
+	    console.log(e.target.value);
+	    this.setState({
+	      persona: {
+	        informatica: e.target.value
+	      }
+	    });
+	  },
+	  cambiarCarnet: function cambiarCarnet(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 1 : 0;
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        carnet: val
+	      }
+	    });
+	  },
+	  cambiarDisp: function cambiarDisp(e) {
+	    console.log(e.target.value);
+	    this.setState({
+	      persona: {
+	        disp: e.target.value
+	      }
+	    });
+	  },
+	  cambiarAuto: function cambiarAuto(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'auto' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movA: val
+	      }
+	    });
+	  },
+	  cambiarMoto: function cambiarMoto(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'moto' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movM: val
+	      }
+	    });
+	  },
+	  cambiarTicla: function cambiarTicla(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'bicicleta' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movB: val
+	      }
+	    });
+	  },
+	  cambiarOtro: function cambiarOtro(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'otro' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movO: val
+	      }
+	    });
+	  },
+	  cambiarAcla: function cambiarAcla(e) {
+	    console.log(e.target.value);
+	    this.setState({
+	      persona: {
+	        acla: e.target.value.substr(0, 120)
+	      }
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m6 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Nivel de Ingl\xE9s'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.ingles, onChange: this.cambiarIngles },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija su nivel'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'basico' },
+	              'B\xE1sico'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'intermedio' },
+	              'Intermedio'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'avanzado' },
+	              'Avanzado'
+	            )
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m6 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Manejo de computadora'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.informatica, onChange: this.cambiarInform },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija su nivel'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'basico' },
+	              'B\xE1sico'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'intermedio' },
+	              'Intermedio'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'avanzado' },
+	              'Avanzado'
+	            )
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          _react2.default.createElement('input', { type: 'checkbox', id: 'carnet', onChange: this.cambiarCarnet }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'carnet' },
+	            'Licencia de conducir'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m6 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Disponibilidad horaria'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.disp, onChange: this.cambiarDisp },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija su turno'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'matutino' },
+	              'Matutino'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'vespertino' },
+	              'Vespertino'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'nocturno' },
+	              'Nocturno'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'todos' },
+	              'Todos'
+	            )
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          _react2.default.createElement(
+	            'h5',
+	            null,
+	            'Medios de transporte:'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s3' },
+	          _react2.default.createElement('input', { type: 'checkbox', id: 'auto', onChange: this.cambiarAuto }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'auto' },
+	            'Auto'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s3' },
+	          _react2.default.createElement('input', { type: 'checkbox', id: 'moto', onChange: this.cambiarMoto }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'moto' },
+	            'Moto'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s3' },
+	          _react2.default.createElement('input', { type: 'checkbox', id: 'ticla', onChange: this.cambiarTicla }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'ticla' },
+	            'Bicicleta'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s3' },
+	          _react2.default.createElement('input', { type: 'checkbox', id: 'otro', onChange: this.cambiarOtro }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'otro' },
+	            'Otro'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s12' },
+	          _react2.default.createElement('textarea', { id: 'aclaracion',
+	            className: 'materialize-textarea',
+	            value: this.state.persona.acla,
+	            onChange: this.cambiarAcla
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'aclaracion' },
+	            'Aclaraciones e informaci\xF3n horaria (m\xE1ximo 120 caracteres)'
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = InfoAdicional;
+
+/***/ },
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28578,130 +28955,6 @@
 	});
 
 	exports.default = Empresas;
-
-/***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var InfoAdicional = _react2.default.createClass({
-	  displayName: 'InfoAdicional',
-
-	  getInitialState: function getInitialState() {
-	    return {
-	      persona: {
-	        dni: '',
-	        ingles: '',
-	        informatica: '',
-	        movA: '',
-	        movM: '',
-	        movB: '',
-	        movTP: '',
-	        disp: '',
-	        acla: ''
-	      }
-	    };
-	  },
-	  cambiarAuto: function cambiarAuto(e) {
-	    var evento = e.target.checked;
-	    var val = evento ? 'auto' : '';
-	    console.log(val);
-	    this.setState({
-	      persona: {
-	        movA: val
-	      }
-	    });
-	  },
-	  cambiarMoto: function cambiarMoto(e) {
-	    var evento = e.target.checked;
-	    var val = evento ? 'moto' : '';
-	    console.log(val);
-	    this.setState({
-	      persona: {
-	        movM: val
-	      }
-	    });
-	  },
-	  cambiarTicla: function cambiarTicla(e) {
-	    var evento = e.target.checked;
-	    var val = evento ? 'bicicleta' : '';
-	    console.log(val);
-	    this.setState({
-	      persona: {
-	        movB: val
-	      }
-	    });
-	  },
-	  cambiarTP: function cambiarTP(e) {
-	    var evento = e.target.checked;
-	    var val = evento ? 'transporte_publico' : '';
-	    console.log(val);
-	    this.setState({
-	      persona: {
-	        movB: val
-	      }
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'row' },
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'col s3' },
-	        _react2.default.createElement('input', { type: 'checkbox', id: 'auto', onChange: this.cambiarAuto }),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'auto' },
-	          'Auto'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'col s3' },
-	        _react2.default.createElement('input', { type: 'checkbox', id: 'moto', onChange: this.cambiarMoto }),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'moto' },
-	          'Moto'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'col s3' },
-	        _react2.default.createElement('input', { type: 'checkbox', id: 'ticla', onChange: this.cambiarTicla }),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'ticla' },
-	          'Bicicleta'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'col s3' },
-	        _react2.default.createElement('input', { type: 'checkbox', id: 'tp', onChange: this.cambiarTP }),
-	        _react2.default.createElement(
-	          'label',
-	          { htmlFor: 'tp' },
-	          'Transporte p\xFAblico'
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports.default = InfoAdicional;
 
 /***/ }
 /******/ ]);
