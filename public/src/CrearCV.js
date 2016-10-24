@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import InformacionPersona from './Formularios/InfoPersona.js';
 import ExperienciaLaboral from './Formularios/ExpLaboral.js';
 import FormacionAcademica from './Formularios/FormAcademica.js';
+import InfoAdicional from './Formularios/InfoAdicional.js';
 
 let CrearCV = React.createClass({
   getInitialState: function () {
@@ -76,6 +77,7 @@ let CrearCV = React.createClass({
 							<InformacionPersona onInfoSubmit={this.handleInfoSubmit} getDNI={this.handleDNI}/>
               <ExperienciaLaboral personaDNI={this.state.persona.dni} />
               <FormacionAcademica />
+              <InfoAdicional />
 							<input type="submit" value="Crear CV" className="btn-large"/>
 						</div>
           </form>

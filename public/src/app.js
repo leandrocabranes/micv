@@ -27192,6 +27192,10 @@
 
 	var _FormAcademica2 = _interopRequireDefault(_FormAcademica);
 
+	var _InfoAdicional = __webpack_require__(241);
+
+	var _InfoAdicional2 = _interopRequireDefault(_InfoAdicional);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CrearCV = _react2.default.createClass({
@@ -27282,6 +27286,7 @@
 	            _react2.default.createElement(_InfoPersona2.default, { onInfoSubmit: this.handleInfoSubmit, getDNI: this.handleDNI }),
 	            _react2.default.createElement(_ExpLaboral2.default, { personaDNI: this.state.persona.dni }),
 	            _react2.default.createElement(_FormAcademica2.default, null),
+	            _react2.default.createElement(_InfoAdicional2.default, null),
 	            _react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
 	          )
 	        )
@@ -28573,6 +28578,130 @@
 	});
 
 	exports.default = Empresas;
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var InfoAdicional = _react2.default.createClass({
+	  displayName: 'InfoAdicional',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      persona: {
+	        dni: '',
+	        ingles: '',
+	        informatica: '',
+	        movA: '',
+	        movM: '',
+	        movB: '',
+	        movTP: '',
+	        disp: '',
+	        acla: ''
+	      }
+	    };
+	  },
+	  cambiarAuto: function cambiarAuto(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'auto' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movA: val
+	      }
+	    });
+	  },
+	  cambiarMoto: function cambiarMoto(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'moto' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movM: val
+	      }
+	    });
+	  },
+	  cambiarTicla: function cambiarTicla(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'bicicleta' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movB: val
+	      }
+	    });
+	  },
+	  cambiarTP: function cambiarTP(e) {
+	    var evento = e.target.checked;
+	    var val = evento ? 'transporte_publico' : '';
+	    console.log(val);
+	    this.setState({
+	      persona: {
+	        movB: val
+	      }
+	    });
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'col s3' },
+	        _react2.default.createElement('input', { type: 'checkbox', id: 'auto', onChange: this.cambiarAuto }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'auto' },
+	          'Auto'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'col s3' },
+	        _react2.default.createElement('input', { type: 'checkbox', id: 'moto', onChange: this.cambiarMoto }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'moto' },
+	          'Moto'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'col s3' },
+	        _react2.default.createElement('input', { type: 'checkbox', id: 'ticla', onChange: this.cambiarTicla }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'ticla' },
+	          'Bicicleta'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'col s3' },
+	        _react2.default.createElement('input', { type: 'checkbox', id: 'tp', onChange: this.cambiarTP }),
+	        _react2.default.createElement(
+	          'label',
+	          { htmlFor: 'tp' },
+	          'Transporte p\xFAblico'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = InfoAdicional;
 
 /***/ }
 /******/ ]);
