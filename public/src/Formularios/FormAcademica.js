@@ -6,7 +6,7 @@ let FormacionAcademica = React.createClass({
       persona: {
         dni: '',
         primIn: '',
-        primEst: '',
+        primEst: 'incompleto',
         primInst: '',
         secIn: '',
         secFin: '',
@@ -39,10 +39,38 @@ let FormacionAcademica = React.createClass({
     });
     console.log(e.target.value);
   },
-
-
-
-
+  cambiarSecIn: function (e) {
+    this.setState({
+      persona: {
+        secIn: e.target.value
+      }
+    });
+    console.log(e.target.value);
+  },
+  cambiarSecFin: function (e) {
+    this.setState({
+      persona: {
+        secFin: e.target.value
+      }
+    });
+    console.log(e.target.value);
+  },
+  cambiarSecEst: function (e) {
+    this.setState({
+      persona: {
+        secEst: e.target.value
+      }
+    });
+    console.log(e.target.value);
+  },
+  cambiarSecInst: function (e) {
+    this.setState({
+      persona: {
+        secInst: e.target.value
+      }
+    });
+    console.log(e.target.value);
+  },
   render: function () {
     let anios = [1920];
     for (var i = 1921; i < 2016; i++) {
@@ -53,78 +81,11 @@ let FormacionAcademica = React.createClass({
     });
 
     function secundario (est, secin, secfin, secest, secinst) {
-      function cambiarSecIn (e) {
-        this.this.setState({
-          persona: {
-            secIn: e.target.value
-          }
-        });
-        console.log(e.target.value);
-      }
-      function cambiarSecFin (e) {
-        this.this.setState({
-          persona: {
-            secFin: e.target.value
-          }
-        });
-        console.log(e.target.value);
-      }
-      function cambiarSecEst (e) {
-        this.setState({
-          persona: {
-            secEst: e.target.value
-          }
-        });
-        console.log(e.target.value);
-      }
-      function cambiarSecInst (e) {
-        this.setState({
-          persona: {
-            secInst: e.target.value
-          }
-        });
-        console.log(e.target.value);
-      }
+
       if (est == 'completo') {
         return (
           <div className="row">
-            <div className="row">
-              <div className="col m3 s4">
-                <label>Año en que inicio su educación Secundaria</label>
-                <select className="browser-default" value={secin} onChange={cambiarSecIn}>
-                  <option disabled value="">Elija el año</option>
-                  {aniosEd}
-                </select>
-              </div>
-              <div className="col m3 s4">
-                <label>Año en que finalizó su educación Secundaria</label>
-                <select className="browser-default" value={secfin} onChange={cambiarSecFin}>
-                  <option disabled value="">Elija el año</option>
-                  {aniosEd}
-                </select>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col m6 s4">
-                <label>Estado de su educación Secundaria</label>
-                <select className="browser-default" value={secest} onChange={cambiarSecEst}>
-                  <option disabled value="">Elija su estado</option>
-                  <option value="completo">Completo</option>
-                  <option value="incompleto">Incompleto</option>
-                </select>
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s6">
-    						<input type="text"
-    							id="nombreSecundaria"
-    							placeholder="E.E.S.T. N°3"
-    							value={secinst}
-                  onChange={cambiarSecInst}
-    						/>
-              <label htmlFor="nombreSecundaria">Nombre de la escuela secundaria</label>
-    					</div>
-            </div>
+
           </div>
         );
       } else {
@@ -161,8 +122,43 @@ let FormacionAcademica = React.createClass({
           <label htmlFor="nombreEscuela">Nombre de la escuela primaria</label>
 					</div>
         </div>
-        {secundario(this.state.persona.primEst, this.state.persona.secIn,
-          this.state.persona.secFin, this.state.persona.secEst, this.state.persona.secInst)}
+        <div className={this.state.persona.primEst != 'incompleto' ? 'row'  : 'row hide'}>
+          <div className="col m3 s4">
+            <label>Año en que inicio su educación Secundaria</label>
+            <select className="browser-default" value={this.state.persona.secIn} onChange={this.cambiarSecIn}>
+              <option disabled value="">Elija el año</option>
+              {aniosEd}
+            </select>
+          </div>
+          <div className="col m3 s4">
+            <label>Año en que finalizó su educación Secundaria</label>
+            <select className="browser-default" value={this.state.persona.secFin} onChange={this.cambiarSecFin}>
+              <option disabled value="">Elija el año</option>
+              {aniosEd}
+            </select>
+          </div>
+        </div>
+        <div className={this.state.persona.primEst != 'incompleto' ? 'row'  : 'row hide'}>
+          <div className="col m6 s4">
+            <label>Estado de su educación Secundaria</label>
+            <select className="browser-default" value={this.state.persona.secEst} onChange={this.cambiarSecEst}>
+              <option disabled value="">Elija su estado</option>
+              <option value="completo">Completo</option>
+              <option value="incompleto">Incompleto</option>
+            </select>
+          </div>
+        </div>
+        <div className={this.state.persona.primEst != 'incompleto' ? 'row'  : 'row hide'}>
+          <div className="input-field col s6">
+            <input type="text"
+              id="nombreSecundaria"
+              placeholder="E.E.S.T. N°3"
+              value={this.state.persona.secInst}
+              onChange={this.cambiarSecInst}
+            />
+          <label htmlFor="nombreSecundaria">Nombre de la escuela secundaria</label>
+          </div>
+        </div>
         <div className="row">
           <div className="btn-large">Siguiente</div>
         </div>

@@ -27206,6 +27206,7 @@
 	    // de la persona, como formacion academica y demas
 	    return {
 	      persona: {
+	        // informacion personal
 	        nombre: '',
 	        apellido: '',
 	        dni: '',
@@ -27224,7 +27225,34 @@
 	        celular: '',
 	        telefono: '',
 	        otrotel: '',
-	        email: ''
+	        email: '',
+	        // experiencia laboral
+	        fechaIn: '',
+	        fechaFn: '',
+	        rubro: '',
+	        puesto: '',
+	        lugar: '',
+	        nomRef: '',
+	        telRef: '',
+	        puestoRef: '',
+	        // formacion academica
+	        primIn: '',
+	        primEst: '',
+	        primInst: '',
+	        secIn: '',
+	        secFin: '',
+	        secInst: '',
+	        secEst: '',
+	        // info adicional
+	        ingles: '',
+	        informatica: '',
+	        movA: '',
+	        movM: '',
+	        movB: '',
+	        movO: '',
+	        carnet: 0,
+	        disp: '',
+	        acla: ''
 	      }
 	    };
 	  },
@@ -28293,7 +28321,7 @@
 	      persona: {
 	        dni: '',
 	        primIn: '',
-	        primEst: '',
+	        primEst: 'incompleto',
 	        primInst: '',
 	        secIn: '',
 	        secFin: '',
@@ -28326,7 +28354,38 @@
 	    });
 	    console.log(e.target.value);
 	  },
-
+	  cambiarSecIn: function cambiarSecIn(e) {
+	    this.setState({
+	      persona: {
+	        secIn: e.target.value
+	      }
+	    });
+	    console.log(e.target.value);
+	  },
+	  cambiarSecFin: function cambiarSecFin(e) {
+	    this.setState({
+	      persona: {
+	        secFin: e.target.value
+	      }
+	    });
+	    console.log(e.target.value);
+	  },
+	  cambiarSecEst: function cambiarSecEst(e) {
+	    this.setState({
+	      persona: {
+	        secEst: e.target.value
+	      }
+	    });
+	    console.log(e.target.value);
+	  },
+	  cambiarSecInst: function cambiarSecInst(e) {
+	    this.setState({
+	      persona: {
+	        secInst: e.target.value
+	      }
+	    });
+	    console.log(e.target.value);
+	  },
 	  render: function render() {
 	    var anios = [1920];
 	    for (var i = 1921; i < 2016; i++) {
@@ -28341,136 +28400,9 @@
 	    });
 
 	    function secundario(est, secin, secfin, secest, secinst) {
-	      function cambiarSecIn(e) {
-	        this.this.setState({
-	          persona: {
-	            secIn: e.target.value
-	          }
-	        });
-	        console.log(e.target.value);
-	      }
-	      function cambiarSecFin(e) {
-	        this.this.setState({
-	          persona: {
-	            secFin: e.target.value
-	          }
-	        });
-	        console.log(e.target.value);
-	      }
-	      function cambiarSecEst(e) {
-	        this.setState({
-	          persona: {
-	            secEst: e.target.value
-	          }
-	        });
-	        console.log(e.target.value);
-	      }
-	      function cambiarSecInst(e) {
-	        this.setState({
-	          persona: {
-	            secInst: e.target.value
-	          }
-	        });
-	        console.log(e.target.value);
-	      }
+
 	      if (est == 'completo') {
-	        return _react2.default.createElement(
-	          'div',
-	          { className: 'row' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col m3 s4' },
-	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'A\xF1o en que inicio su educaci\xF3n Secundaria'
-	              ),
-	              _react2.default.createElement(
-	                'select',
-	                { className: 'browser-default', value: secin, onChange: cambiarSecIn },
-	                _react2.default.createElement(
-	                  'option',
-	                  { disabled: true, value: '' },
-	                  'Elija el a\xF1o'
-	                ),
-	                aniosEd
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col m3 s4' },
-	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'A\xF1o en que finaliz\xF3 su educaci\xF3n Secundaria'
-	              ),
-	              _react2.default.createElement(
-	                'select',
-	                { className: 'browser-default', value: secfin, onChange: cambiarSecFin },
-	                _react2.default.createElement(
-	                  'option',
-	                  { disabled: true, value: '' },
-	                  'Elija el a\xF1o'
-	                ),
-	                aniosEd
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col m6 s4' },
-	              _react2.default.createElement(
-	                'label',
-	                null,
-	                'Estado de su educaci\xF3n Secundaria'
-	              ),
-	              _react2.default.createElement(
-	                'select',
-	                { className: 'browser-default', value: secest, onChange: cambiarSecEst },
-	                _react2.default.createElement(
-	                  'option',
-	                  { disabled: true, value: '' },
-	                  'Elija su estado'
-	                ),
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'completo' },
-	                  'Completo'
-	                ),
-	                _react2.default.createElement(
-	                  'option',
-	                  { value: 'incompleto' },
-	                  'Incompleto'
-	                )
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'input-field col s6' },
-	              _react2.default.createElement('input', { type: 'text',
-	                id: 'nombreSecundaria',
-	                placeholder: 'E.E.S.T. N\xB03',
-	                value: secinst,
-	                onChange: cambiarSecInst
-	              }),
-	              _react2.default.createElement(
-	                'label',
-	                { htmlFor: 'nombreSecundaria' },
-	                'Nombre de la escuela secundaria'
-	              )
-	            )
-	          )
-	        );
+	        return _react2.default.createElement('div', { className: 'row' });
 	      } else {
 	        return;
 	      }
@@ -28548,7 +28480,99 @@
 	          )
 	        )
 	      ),
-	      secundario(this.state.persona.primEst, this.state.persona.secIn, this.state.persona.secFin, this.state.persona.secEst, this.state.persona.secInst),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.persona.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m3 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'A\xF1o en que inicio su educaci\xF3n Secundaria'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.secIn, onChange: this.cambiarSecIn },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el a\xF1o'
+	            ),
+	            aniosEd
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m3 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'A\xF1o en que finaliz\xF3 su educaci\xF3n Secundaria'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.secFin, onChange: this.cambiarSecFin },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el a\xF1o'
+	            ),
+	            aniosEd
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.persona.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m6 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Estado de su educaci\xF3n Secundaria'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.persona.secEst, onChange: this.cambiarSecEst },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija su estado'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'completo' },
+	              'Completo'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'incompleto' },
+	              'Incompleto'
+	            )
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.persona.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'nombreSecundaria',
+	            placeholder: 'E.E.S.T. N\xB03',
+	            value: this.state.persona.secInst,
+	            onChange: this.cambiarSecInst
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'nombreSecundaria' },
+	            'Nombre de la escuela secundaria'
+	          )
+	        )
+	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'row' },

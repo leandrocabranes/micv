@@ -12,6 +12,7 @@ let CrearCV = React.createClass({
     // de la persona, como formacion academica y demas
     return {
       persona: {
+        // informacion personal
         nombre: '',
 				apellido: '',
 				dni: '',
@@ -30,7 +31,34 @@ let CrearCV = React.createClass({
 				celular: '',
 				telefono: '',
 				otrotel: '',
-				email: ''
+				email: '',
+        // experiencia laboral
+        fechaIn: '',
+        fechaFn: '',
+        rubro: '',
+        puesto: '',
+        lugar: '',
+        nomRef: '',
+        telRef: '',
+        puestoRef: '',
+        // formacion academica
+        primIn: '',
+        primEst: '',
+        primInst: '',
+        secIn: '',
+        secFin: '',
+        secInst: '',
+        secEst: '',
+        // info adicional
+        ingles: '',
+        informatica: '',
+        movA: '',
+        movM: '',
+        movB: '',
+        movO: '',
+        carnet: 0,
+        disp: '',
+        acla: ''
       }
     };
   },
