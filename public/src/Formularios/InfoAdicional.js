@@ -1,4 +1,5 @@
 import React from 'react';
+import Webcam from 'react-webcam';
 
 let InfoAdicional = React.createClass({
   getInitialState: function () {
@@ -12,7 +13,8 @@ let InfoAdicional = React.createClass({
         movO: '',
         carnet: 0,
         disp: '',
-        acla: ''
+        acla: '',
+        foto: null
       }
     }
   },
@@ -31,7 +33,8 @@ let InfoAdicional = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -47,7 +50,8 @@ let InfoAdicional = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -65,7 +69,8 @@ let InfoAdicional = React.createClass({
         movM: this.state.persona.movM,
         movB: this.state.persona.movB,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -81,7 +86,8 @@ let InfoAdicional = React.createClass({
         movM: this.state.persona.movM,
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -99,7 +105,8 @@ let InfoAdicional = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -117,7 +124,8 @@ let InfoAdicional = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -135,7 +143,8 @@ let InfoAdicional = React.createClass({
         movM: this.state.persona.movM,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -153,7 +162,9 @@ let InfoAdicional = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto,
+        foto: this.state.persona.foto
       }
     })
   },
@@ -169,12 +180,27 @@ let InfoAdicional = React.createClass({
         movM: this.state.persona.movM,
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp
+        disp: this.state.persona.disp,
+        foto: this.state.persona.foto
       }
     })
   },
-  mostrar: function () {
-    console.log(this.state.persona);
+  cambiarFoto: function () {
+    let foto = this.refs.webcam.getScreenshot();
+    this.setState({
+      persona: {
+        acla: this.state.persona.acla,
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        foto: foto
+      }
+    })
   },
   render: function () {
     return (
@@ -250,6 +276,19 @@ let InfoAdicional = React.createClass({
             ></textarea>
           <label htmlFor="aclaracion">Aclaraciones e información horaria (máximo 120 caracteres)</label>
           </div>
+        </div>
+        <div className="row">
+          <Webcam
+            audio={false}
+            ref="webcam"
+            screenshotFormat="image/jpeg"
+            width={180}
+            height={300}
+          />
+          <div className="btn" onClick={this.cambiarFoto}>Tomar foto</div>
+        </div>
+        <div className="row">
+          {this.state.persona.foto ? <img src={this.state.persona.foto}/> : null}
         </div>
         <div className="row">
           <div className="btn-large" onClick={this.cambiarInfoPersona}>veamos</div>

@@ -57,7 +57,8 @@ let CrearCV = React.createClass({
         movO: '',
         carnet: 0,
         disp: '',
-        acla: ''
+        acla: '',
+        foto: null
       }
     };
   },
@@ -111,7 +112,8 @@ let CrearCV = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     });
     console.log(this.state.persona);
@@ -166,7 +168,8 @@ let CrearCV = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     });
     console.log(this.state.persona);
@@ -221,7 +224,8 @@ let CrearCV = React.createClass({
         movB: this.state.persona.movB,
         carnet: this.state.persona.carnet,
         disp: this.state.persona.disp,
-        acla: this.state.persona.acla
+        acla: this.state.persona.acla,
+        foto: this.state.persona.foto
       }
     });
     console.log(this.state.persona);
@@ -276,16 +280,11 @@ let CrearCV = React.createClass({
         movB: pers.movB,
         carnet: pers.carnet,
         disp: pers.disp,
-        acla: pers.acla
+        acla: pers.acla,
+        foto: pers.foto
       }
     });
     console.log(this.state.persona);
-  },
-
-  handleInfoSubmit: function (pers) {
-    // falta hacer subir la info de la persona
-    // aunque se podría hacer que se asigne al state
-    // de este componente
   },
 
   handleSubmit: function () {
@@ -299,7 +298,7 @@ let CrearCV = React.createClass({
         console.log(data);
       }.bind(this),
       error: function (xhr, status, err) {
-        console.error('/pokemon/subir', status, err.toString());
+        console.error('/cv/crear', status, err.toString());
       }.bind(this)
     });
   },
@@ -323,6 +322,11 @@ let CrearCV = React.createClass({
             <div id="form2"><ExperienciaLaboral updatePersona={this.handleExpPersona} /></div>
             <div id="form3"><FormacionAcademica updatePersona={this.handleFormPersona}/></div>
             <div id="form4"><InfoAdicional updatePersona={this.handleAdPersona}/></div>
+            <div className="row">
+              <div className="col s12">
+                <div className="btn-large green accent-3">¡Crear mi CV!</div>
+              </div>
+            </div>
           </form>
         </div>
       </div>
