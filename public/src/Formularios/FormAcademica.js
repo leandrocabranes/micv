@@ -4,7 +4,6 @@ let FormacionAcademica = React.createClass({
   getInitialState: function () {
     return {
       persona: {
-        dni: '',
         primIn: '',
         primEst: 'incompleto',
         primInst: '',
@@ -15,10 +14,19 @@ let FormacionAcademica = React.createClass({
       }
     }
   },
+  cambiarInfoPersona: function () {
+    this.props.updatePersona(this.state.persona);
+  },
   cambiarPrimIn: function (e) {
     this.setState({
       persona: {
-        primIn: e.target.value
+        primIn: e.target.value,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst
       }
     });
     console.log(e.target.value);
@@ -26,7 +34,13 @@ let FormacionAcademica = React.createClass({
   cambiarPrimEst: function (e) {
     this.setState({
       persona: {
-        primEst: e.target.value
+        primEst: e.target.value,
+        primIn: this.state.persona.primIn,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst
       }
     });
     console.log(e.target.value);
@@ -34,7 +48,13 @@ let FormacionAcademica = React.createClass({
   cambiarPrimInst: function (e) {
     this.setState({
       persona: {
-        primInst: e.target.value
+        primInst: e.target.value,
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst
       }
     });
     console.log(e.target.value);
@@ -42,7 +62,13 @@ let FormacionAcademica = React.createClass({
   cambiarSecIn: function (e) {
     this.setState({
       persona: {
-        secIn: e.target.value
+        secIn: e.target.value,
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst
       }
     });
     console.log(e.target.value);
@@ -50,7 +76,13 @@ let FormacionAcademica = React.createClass({
   cambiarSecFin: function (e) {
     this.setState({
       persona: {
-        secFin: e.target.value
+        secFin: e.target.value,
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst
       }
     });
     console.log(e.target.value);
@@ -58,7 +90,13 @@ let FormacionAcademica = React.createClass({
   cambiarSecEst: function (e) {
     this.setState({
       persona: {
-        secEst: e.target.value
+        secEst: e.target.value,
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
       }
     });
     console.log(e.target.value);
@@ -66,10 +104,19 @@ let FormacionAcademica = React.createClass({
   cambiarSecInst: function (e) {
     this.setState({
       persona: {
-        secInst: e.target.value
+        secInst: e.target.value,
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secEst: this.state.persona.secEst
       }
     });
     console.log(e.target.value);
+  },
+  mostrar: function () {
+    console.log(this.state.persona);
   },
   render: function () {
     let anios = [1920];
@@ -79,19 +126,6 @@ let FormacionAcademica = React.createClass({
     let aniosEd = anios.map(function (ai) {
       return <option key={ai} value={ai}>{ai}</option>;
     });
-
-    function secundario (est, secin, secfin, secest, secinst) {
-
-      if (est == 'completo') {
-        return (
-          <div className="row">
-
-          </div>
-        );
-      } else {
-        return ;
-      }
-    };
     return (
       <div className="row">
         <div className="row">
@@ -160,7 +194,7 @@ let FormacionAcademica = React.createClass({
           </div>
         </div>
         <div className="row">
-          <div className="btn-large">Siguiente</div>
+          <div className="btn-large" onClick={this.cambiarInfoPersona}>Siguiente</div>
         </div>
       </div>
     );

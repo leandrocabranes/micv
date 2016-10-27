@@ -6,7 +6,6 @@ let ExperienciaLaboral = React.createClass({
   getInitialState: function () {
     return {
       persona: {
-        dni: '',
         fechaIn: '',
         fechaFn: '',
         rubro: '',
@@ -18,59 +17,118 @@ let ExperienciaLaboral = React.createClass({
       }
     };
   },
+  cambiarInfoPersona: function () {
+    this.props.updatePersona(this.state.persona);
+  },
   cambiarInicio: function (e) {
     this.setState({
       persona: {
-        fechaIn: e.target.value
+        fechaIn: e.target.value,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        telRef: this.state.persona.telRef,
+        puestoRef: this.state.persona.puestoRef
       }
     });
   },
   cambiarFin: function (e) {
     this.setState({
       persona: {
-        fechaFn: e.target.value
+        fechaFn: e.target.value,
+        fechaIn: this.state.persona.fechaIn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        telRef: this.state.persona.telRef,
+        puestoRef: this.state.persona.puestoRef
       }
     });
   },
   cambiarRubro: function (e) {
     this.setState({
       persona: {
-        rubro: e.target.value
+        rubro: e.target.value,
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        telRef: this.state.persona.telRef,
+        puestoRef: this.state.persona.puestoRef
       }
     });
   },
   cambiarPuesto: function (e) {
     this.setState({
       persona: {
-        puesto: e.target.value.substr(0, 25)
+        puesto: e.target.value.substr(0, 25),
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        telRef: this.state.persona.telRef,
+        puestoRef: this.state.persona.puestoRef
       }
     });
   },
   cambiarLugar: function (e) {
     this.setState({
       persona: {
-        lugar: e.target.value.substr(0, 30)
+        lugar: e.target.value.substr(0, 30),
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        nomRef: this.state.persona.nomRef,
+        telRef: this.state.persona.telRef,
+        puestoRef: this.state.persona.puestoRef
       }
     });
   },
   cambiarNomRef: function (e) {
     this.setState({
       persona: {
-        nomRef: e.target.value.substr(0, 30)
+        nomRef: e.target.value.substr(0, 30),
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        telRef: this.state.persona.telRef,
+        puestoRef: this.state.persona.puestoRef
       }
     });
   },
   cambiarTelRef: function (e) {
     this.setState({
       persona: {
-        telRef: e.target.value.substr(0, 20)
+        telRef: e.target.value.substr(0, 20),
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        puestoRef: this.state.persona.puestoRef
       }
     });
   },
   cambiarPuestoRef: function (e) {
     this.setState({
       persona: {
-        puestoRef: e.target.value.substr(0, 20)
+        puestoRef: e.target.value.substr(0, 20),
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        telRef: this.state.persona.telRef,
       }
     });
   },
@@ -160,7 +218,7 @@ let ExperienciaLaboral = React.createClass({
 					</div>
         </div>
         <div className="row">
-          <div className="btn-large">Siguiente</div>
+          <div className="btn-large" onClick={this.cambiarInfoPersona}>Siguiente</div>
         </div>
       </div>
     );

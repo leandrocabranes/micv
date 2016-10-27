@@ -4,7 +4,6 @@ let InfoAdicional = React.createClass({
   getInitialState: function () {
     return {
       persona: {
-        dni: '',
         ingles: '',
         informatica: '',
         movA: '',
@@ -17,11 +16,22 @@ let InfoAdicional = React.createClass({
       }
     }
   },
+  cambiarInfoPersona: function () {
+    this.props.updatePersona(this.state.persona);
+  },
   cambiarIngles: function (e) {
     console.log(e.target.value);
     this.setState({
       persona: {
-        ingles: e.target.value
+        ingles: e.target.value,
+        movO: this.state.persona.movO,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -29,7 +39,15 @@ let InfoAdicional = React.createClass({
     console.log(e.target.value);
     this.setState({
       persona: {
-        informatica: e.target.value
+        informatica: e.target.value,
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -39,7 +57,15 @@ let InfoAdicional = React.createClass({
     console.log(val);
     this.setState({
       persona: {
-        carnet: val
+        carnet: val,
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -47,7 +73,15 @@ let InfoAdicional = React.createClass({
     console.log(e.target.value);
     this.setState({
       persona: {
-        disp: e.target.value
+        disp: e.target.value,
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -57,7 +91,15 @@ let InfoAdicional = React.createClass({
     console.log(val);
     this.setState({
       persona: {
-        movA: val
+        movA: val,
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -67,7 +109,15 @@ let InfoAdicional = React.createClass({
     console.log(val);
     this.setState({
       persona: {
-        movM: val
+        movM: val,
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -77,7 +127,15 @@ let InfoAdicional = React.createClass({
     console.log(val);
     this.setState({
       persona: {
-        movB: val
+        movB: val,
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -87,7 +145,15 @@ let InfoAdicional = React.createClass({
     console.log(val);
     this.setState({
       persona: {
-        movO: val
+        movO: val,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
       }
     })
   },
@@ -95,9 +161,20 @@ let InfoAdicional = React.createClass({
     console.log(e.target.value);
     this.setState({
       persona: {
-        acla: e.target.value.substr(0,120)
+        acla: e.target.value.substr(0,120),
+        movO: this.state.persona.movO,
+        ingles: this.state.persona.ingles,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp
       }
     })
+  },
+  mostrar: function () {
+    console.log(this.state.persona);
   },
   render: function () {
     return (
@@ -172,6 +249,9 @@ let InfoAdicional = React.createClass({
             ></textarea>
           <label htmlFor="aclaracion">Aclaraciones e información horaria (máximo 120 caracteres)</label>
           </div>
+        </div>
+        <div className="row">
+          <div className="btn-large" onClick={this.cambiarInfoPersona}>veamos</div>
         </div>
       </div>
     );

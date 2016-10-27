@@ -43,7 +43,7 @@ let CrearCV = React.createClass({
         puestoRef: '',
         // formacion academica
         primIn: '',
-        primEst: '',
+        primEst: 'incompleto',
         primInst: '',
         secIn: '',
         secFin: '',
@@ -63,11 +63,224 @@ let CrearCV = React.createClass({
     };
   },
 
-  handleDNI: function (dni) {
+  handleInfoPersona: function (pers) {
     this.setState({
-      persona: { dni: dni }
+      persona: {
+        // informacion personal
+        nombre: pers.nombre,
+				apellido: pers.apellido,
+				dni: pers.dni,
+				anio: pers.anio,
+				mes: pers.mes,
+				dia: pers.dia,
+				direccion: pers.direccion,
+				numero: pers.numero,
+				piso: pers.piso,
+				dpto: pers.dpto,
+				localidad: pers.localidad,
+				codpostal: pers.codpostal,
+				nacionalidad: pers.nacionalidad,
+				estadocivil: pers.estadocivil,
+				hijos: pers.hijos,
+				celular: pers.celular,
+				telefono: pers.telefono,
+				otrotel: pers.otrotel,
+				email: pers.email,
+        // experiencia laboral
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        puestoRef: this.state.persona.puestoRef,
+        telRef: this.state.persona.telRef,
+        // formacion academica
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst,
+        // info adicional
+        ingles: this.state.persona.ingles,
+        movO: this.state.persona.movO,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
+      }
     });
-    console.log(this.state.persona.dni);
+    console.log(this.state.persona);
+  },
+
+  handleExpPersona: function (pers) {
+    this.setState({
+      persona: {
+        // informacion personal
+        nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email,
+        // experiencia laboral
+        fechaIn: pers.fechaIn,
+        fechaFn: pers.fechaFn,
+        rubro: pers.rubro,
+        puesto: pers.puesto,
+        lugar: pers.lugar,
+        nomRef: pers.nomRef,
+        puestoRef: pers.puestoRef,
+        telRef: pers.telRef,
+        // formacion academica
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst,
+        // info adicional
+        ingles: this.state.persona.ingles,
+        movO: this.state.persona.movO,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
+      }
+    });
+    console.log(this.state.persona);
+  },
+
+  handleFormPersona: function (pers) {
+    this.setState({
+      persona: {
+        // informacion personal
+        nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email,
+        // experiencia laboral
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        puestoRef: this.state.persona.puestoRef,
+        telRef: this.state.persona.telRef,
+        // formacion academica
+        primIn: pers.primIn,
+        primEst: pers.primEst,
+        primInst: pers.primInst,
+        secIn: pers.secIn,
+        secFin: pers.secFin,
+        secInst: pers.secInst,
+        secEst: pers.secEst,
+        // info adicional
+        ingles: this.state.persona.ingles,
+        movO: this.state.persona.movO,
+        informatica: this.state.persona.informatica,
+        movA: this.state.persona.movA,
+        movM: this.state.persona.movM,
+        movB: this.state.persona.movB,
+        carnet: this.state.persona.carnet,
+        disp: this.state.persona.disp,
+        acla: this.state.persona.acla
+      }
+    });
+    console.log(this.state.persona);
+  },
+
+  handleAdPersona: function (pers) {
+    this.setState({
+      persona: {
+        // informacion personal
+        nombre: this.state.persona.nombre,
+        apellido: this.state.persona.apellido,
+        dni: this.state.persona.dni,
+        anio: this.state.persona.anio,
+        mes: this.state.persona.mes,
+        dia: this.state.persona.dia,
+        direccion: this.state.persona.direccion,
+        numero: this.state.persona.numero,
+        piso: this.state.persona.piso,
+        dpto: this.state.persona.dpto,
+        localidad: this.state.persona.localidad,
+        codpostal: this.state.persona.codpostal,
+        nacionalidad: this.state.persona.nacionalidad,
+        estadocivil: this.state.persona.estadocivil,
+        hijos: this.state.persona.hijos,
+        celular: this.state.persona.celular,
+        telefono: this.state.persona.telefono,
+        otrotel: this.state.persona.otrotel,
+        email: this.state.persona.email,
+        // experiencia laboral
+        fechaIn: this.state.persona.fechaIn,
+        fechaFn: this.state.persona.fechaFn,
+        rubro: this.state.persona.rubro,
+        puesto: this.state.persona.puesto,
+        lugar: this.state.persona.lugar,
+        nomRef: this.state.persona.nomRef,
+        puestoRef: this.state.persona.puestoRef,
+        telRef: this.state.persona.telRef,
+        // formacion academica
+        primIn: this.state.persona.primIn,
+        primEst: this.state.persona.primEst,
+        primInst: this.state.persona.primInst,
+        secIn: this.state.persona.secIn,
+        secFin: this.state.persona.secFin,
+        secInst: this.state.persona.secInst,
+        secEst: this.state.persona.secEst,
+        // info adicional
+        ingles: pers.ingles,
+        movO: pers.movO,
+        informatica: pers.Informatica,
+        movA: pers.movA,
+        movM: pers.movM,
+        movB: pers.movB,
+        carnet: pers.carnet,
+        disp: pers.disp,
+        acla: pers.acla
+      }
+    });
+    console.log(this.state.persona);
   },
 
   handleInfoSubmit: function (pers) {
@@ -102,10 +315,10 @@ let CrearCV = React.createClass({
         <div className="row">
           <form className="col s12" onSubmit={this.handleSubmit}>
 						<div className="row">
-							<InformacionPersona onInfoSubmit={this.handleInfoSubmit} getDNI={this.handleDNI}/>
-              <ExperienciaLaboral personaDNI={this.state.persona.dni} />
-              <FormacionAcademica />
-              <InfoAdicional />
+							<InformacionPersona onInfoSubmit={this.handleInfoSubmit} updatePersona={this.handleInfoPersona}/>
+              <ExperienciaLaboral updatePersona={this.handleExpPersona} />
+              <FormacionAcademica updatePersona={this.handleFormPersona}/>
+              <InfoAdicional updatePersona={this.handleAdPersona}/>
 							<input type="submit" value="Crear CV" className="btn-large"/>
 						</div>
           </form>

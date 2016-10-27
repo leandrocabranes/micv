@@ -27237,7 +27237,7 @@
 	        puestoRef: '',
 	        // formacion academica
 	        primIn: '',
-	        primEst: '',
+	        primEst: 'incompleto',
 	        primInst: '',
 	        secIn: '',
 	        secFin: '',
@@ -27257,11 +27257,224 @@
 	    };
 	  },
 
-	  handleDNI: function handleDNI(dni) {
+	  handleInfoPersona: function handleInfoPersona(pers) {
 	    this.setState({
-	      persona: { dni: dni }
+	      persona: {
+	        // informacion personal
+	        nombre: pers.nombre,
+	        apellido: pers.apellido,
+	        dni: pers.dni,
+	        anio: pers.anio,
+	        mes: pers.mes,
+	        dia: pers.dia,
+	        direccion: pers.direccion,
+	        numero: pers.numero,
+	        piso: pers.piso,
+	        dpto: pers.dpto,
+	        localidad: pers.localidad,
+	        codpostal: pers.codpostal,
+	        nacionalidad: pers.nacionalidad,
+	        estadocivil: pers.estadocivil,
+	        hijos: pers.hijos,
+	        celular: pers.celular,
+	        telefono: pers.telefono,
+	        otrotel: pers.otrotel,
+	        email: pers.email,
+	        // experiencia laboral
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        puestoRef: this.state.persona.puestoRef,
+	        telRef: this.state.persona.telRef,
+	        // formacion academica
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst,
+	        // info adicional
+	        ingles: this.state.persona.ingles,
+	        movO: this.state.persona.movO,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
+	      }
 	    });
-	    console.log(this.state.persona.dni);
+	    console.log(this.state.persona);
+	  },
+
+	  handleExpPersona: function handleExpPersona(pers) {
+	    this.setState({
+	      persona: {
+	        // informacion personal
+	        nombre: this.state.persona.nombre,
+	        apellido: this.state.persona.apellido,
+	        dni: this.state.persona.dni,
+	        anio: this.state.persona.anio,
+	        mes: this.state.persona.mes,
+	        dia: this.state.persona.dia,
+	        direccion: this.state.persona.direccion,
+	        numero: this.state.persona.numero,
+	        piso: this.state.persona.piso,
+	        dpto: this.state.persona.dpto,
+	        localidad: this.state.persona.localidad,
+	        codpostal: this.state.persona.codpostal,
+	        nacionalidad: this.state.persona.nacionalidad,
+	        estadocivil: this.state.persona.estadocivil,
+	        hijos: this.state.persona.hijos,
+	        celular: this.state.persona.celular,
+	        telefono: this.state.persona.telefono,
+	        otrotel: this.state.persona.otrotel,
+	        email: this.state.persona.email,
+	        // experiencia laboral
+	        fechaIn: pers.fechaIn,
+	        fechaFn: pers.fechaFn,
+	        rubro: pers.rubro,
+	        puesto: pers.puesto,
+	        lugar: pers.lugar,
+	        nomRef: pers.nomRef,
+	        puestoRef: pers.puestoRef,
+	        telRef: pers.telRef,
+	        // formacion academica
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst,
+	        // info adicional
+	        ingles: this.state.persona.ingles,
+	        movO: this.state.persona.movO,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
+	      }
+	    });
+	    console.log(this.state.persona);
+	  },
+
+	  handleFormPersona: function handleFormPersona(pers) {
+	    this.setState({
+	      persona: {
+	        // informacion personal
+	        nombre: this.state.persona.nombre,
+	        apellido: this.state.persona.apellido,
+	        dni: this.state.persona.dni,
+	        anio: this.state.persona.anio,
+	        mes: this.state.persona.mes,
+	        dia: this.state.persona.dia,
+	        direccion: this.state.persona.direccion,
+	        numero: this.state.persona.numero,
+	        piso: this.state.persona.piso,
+	        dpto: this.state.persona.dpto,
+	        localidad: this.state.persona.localidad,
+	        codpostal: this.state.persona.codpostal,
+	        nacionalidad: this.state.persona.nacionalidad,
+	        estadocivil: this.state.persona.estadocivil,
+	        hijos: this.state.persona.hijos,
+	        celular: this.state.persona.celular,
+	        telefono: this.state.persona.telefono,
+	        otrotel: this.state.persona.otrotel,
+	        email: this.state.persona.email,
+	        // experiencia laboral
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        puestoRef: this.state.persona.puestoRef,
+	        telRef: this.state.persona.telRef,
+	        // formacion academica
+	        primIn: pers.primIn,
+	        primEst: pers.primEst,
+	        primInst: pers.primInst,
+	        secIn: pers.secIn,
+	        secFin: pers.secFin,
+	        secInst: pers.secInst,
+	        secEst: pers.secEst,
+	        // info adicional
+	        ingles: this.state.persona.ingles,
+	        movO: this.state.persona.movO,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
+	      }
+	    });
+	    console.log(this.state.persona);
+	  },
+
+	  handleAdPersona: function handleAdPersona(pers) {
+	    this.setState({
+	      persona: {
+	        // informacion personal
+	        nombre: this.state.persona.nombre,
+	        apellido: this.state.persona.apellido,
+	        dni: this.state.persona.dni,
+	        anio: this.state.persona.anio,
+	        mes: this.state.persona.mes,
+	        dia: this.state.persona.dia,
+	        direccion: this.state.persona.direccion,
+	        numero: this.state.persona.numero,
+	        piso: this.state.persona.piso,
+	        dpto: this.state.persona.dpto,
+	        localidad: this.state.persona.localidad,
+	        codpostal: this.state.persona.codpostal,
+	        nacionalidad: this.state.persona.nacionalidad,
+	        estadocivil: this.state.persona.estadocivil,
+	        hijos: this.state.persona.hijos,
+	        celular: this.state.persona.celular,
+	        telefono: this.state.persona.telefono,
+	        otrotel: this.state.persona.otrotel,
+	        email: this.state.persona.email,
+	        // experiencia laboral
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        puestoRef: this.state.persona.puestoRef,
+	        telRef: this.state.persona.telRef,
+	        // formacion academica
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst,
+	        // info adicional
+	        ingles: pers.ingles,
+	        movO: pers.movO,
+	        informatica: pers.Informatica,
+	        movA: pers.movA,
+	        movM: pers.movM,
+	        movB: pers.movB,
+	        carnet: pers.carnet,
+	        disp: pers.disp,
+	        acla: pers.acla
+	      }
+	    });
+	    console.log(this.state.persona);
 	  },
 
 	  handleInfoSubmit: function handleInfoSubmit(pers) {
@@ -27311,10 +27524,10 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'row' },
-	            _react2.default.createElement(_InfoPersona2.default, { onInfoSubmit: this.handleInfoSubmit, getDNI: this.handleDNI }),
-	            _react2.default.createElement(_ExpLaboral2.default, { personaDNI: this.state.persona.dni }),
-	            _react2.default.createElement(_FormAcademica2.default, null),
-	            _react2.default.createElement(_InfoAdicional2.default, null),
+	            _react2.default.createElement(_InfoPersona2.default, { onInfoSubmit: this.handleInfoSubmit, updatePersona: this.handleInfoPersona }),
+	            _react2.default.createElement(_ExpLaboral2.default, { updatePersona: this.handleExpPersona }),
+	            _react2.default.createElement(_FormAcademica2.default, { updatePersona: this.handleFormPersona }),
+	            _react2.default.createElement(_InfoAdicional2.default, { updatePersona: this.handleAdPersona }),
 	            _react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
 	          )
 	        )
@@ -27338,10 +27551,6 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27374,13 +27583,32 @@
 			};
 		},
 		cambiarInfoPersona: function cambiarInfoPersona() {
-			// this.props.onInfoSubmit(this.state.persona);
-			this.props.getDNI(this.state.persona.dni);
+			this.props.updatePersona(this.state.persona);
 		},
+
+		// handlers de los inputs
 		cambiarDNI: function cambiarDNI(e) {
 			this.setState({
 				persona: {
-					dni: e.target.value.substring(0, 8)
+					dni: e.target.value.substring(0, 8),
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 			// this.props.getDNI(this.state.persona.dni);
@@ -27388,28 +27616,100 @@
 		cambiarNombre: function cambiarNombre(e) {
 			this.setState({
 				persona: {
-					nombre: e.target.value.toUpperCase()
+					nombre: e.target.value.toUpperCase(),
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
 		cambiarApellido: function cambiarApellido(e) {
 			this.setState({
 				persona: {
-					apellido: e.target.value.toUpperCase()
+					apellido: e.target.value.toUpperCase(),
+					nombre: this.state.persona.nombre,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
 		cambiarAnio: function cambiarAnio(e) {
 			this.setState({
 				persona: {
-					anio: e.target.value
+					anio: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
 		cambiarMes: function cambiarMes(e) {
 			this.setState({
 				persona: {
-					mes: e.target.value
+					mes: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27417,7 +27717,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					dia: e.target.value
+					dia: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27425,7 +27743,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					direccion: e.target.value
+					direccion: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27433,7 +27769,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					numero: e.target.value
+					numero: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27441,7 +27795,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					piso: e.target.value
+					piso: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27449,7 +27821,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					localidad: e.target.value
+					localidad: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27457,7 +27847,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					codpostal: e.target.value
+					codpostal: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27465,7 +27873,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					dpto: e.target.value
+					dpto: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27473,7 +27899,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					nacionalidad: e.target.value
+					nacionalidad: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27481,7 +27925,25 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					estadocivil: e.target.value
+					estadocivil: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27490,7 +27952,25 @@
 			var hjs = e.target.value > 0 ? e.target.value.substr(0, 2) : "";
 			this.setState({
 				persona: {
-					hijos: hjs
+					hijos: hjs,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
@@ -27498,35 +27978,103 @@
 			console.log(e.target.value);
 			this.setState({
 				persona: {
-					celular: e.target.value.substring(0, 18)
+					celular: e.target.value.substring(0, 18),
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
 		cambiarTel: function cambiarTel(e) {
-			console.log(e.target.value);
 			this.setState({
 				persona: {
-					telefono: e.target.value.substring(0, 18)
-				}
-			});
-		},
-		cambiarOTel: function cambiarOTel(e) {
-			console.log(e.target.value);
-			this.setState({
-				persona: {
-					otrotel: e.target.value.substring(0, 18)
+					telefono: e.target.value.substring(0, 18),
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					otrotel: this.state.persona.otrotel,
+					email: this.state.persona.email
 				}
 			});
 		},
 		cambiarEmail: function cambiarEmail(e) {
-			console.log(e.target.value);
 			this.setState({
 				persona: {
-					email: e.target.value.substring(0, 50)
+					email: e.target.value.substring(0, 50),
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel
 				}
 			});
 		},
-
+		cambiarOTel: function cambiarOTel(e) {
+			this.setState({
+				persona: {
+					otrotel: e.target.value.substring(0, 18),
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					email: this.state.persona.email
+				}
+			});
+		},
 		render: function render() {
 			// variable de años
 			var anios = [1920];
@@ -28016,7 +28564,6 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      persona: {
-	        dni: '',
 	        fechaIn: '',
 	        fechaFn: '',
 	        rubro: '',
@@ -28028,59 +28575,118 @@
 	      }
 	    };
 	  },
+	  cambiarInfoPersona: function cambiarInfoPersona() {
+	    this.props.updatePersona(this.state.persona);
+	  },
 	  cambiarInicio: function cambiarInicio(e) {
 	    this.setState({
 	      persona: {
-	        fechaIn: e.target.value
+	        fechaIn: e.target.value,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        telRef: this.state.persona.telRef,
+	        puestoRef: this.state.persona.puestoRef
 	      }
 	    });
 	  },
 	  cambiarFin: function cambiarFin(e) {
 	    this.setState({
 	      persona: {
-	        fechaFn: e.target.value
+	        fechaFn: e.target.value,
+	        fechaIn: this.state.persona.fechaIn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        telRef: this.state.persona.telRef,
+	        puestoRef: this.state.persona.puestoRef
 	      }
 	    });
 	  },
 	  cambiarRubro: function cambiarRubro(e) {
 	    this.setState({
 	      persona: {
-	        rubro: e.target.value
+	        rubro: e.target.value,
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        telRef: this.state.persona.telRef,
+	        puestoRef: this.state.persona.puestoRef
 	      }
 	    });
 	  },
 	  cambiarPuesto: function cambiarPuesto(e) {
 	    this.setState({
 	      persona: {
-	        puesto: e.target.value.substr(0, 25)
+	        puesto: e.target.value.substr(0, 25),
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        telRef: this.state.persona.telRef,
+	        puestoRef: this.state.persona.puestoRef
 	      }
 	    });
 	  },
 	  cambiarLugar: function cambiarLugar(e) {
 	    this.setState({
 	      persona: {
-	        lugar: e.target.value.substr(0, 30)
+	        lugar: e.target.value.substr(0, 30),
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        nomRef: this.state.persona.nomRef,
+	        telRef: this.state.persona.telRef,
+	        puestoRef: this.state.persona.puestoRef
 	      }
 	    });
 	  },
 	  cambiarNomRef: function cambiarNomRef(e) {
 	    this.setState({
 	      persona: {
-	        nomRef: e.target.value.substr(0, 30)
+	        nomRef: e.target.value.substr(0, 30),
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        telRef: this.state.persona.telRef,
+	        puestoRef: this.state.persona.puestoRef
 	      }
 	    });
 	  },
 	  cambiarTelRef: function cambiarTelRef(e) {
 	    this.setState({
 	      persona: {
-	        telRef: e.target.value.substr(0, 20)
+	        telRef: e.target.value.substr(0, 20),
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        puestoRef: this.state.persona.puestoRef
 	      }
 	    });
 	  },
 	  cambiarPuestoRef: function cambiarPuestoRef(e) {
 	    this.setState({
 	      persona: {
-	        puestoRef: e.target.value.substr(0, 20)
+	        puestoRef: e.target.value.substr(0, 20),
+	        fechaIn: this.state.persona.fechaIn,
+	        fechaFn: this.state.persona.fechaFn,
+	        rubro: this.state.persona.rubro,
+	        puesto: this.state.persona.puesto,
+	        lugar: this.state.persona.lugar,
+	        nomRef: this.state.persona.nomRef,
+	        telRef: this.state.persona.telRef
 	      }
 	    });
 	  },
@@ -28255,7 +28861,7 @@
 	        { className: 'row' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'btn-large' },
+	          { className: 'btn-large', onClick: this.cambiarInfoPersona },
 	          'Siguiente'
 	        )
 	      )
@@ -28319,7 +28925,6 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      persona: {
-	        dni: '',
 	        primIn: '',
 	        primEst: 'incompleto',
 	        primInst: '',
@@ -28330,10 +28935,19 @@
 	      }
 	    };
 	  },
+	  cambiarInfoPersona: function cambiarInfoPersona() {
+	    this.props.updatePersona(this.state.persona);
+	  },
 	  cambiarPrimIn: function cambiarPrimIn(e) {
 	    this.setState({
 	      persona: {
-	        primIn: e.target.value
+	        primIn: e.target.value,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst
 	      }
 	    });
 	    console.log(e.target.value);
@@ -28341,7 +28955,13 @@
 	  cambiarPrimEst: function cambiarPrimEst(e) {
 	    this.setState({
 	      persona: {
-	        primEst: e.target.value
+	        primEst: e.target.value,
+	        primIn: this.state.persona.primIn,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst
 	      }
 	    });
 	    console.log(e.target.value);
@@ -28349,7 +28969,13 @@
 	  cambiarPrimInst: function cambiarPrimInst(e) {
 	    this.setState({
 	      persona: {
-	        primInst: e.target.value
+	        primInst: e.target.value,
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst
 	      }
 	    });
 	    console.log(e.target.value);
@@ -28357,7 +28983,13 @@
 	  cambiarSecIn: function cambiarSecIn(e) {
 	    this.setState({
 	      persona: {
-	        secIn: e.target.value
+	        secIn: e.target.value,
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst
 	      }
 	    });
 	    console.log(e.target.value);
@@ -28365,7 +28997,13 @@
 	  cambiarSecFin: function cambiarSecFin(e) {
 	    this.setState({
 	      persona: {
-	        secFin: e.target.value
+	        secFin: e.target.value,
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secInst: this.state.persona.secInst,
+	        secEst: this.state.persona.secEst
 	      }
 	    });
 	    console.log(e.target.value);
@@ -28373,7 +29011,13 @@
 	  cambiarSecEst: function cambiarSecEst(e) {
 	    this.setState({
 	      persona: {
-	        secEst: e.target.value
+	        secEst: e.target.value,
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secInst: this.state.persona.secInst
 	      }
 	    });
 	    console.log(e.target.value);
@@ -28381,10 +29025,19 @@
 	  cambiarSecInst: function cambiarSecInst(e) {
 	    this.setState({
 	      persona: {
-	        secInst: e.target.value
+	        secInst: e.target.value,
+	        primIn: this.state.persona.primIn,
+	        primEst: this.state.persona.primEst,
+	        primInst: this.state.persona.primInst,
+	        secIn: this.state.persona.secIn,
+	        secFin: this.state.persona.secFin,
+	        secEst: this.state.persona.secEst
 	      }
 	    });
 	    console.log(e.target.value);
+	  },
+	  mostrar: function mostrar() {
+	    console.log(this.state.persona);
 	  },
 	  render: function render() {
 	    var anios = [1920];
@@ -28398,15 +29051,6 @@
 	        ai
 	      );
 	    });
-
-	    function secundario(est, secin, secfin, secest, secinst) {
-
-	      if (est == 'completo') {
-	        return _react2.default.createElement('div', { className: 'row' });
-	      } else {
-	        return;
-	      }
-	    };
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'row' },
@@ -28578,7 +29222,7 @@
 	        { className: 'row' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'btn-large' },
+	          { className: 'btn-large', onClick: this.cambiarInfoPersona },
 	          'Siguiente'
 	        )
 	      )
@@ -28610,7 +29254,6 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      persona: {
-	        dni: '',
 	        ingles: '',
 	        informatica: '',
 	        movA: '',
@@ -28623,11 +29266,22 @@
 	      }
 	    };
 	  },
+	  cambiarInfoPersona: function cambiarInfoPersona() {
+	    this.props.updatePersona(this.state.persona);
+	  },
 	  cambiarIngles: function cambiarIngles(e) {
 	    console.log(e.target.value);
 	    this.setState({
 	      persona: {
-	        ingles: e.target.value
+	        ingles: e.target.value,
+	        movO: this.state.persona.movO,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28635,7 +29289,15 @@
 	    console.log(e.target.value);
 	    this.setState({
 	      persona: {
-	        informatica: e.target.value
+	        informatica: e.target.value,
+	        movO: this.state.persona.movO,
+	        ingles: this.state.persona.ingles,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28645,7 +29307,15 @@
 	    console.log(val);
 	    this.setState({
 	      persona: {
-	        carnet: val
+	        carnet: val,
+	        movO: this.state.persona.movO,
+	        ingles: this.state.persona.ingles,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28653,7 +29323,15 @@
 	    console.log(e.target.value);
 	    this.setState({
 	      persona: {
-	        disp: e.target.value
+	        disp: e.target.value,
+	        movO: this.state.persona.movO,
+	        ingles: this.state.persona.ingles,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28663,7 +29341,15 @@
 	    console.log(val);
 	    this.setState({
 	      persona: {
-	        movA: val
+	        movA: val,
+	        movO: this.state.persona.movO,
+	        ingles: this.state.persona.ingles,
+	        informatica: this.state.persona.informatica,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28673,7 +29359,15 @@
 	    console.log(val);
 	    this.setState({
 	      persona: {
-	        movM: val
+	        movM: val,
+	        movO: this.state.persona.movO,
+	        ingles: this.state.persona.ingles,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28683,7 +29377,15 @@
 	    console.log(val);
 	    this.setState({
 	      persona: {
-	        movB: val
+	        movB: val,
+	        movO: this.state.persona.movO,
+	        ingles: this.state.persona.ingles,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28693,7 +29395,15 @@
 	    console.log(val);
 	    this.setState({
 	      persona: {
-	        movO: val
+	        movO: val,
+	        ingles: this.state.persona.ingles,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp,
+	        acla: this.state.persona.acla
 	      }
 	    });
 	  },
@@ -28701,9 +29411,20 @@
 	    console.log(e.target.value);
 	    this.setState({
 	      persona: {
-	        acla: e.target.value.substr(0, 120)
+	        acla: e.target.value.substr(0, 120),
+	        movO: this.state.persona.movO,
+	        ingles: this.state.persona.ingles,
+	        informatica: this.state.persona.informatica,
+	        movA: this.state.persona.movA,
+	        movM: this.state.persona.movM,
+	        movB: this.state.persona.movB,
+	        carnet: this.state.persona.carnet,
+	        disp: this.state.persona.disp
 	      }
 	    });
+	  },
+	  mostrar: function mostrar() {
+	    console.log(this.state.persona);
 	  },
 	  render: function render() {
 	    return _react2.default.createElement(
@@ -28908,6 +29629,15 @@
 	            { htmlFor: 'aclaracion' },
 	            'Aclaraciones e informaci\xF3n horaria (m\xE1ximo 120 caracteres)'
 	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'btn-large', onClick: this.cambiarInfoPersona },
+	          'veamos'
 	        )
 	      )
 	    );

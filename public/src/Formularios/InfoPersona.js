@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 let InformacionPersona = React.createClass({
 	getInitialState: function () {
@@ -25,16 +24,35 @@ let InformacionPersona = React.createClass({
 				otrotel: '',
 				email: ''
 			}
-		};
+		}
 	},
 	cambiarInfoPersona: function () {
-		// this.props.onInfoSubmit(this.state.persona);
-		this.props.getDNI(this.state.persona.dni);
+		this.props.updatePersona(this.state.persona);
 	},
+
+	// handlers de los inputs
 	cambiarDNI: function (e) {
 		this.setState({
 			persona: {
-				dni: e.target.value.substring(0,8)
+				dni: e.target.value.substring(0,8),
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
 		});
 		// this.props.getDNI(this.state.persona.dni);
@@ -42,145 +60,465 @@ let InformacionPersona = React.createClass({
 	cambiarNombre: function (e) {
 		this.setState({
 			persona: {
-				nombre: e.target.value.toUpperCase()
+				nombre: e.target.value.toUpperCase(),
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
 		});
 	},
 	cambiarApellido: function (e) {
 		this.setState({
 			persona: {
-				apellido: e.target.value.toUpperCase()
+				apellido: e.target.value.toUpperCase(),
+				nombre: this.state.persona.nombre,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarAnio: function (e) {
 		this.setState({
 			persona: {
-				anio: e.target.value
+				anio: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarMes: function (e) {
 		this.setState({
 			persona: {
-				mes: e.target.value
+				mes: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarDia: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				dia: e.target.value
+				dia: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarDir: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				direccion: e.target.value
+				direccion: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarNum: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				numero: e.target.value
+				numero: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarPiso: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				piso: e.target.value
+				piso: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarLocal: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				localidad: e.target.value
+				localidad: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarPostal: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				codpostal: e.target.value
+				codpostal: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarDpto: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				dpto: e.target.value
+				dpto: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarNac: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				nacionalidad: e.target.value
+				nacionalidad: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarCiv: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				estadocivil: e.target.value
+				estadocivil: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarHijos: function (e) {
 		console.log(e.target.value);
 		let hjs = e.target.value > 0 ? e.target.value.substr(0,2) : "";
 		this.setState({
 			persona: {
-				hijos: hjs
+				hijos: hjs,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarCel: function (e) {
 		console.log(e.target.value);
 		this.setState({
 			persona: {
-				celular: e.target.value.substring(0,18)
+				celular: e.target.value.substring(0,18),
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
+		})
 	},
 	cambiarTel: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			persona: {
-				telefono: e.target.value.substring(0,18)
+				telefono: e.target.value.substring(0,18),
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				otrotel: this.state.persona.otrotel,
+				email: this.state.persona.email
 			}
-		});
-	},
-	cambiarOTel: function (e) {
-		console.log(e.target.value);
-		this.setState({
-			persona: {
-				otrotel: e.target.value.substring(0,18)
-			}
-		});
+		})
 	},
 	cambiarEmail: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			persona: {
-				email: e.target.value.substring(0,50)
+				email: e.target.value.substring(0,50),
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
 			}
-		});
+		})
 	},
-
+	cambiarOTel: function (e) {
+		this.setState({
+			persona: {
+				otrotel: e.target.value.substring(0,18),
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				email: this.state.persona.email
+			}
+		})
+	},
 	render: function () {
 		// variable de años
 		let anios = [1920];
@@ -414,7 +752,7 @@ let InformacionPersona = React.createClass({
 					<div className="btn-large" onClick={this.cambiarInfoPersona}>Siguiente</div>
 				</div>
 			</div>
-		);
+		)
 	}
 });
 
