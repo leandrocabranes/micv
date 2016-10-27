@@ -27214,6 +27214,7 @@
 	        piso: '',
 	        dpto: '',
 	        localidad: '',
+	        prov: '',
 	        codpostal: '',
 	        nacionalidad: '',
 	        estadocivil: '',
@@ -27269,6 +27270,7 @@
 	        piso: pers.piso,
 	        dpto: pers.dpto,
 	        localidad: pers.localidad,
+	        prov: pers.prov,
 	        codpostal: pers.codpostal,
 	        nacionalidad: pers.nacionalidad,
 	        estadocivil: pers.estadocivil,
@@ -27325,6 +27327,7 @@
 	        piso: this.state.persona.piso,
 	        dpto: this.state.persona.dpto,
 	        localidad: this.state.persona.localidad,
+	        prov: this.state.persona.prov,
 	        codpostal: this.state.persona.codpostal,
 	        nacionalidad: this.state.persona.nacionalidad,
 	        estadocivil: this.state.persona.estadocivil,
@@ -27381,6 +27384,7 @@
 	        piso: this.state.persona.piso,
 	        dpto: this.state.persona.dpto,
 	        localidad: this.state.persona.localidad,
+	        prov: this.state.persona.prov,
 	        codpostal: this.state.persona.codpostal,
 	        nacionalidad: this.state.persona.nacionalidad,
 	        estadocivil: this.state.persona.estadocivil,
@@ -27437,6 +27441,7 @@
 	        piso: this.state.persona.piso,
 	        dpto: this.state.persona.dpto,
 	        localidad: this.state.persona.localidad,
+	        prov: this.state.persona.prov,
 	        codpostal: this.state.persona.codpostal,
 	        nacionalidad: this.state.persona.nacionalidad,
 	        estadocivil: this.state.persona.estadocivil,
@@ -27611,6 +27616,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _provincias = __webpack_require__(243);
+
+	var _provincias2 = _interopRequireDefault(_provincias);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var InformacionPersona = _react2.default.createClass({
@@ -27630,6 +27639,7 @@
 					piso: '',
 					dpto: '',
 					localidad: '',
+					prov: '',
 					codpostal: '',
 					nacionalidad: '',
 					estadocivil: '',
@@ -27660,6 +27670,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27686,6 +27697,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27711,6 +27723,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27736,6 +27749,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27761,6 +27775,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27787,6 +27802,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27813,6 +27829,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27839,6 +27856,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27865,6 +27883,7 @@
 					numero: this.state.persona.numero,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27892,6 +27911,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					codpostal: this.state.persona.codpostal,
+					prov: this.state.persona.prov,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
 					hijos: this.state.persona.hijos,
@@ -27918,6 +27938,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
 					hijos: this.state.persona.hijos,
@@ -27943,6 +27964,7 @@
 					numero: this.state.persona.numero,
 					piso: this.state.persona.piso,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -27970,6 +27992,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					estadocivil: this.state.persona.estadocivil,
 					hijos: this.state.persona.hijos,
@@ -27996,6 +28019,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					hijos: this.state.persona.hijos,
@@ -28023,6 +28047,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -28049,6 +28074,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -28074,6 +28100,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -28099,6 +28126,7 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
@@ -28124,12 +28152,39 @@
 					piso: this.state.persona.piso,
 					dpto: this.state.persona.dpto,
 					localidad: this.state.persona.localidad,
+					prov: this.state.persona.prov,
 					codpostal: this.state.persona.codpostal,
 					nacionalidad: this.state.persona.nacionalidad,
 					estadocivil: this.state.persona.estadocivil,
 					hijos: this.state.persona.hijos,
 					celular: this.state.persona.celular,
 					telefono: this.state.persona.telefono,
+					email: this.state.persona.email
+				}
+			});
+		},
+		cambiarProv: function cambiarProv(e) {
+			this.setState({
+				persona: {
+					prov: e.target.value,
+					nombre: this.state.persona.nombre,
+					apellido: this.state.persona.apellido,
+					dni: this.state.persona.dni,
+					anio: this.state.persona.anio,
+					mes: this.state.persona.mes,
+					dia: this.state.persona.dia,
+					direccion: this.state.persona.direccion,
+					numero: this.state.persona.numero,
+					piso: this.state.persona.piso,
+					dpto: this.state.persona.dpto,
+					localidad: this.state.persona.localidad,
+					codpostal: this.state.persona.codpostal,
+					nacionalidad: this.state.persona.nacionalidad,
+					estadocivil: this.state.persona.estadocivil,
+					hijos: this.state.persona.hijos,
+					celular: this.state.persona.celular,
+					telefono: this.state.persona.telefono,
+					otrotel: this.state.persona.otrotel,
 					email: this.state.persona.email
 				}
 			});
@@ -28178,6 +28233,15 @@
 					'option',
 					{ key: di, value: di },
 					di
+				);
+			});
+
+			// variable de provincias
+			var provincias = _provincias2.default.map(function (pr) {
+				return _react2.default.createElement(
+					'option',
+					{ key: pr.cod, value: pr.cod },
+					pr.nom
 				);
 			});
 
@@ -28373,6 +28437,29 @@
 							'label',
 							{ htmlFor: 'dpto-dir' },
 							'N\xFAmero del departamento (en caso de vivir en departamento)'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m6 s6' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'Provincia en la que reside'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.persona.prov, onChange: this.cambiarProv },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija una opci\xF3n'
+							),
+							provincias
 						)
 					)
 				),
@@ -30174,6 +30261,23 @@
 	/******/ ])
 	});
 	;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var PROVINCIAS = [{ nom: 'Buenos Aires', cod: 'BA' }];
+	PROVINCIAS.push({ nom: 'Catamarca', cod: 'CAT' });
+	PROVINCIAS.push({ nom: 'Formosa', cod: 'FSA' });
+	PROVINCIAS.push({ nom: 'Mendoza', cod: 'MZA' });
+	PROVINCIAS.push({ nom: 'Salta', cod: 'SAL' });
+
+	exports.default = PROVINCIAS;
 
 /***/ }
 /******/ ]);

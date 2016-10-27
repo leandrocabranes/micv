@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PROVINCIAS from './variables/provincias.js';
+
 let InformacionPersona = React.createClass({
 	getInitialState: function () {
 		return {
@@ -15,6 +17,7 @@ let InformacionPersona = React.createClass({
 				piso: '',
 				dpto: '',
 				localidad: '',
+				prov: '',
 				codpostal: '',
 				nacionalidad: '',
 				estadocivil: '',
@@ -45,6 +48,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -71,6 +75,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -96,6 +101,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -121,6 +127,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -146,6 +153,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -172,6 +180,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -198,6 +207,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -224,6 +234,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -250,6 +261,7 @@ let InformacionPersona = React.createClass({
 				numero: this.state.persona.numero,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -277,6 +289,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				codpostal: this.state.persona.codpostal,
+				prov: this.state.persona.prov,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
 				hijos: this.state.persona.hijos,
@@ -303,6 +316,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
 				hijos: this.state.persona.hijos,
@@ -328,6 +342,7 @@ let InformacionPersona = React.createClass({
 				numero: this.state.persona.numero,
 				piso: this.state.persona.piso,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -355,6 +370,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				estadocivil: this.state.persona.estadocivil,
 				hijos: this.state.persona.hijos,
@@ -381,6 +397,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				hijos: this.state.persona.hijos,
@@ -408,6 +425,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -434,6 +452,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -459,6 +478,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -484,6 +504,7 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
@@ -509,12 +530,39 @@ let InformacionPersona = React.createClass({
 				piso: this.state.persona.piso,
 				dpto: this.state.persona.dpto,
 				localidad: this.state.persona.localidad,
+				prov: this.state.persona.prov,
 				codpostal: this.state.persona.codpostal,
 				nacionalidad: this.state.persona.nacionalidad,
 				estadocivil: this.state.persona.estadocivil,
 				hijos: this.state.persona.hijos,
 				celular: this.state.persona.celular,
 				telefono: this.state.persona.telefono,
+				email: this.state.persona.email
+			}
+		})
+	},
+	cambiarProv: function (e) {
+		this.setState({
+			persona: {
+				prov: e.target.value,
+				nombre: this.state.persona.nombre,
+				apellido: this.state.persona.apellido,
+				dni: this.state.persona.dni,
+				anio: this.state.persona.anio,
+				mes: this.state.persona.mes,
+				dia: this.state.persona.dia,
+				direccion: this.state.persona.direccion,
+				numero: this.state.persona.numero,
+				piso: this.state.persona.piso,
+				dpto: this.state.persona.dpto,
+				localidad: this.state.persona.localidad,
+				codpostal: this.state.persona.codpostal,
+				nacionalidad: this.state.persona.nacionalidad,
+				estadocivil: this.state.persona.estadocivil,
+				hijos: this.state.persona.hijos,
+				celular: this.state.persona.celular,
+				telefono: this.state.persona.telefono,
+				otrotel: this.state.persona.otrotel,
 				email: this.state.persona.email
 			}
 		})
@@ -552,6 +600,11 @@ let InformacionPersona = React.createClass({
 		}
 		let fechaNacimientoD = dias.map(function (di) {
 			return <option key={di} value={di}>{di}</option>;
+		});
+
+		// variable de provincias
+		let provincias = PROVINCIAS.map(function (pr) {
+			return <option key={pr.cod} value={pr.cod}>{pr.nom}</option>;
 		});
 
 		return (
@@ -652,6 +705,15 @@ let InformacionPersona = React.createClass({
 							onChange={this.cambiarDpto}
 						/>
 						<label htmlFor="dpto-dir">Número del departamento (en caso de vivir en departamento)</label>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col m6 s6">
+						<label>Provincia en la que reside</label>
+						<select className="browser-default" value={this.state.persona.prov} onChange={this.cambiarProv}>
+							<option disabled value="">Elija una opción</option>
+							{provincias}
+						</select>
 					</div>
 				</div>
 				<div className="row">

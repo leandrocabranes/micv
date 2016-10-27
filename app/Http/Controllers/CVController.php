@@ -25,6 +25,11 @@ class CVController extends Controller
     public function crear_cv (Request $request) {
       // Falta poner el nombre de las variables con los datos a insertar
       $cv = $request->all();
+      $cvP = $cv['persona'];
+
+      $fecha = $cvP['dia'] . '/' . $cvP['mes'] . '/' . $cvP['anio'];
+      $foto = 'falta hacer la foro';
+
       app('db')->insert("INSERT INTO datos_personales
         (dni_p, apellido_p, nombre_p, sexo_p, edad_p, fecha_p, dianac_p, mesnac_p,
         anonac_p, calle_p, numero_p, piso_p, depto_p, nacionalidad_p, provincia_p,
@@ -32,7 +37,11 @@ class CVController extends Controller
         mail_p, completo, fotourl, clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
         ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         [
-
+          $cvP['dni'], $cvP['apellido'], $cvP['nombre'], $cvP['sexo'], '', $fecha,
+          $cvP['dia'], $cvP['mes'], $cvP['anio'], $cvP['direccion'], $cvP['numero'],
+          $cvP['piso'], $cvP['dpto'], $cvP['nacionalidad'], $cvP['prov'], $cvP['localidad'],
+          $cvP['codpostal'], $cvP['estadocivil'], $cvP['hijos'], $cvP['tel'], $cvP['celular'],
+          $cvP['otrotel'], $cvP['email'], 1, $foto, '1234'
         ]);
     }
 }
