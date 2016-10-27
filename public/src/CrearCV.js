@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import InformacionPersona from './Formularios/InfoPersona.js';
 import ExperienciaLaboral from './Formularios/ExpLaboral.js';
@@ -314,13 +313,16 @@ let CrearCV = React.createClass({
 				<p>{texto}</p>
         <div className="row">
           <form className="col s12" onSubmit={this.handleSubmit}>
-						<div className="row">
-							<InformacionPersona onInfoSubmit={this.handleInfoSubmit} updatePersona={this.handleInfoPersona}/>
-              <ExperienciaLaboral updatePersona={this.handleExpPersona} />
-              <FormacionAcademica updatePersona={this.handleFormPersona}/>
-              <InfoAdicional updatePersona={this.handleAdPersona}/>
-							<input type="submit" value="Crear CV" className="btn-large"/>
-						</div>
+            <ul className="tabs">
+              <li className="tab col s3"><a href="#form1" className="active">Info</a></li>
+              <li className="tab col s3"><a href="#form2">Exp</a></li>
+              <li className="tab col s3"><a href="#form3">Form</a></li>
+              <li className="tab col s3"><a href="#form4">Ad</a></li>
+            </ul>
+						<div id="form1"><InformacionPersona updatePersona={this.handleInfoPersona}/></div>
+            <div id="form2"><ExperienciaLaboral updatePersona={this.handleExpPersona} /></div>
+            <div id="form3"><FormacionAcademica updatePersona={this.handleFormPersona}/></div>
+            <div id="form4"><InfoAdicional updatePersona={this.handleAdPersona}/></div>
           </form>
         </div>
       </div>

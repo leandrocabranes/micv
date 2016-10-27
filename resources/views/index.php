@@ -10,5 +10,10 @@
   <body>
     <div id="app"></div>
     <script src="src/app.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('ul.tabs').tabs();
+      });
+    </script>
   </body>
 </html>

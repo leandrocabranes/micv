@@ -179,6 +179,7 @@ let InfoAdicional = React.createClass({
   render: function () {
     return (
       <div className="row">
+        <h4>Información adicional</h4>
         <div className="row">
           <div className="col m6 s4">
             <label>Nivel de Inglés</label>

@@ -148,6 +148,7 @@ let ExperienciaLaboral = React.createClass({
 
     return (
       <div className="row">
+        <h4>Experiencia laboral</h4>
         <div className="row">
           <div className="col m2 s4">
 						<label>Año de inicio</label>

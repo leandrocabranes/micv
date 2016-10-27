@@ -128,6 +128,7 @@ let FormacionAcademica = React.createClass({
     });
     return (
       <div className="row">
+        <h4>Formación académica</h4>
         <div className="row">
           <div className="col m3 s4">
             <label>Año de inicio de Primaria</label>

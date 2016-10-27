@@ -27176,10 +27176,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	var _InfoPersona = __webpack_require__(236);
 
 	var _InfoPersona2 = _interopRequireDefault(_InfoPersona);
@@ -27522,13 +27518,64 @@
 	          'form',
 	          { className: 'col s12', onSubmit: this.handleSubmit },
 	          _react2.default.createElement(
+	            'ul',
+	            { className: 'tabs' },
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'tab col s3' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#form1', className: 'active' },
+	                'Info'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'tab col s3' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#form2' },
+	                'Exp'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'tab col s3' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#form3' },
+	                'Form'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'tab col s3' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#form4' },
+	                'Ad'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement(_InfoPersona2.default, { onInfoSubmit: this.handleInfoSubmit, updatePersona: this.handleInfoPersona }),
-	            _react2.default.createElement(_ExpLaboral2.default, { updatePersona: this.handleExpPersona }),
-	            _react2.default.createElement(_FormAcademica2.default, { updatePersona: this.handleFormPersona }),
-	            _react2.default.createElement(_InfoAdicional2.default, { updatePersona: this.handleAdPersona }),
-	            _react2.default.createElement('input', { type: 'submit', value: 'Crear CV', className: 'btn-large' })
+	            { id: 'form1' },
+	            _react2.default.createElement(_InfoPersona2.default, { updatePersona: this.handleInfoPersona })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'form2' },
+	            _react2.default.createElement(_ExpLaboral2.default, { updatePersona: this.handleExpPersona })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'form3' },
+	            _react2.default.createElement(_FormAcademica2.default, { updatePersona: this.handleFormPersona })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'form4' },
+	            _react2.default.createElement(_InfoAdicional2.default, { updatePersona: this.handleAdPersona })
 	          )
 	        )
 	      )
@@ -28716,6 +28763,11 @@
 	      'div',
 	      { className: 'row' },
 	      _react2.default.createElement(
+	        'h4',
+	        null,
+	        'Experiencia laboral'
+	      ),
+	      _react2.default.createElement(
 	        'div',
 	        { className: 'row' },
 	        _react2.default.createElement(
@@ -29054,6 +29106,11 @@
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'row' },
+	      _react2.default.createElement(
+	        'h4',
+	        null,
+	        'Formaci\xF3n acad\xE9mica'
+	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'row' },
@@ -29430,6 +29487,11 @@
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'row' },
+	      _react2.default.createElement(
+	        'h4',
+	        null,
+	        'Informaci\xF3n adicional'
+	      ),
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'row' },
