@@ -27166,7 +27166,7 @@
 /* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -27195,58 +27195,58 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CrearCV = _react2.default.createClass({
-	  displayName: 'CrearCV',
+	  displayName: "CrearCV",
 
 	  getInitialState: function getInitialState() {
 	    return {
 	      // informacion personal
-	      nombre: '',
-	      apellido: '',
-	      dni: '',
-	      anio: '',
-	      mes: '',
-	      dia: '',
-	      direccion: '',
-	      numero: '',
-	      piso: '',
-	      dpto: '',
-	      localidad: '',
-	      prov: '',
-	      codpostal: '',
-	      nacionalidad: '',
-	      estadocivil: '',
-	      hijos: '',
-	      celular: '',
-	      telefono: '',
-	      otrotel: '',
-	      email: '',
+	      nombre: "",
+	      apellido: "",
+	      dni: "",
+	      anio: "",
+	      mes: "",
+	      dia: "",
+	      direccion: "",
+	      numero: "",
+	      piso: "",
+	      dpto: "",
+	      localidad: "",
+	      prov: "",
+	      codpostal: "",
+	      nacionalidad: "",
+	      estadocivil: "",
+	      hijos: "",
+	      celular: "",
+	      telefono: "",
+	      otrotel: "",
+	      email: "",
 	      // experiencia laboral
-	      fechaIn: '',
-	      fechaFn: '',
-	      rubro: '',
-	      puesto: '',
-	      lugar: '',
-	      nomRef: '',
-	      telRef: '',
-	      puestoRef: '',
+	      fechaIn: "",
+	      fechaFn: "",
+	      rubro: "",
+	      puesto: "",
+	      lugar: "",
+	      nomRef: "",
+	      telRef: "",
+	      puestoRef: "",
 	      // formacion academica
-	      primIn: '',
-	      primEst: 'incompleto',
-	      primInst: '',
-	      secIn: '',
-	      secFin: '',
-	      secInst: '',
-	      secEst: '',
+	      primIn: "",
+	      primEst: "incompleto",
+	      primInst: "",
+	      secIn: "",
+	      secFin: "",
+	      secInst: "",
+	      secEst: "",
 	      // info adicional
-	      ingles: '',
-	      informatica: '',
-	      movA: '',
-	      movM: '',
-	      movB: '',
-	      movO: '',
+	      ingles: "",
+	      informatica: "",
+	      movA: "",
+	      movM: "",
+	      movB: "",
+	      movO: "",
 	      carnet: 0,
-	      disp: '',
-	      acla: '',
+	      disp: "",
+	      acla: "",
 	      foto: null
 	    };
 	  },
@@ -27320,19 +27320,72 @@
 	    });
 	  },
 
-	  handleSubmit: function handleSubmit() {
-	    console.log(this.state);
+	  handleSubmit: function handleSubmit(cv) {
+	    console.log(cv);
+	    // let data = cv;
 	    $.ajax({
-	      url: '/cv/crear',
-	      dataType: 'json',
-	      type: 'POST',
-	      data: data,
+	      url: "/cv/crear",
+	      type: "POST",
+	      data: cv,
 	      success: function (data) {
 	        console.log(data);
 	      }.bind(this),
 	      error: function (xhr, status, err) {
-	        console.error('/cv/crear', status, err.toString());
+	        console.error("/cv/crear", status, err.toString());
 	      }.bind(this)
+	    });
+	  },
+
+	  handleFormularioSubmit: function handleFormularioSubmit() {
+	    this.handleSubmit({
+	      nombre: this.state.nombre,
+	      apellido: this.state.apellido,
+	      dni: this.state.dni,
+	      anio: this.state.anio,
+	      mes: this.state.mes,
+	      dia: this.state.dia,
+	      direccion: this.state.direccion,
+	      numero: this.state.numero,
+	      piso: this.state.piso,
+	      dpto: this.state.dpto,
+	      localidad: this.state.localidad,
+	      prov: this.state.prov,
+	      codpostal: this.state.codpostal,
+	      nacionalidad: this.state.nacionalidad,
+	      estadocivil: this.state.estadocivil,
+	      hijos: this.state.hijos,
+	      celular: this.state.celular,
+	      telefono: this.state.telefono,
+	      otrotel: this.state.otrotel,
+	      email: this.state.email,
+	      // experiencia laboral
+	      fechaIn: this.state.fechaIn,
+	      fechaFn: this.state.fechaFn,
+	      rubro: this.state.rubro,
+	      puesto: this.state.puesto,
+	      lugar: this.state.lugar,
+	      nomRef: this.state.nomRef,
+	      telRef: this.state.telRef,
+	      puestoRef: this.state.puestoRef,
+	      // formacion academica
+	      primIn: this.state.primIn,
+	      primEst: this.state.primEst,
+	      primInst: this.state.primInst,
+	      secIn: this.state.secIn,
+	      secFin: this.state.secFin,
+	      secInst: this.state.secInst,
+	      secEst: this.state.secEst,
+	      // info adicional
+	      ingles: this.state.ingles,
+	      informatica: this.state.informatica,
+	      movA: this.state.movA,
+	      movM: this.state.movM,
+	      movB: this.state.movB,
+	      movO: this.state.movO,
+	      carnet: this.state.carnet,
+	      disp: this.state.disp,
+	      acla: this.state.acla,
+	      foto: this.state.foto
 	    });
 	  },
 
@@ -27340,95 +27393,91 @@
 	    var texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
 	    texto += "deberá seguir todos los pasos hasta el último de ellos. No podrá saltar ningún procedimiendo";
 	    return _react2.default.createElement(
-	      'div',
-	      { className: 'container' },
+	      "div",
+	      { className: "container" },
 	      _react2.default.createElement(
-	        'h2',
+	        "h2",
 	        null,
-	        '\xA1Crear mi CV!'
+	        "\xA1Crear mi CV!"
 	      ),
 	      _react2.default.createElement(
-	        'p',
+	        "p",
 	        null,
 	        texto
 	      ),
 	      _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
+	        "div",
+	        { className: "row" },
 	        _react2.default.createElement(
-	          'form',
-	          { className: 'col s12', onSubmit: this.handleSubmit },
+	          "form",
+	          { className: "col s12", onSubmit: this.handleFormularioSubmit },
 	          _react2.default.createElement(
-	            'ul',
-	            { className: 'tabs' },
+	            "ul",
+	            { className: "tabs" },
 	            _react2.default.createElement(
-	              'li',
-	              { className: 'tab col s3' },
+	              "li",
+	              { className: "tab col s3" },
 	              _react2.default.createElement(
-	                'a',
-	                { href: '#form1', className: 'active' },
-	                'Info'
+	                "a",
+	                { href: "#form1", className: "active" },
+	                "Info"
 	              )
 	            ),
 	            _react2.default.createElement(
-	              'li',
-	              { className: 'tab col s3' },
+	              "li",
+	              { className: "tab col s3" },
 	              _react2.default.createElement(
-	                'a',
-	                { href: '#form2' },
-	                'Exp'
+	                "a",
+	                { href: "#form2" },
+	                "Exp"
 	              )
 	            ),
 	            _react2.default.createElement(
-	              'li',
-	              { className: 'tab col s3' },
+	              "li",
+	              { className: "tab col s3" },
 	              _react2.default.createElement(
-	                'a',
-	                { href: '#form3' },
-	                'Form'
+	                "a",
+	                { href: "#form3" },
+	                "Form"
 	              )
 	            ),
 	            _react2.default.createElement(
-	              'li',
-	              { className: 'tab col s3' },
+	              "li",
+	              { className: "tab col s3" },
 	              _react2.default.createElement(
-	                'a',
-	                { href: '#form4' },
-	                'Ad'
+	                "a",
+	                { href: "#form4" },
+	                "Ad"
 	              )
 	            )
 	          ),
 	          _react2.default.createElement(
-	            'div',
-	            { id: 'form1' },
+	            "div",
+	            { id: "form1" },
 	            _react2.default.createElement(_InfoPersona2.default, { updatePersona: this.handleInfoPersona })
 	          ),
 	          _react2.default.createElement(
-	            'div',
-	            { id: 'form2' },
+	            "div",
+	            { id: "form2" },
 	            _react2.default.createElement(_ExpLaboral2.default, { updatePersona: this.handleExpPersona })
 	          ),
 	          _react2.default.createElement(
-	            'div',
-	            { id: 'form3' },
+	            "div",
+	            { id: "form3" },
 	            _react2.default.createElement(_FormAcademica2.default, { updatePersona: this.handleFormPersona })
 	          ),
 	          _react2.default.createElement(
-	            'div',
-	            { id: 'form4' },
+	            "div",
+	            { id: "form4" },
 	            _react2.default.createElement(_InfoAdicional2.default, { updatePersona: this.handleAdPersona })
 	          ),
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
+	            "div",
+	            { className: "row" },
 	            _react2.default.createElement(
-	              'div',
-	              { className: 'col s12' },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'btn-large green accent-3' },
-	                '\xA1Crear mi CV!'
-	              )
+	              "div",
+	              { className: "col s12" },
+	              _react2.default.createElement("input", { type: "submit", className: "btn-large green accent-3", value: "Crear mi CV" })
 	            )
 	          )
 	        )
@@ -27495,7 +27544,6 @@
 			this.setState({
 				dni: e.target.value.substring(0, 8)
 			});
-			// this.props.getDNI(this.state.dni);
 		},
 		cambiarNombre: function cambiarNombre(e) {
 			this.setState({
@@ -27518,68 +27566,57 @@
 			});
 		},
 		cambiarDia: function cambiarDia(e) {
-			console.log(e.target.value);
 			this.setState({
 				dia: e.target.value
 			});
 		},
 		cambiarDir: function cambiarDir(e) {
-			console.log(e.target.value);
 			this.setState({
 				direccion: e.target.value
 			});
 		},
 		cambiarNum: function cambiarNum(e) {
-			console.log(e.target.value);
 			this.setState({
 				numero: e.target.value
 			});
 		},
 		cambiarPiso: function cambiarPiso(e) {
-			console.log(e.target.value);
 			this.setState({
 				piso: e.target.value
 			});
 		},
 		cambiarLocal: function cambiarLocal(e) {
-			console.log(e.target.value);
 			this.setState({
 				localidad: e.target.value
 			});
 		},
 		cambiarPostal: function cambiarPostal(e) {
-			console.log(e.target.value);
 			this.setState({
 				codpostal: e.target.value
 			});
 		},
 		cambiarDpto: function cambiarDpto(e) {
-			console.log(e.target.value);
 			this.setState({
 				dpto: e.target.value
 			});
 		},
 		cambiarNac: function cambiarNac(e) {
-			console.log(e.target.value);
 			this.setState({
 				nacionalidad: e.target.value
 			});
 		},
 		cambiarCiv: function cambiarCiv(e) {
-			console.log(e.target.value);
 			this.setState({
 				estadocivil: e.target.value
 			});
 		},
 		cambiarHijos: function cambiarHijos(e) {
-			console.log(e.target.value);
 			var hjs = e.target.value > 0 ? e.target.value.substr(0, 2) : "";
 			this.setState({
 				hijos: hjs
 			});
 		},
 		cambiarCel: function cambiarCel(e) {
-			console.log(e.target.value);
 			this.setState({
 				celular: e.target.value.substring(0, 18)
 			});

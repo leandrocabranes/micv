@@ -36,7 +36,6 @@ let InformacionPersona = React.createClass({
 		this.setState({
 			dni: e.target.value.substring(0,8),
 		});
-		// this.props.getDNI(this.state.dni);
 	},
 	cambiarNombre: function (e) {
 		this.setState({
@@ -59,68 +58,57 @@ let InformacionPersona = React.createClass({
 		})
 	},
 	cambiarDia: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			dia: e.target.value,
 		})
 	},
 	cambiarDir: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			direccion: e.target.value,
 		})
 	},
 	cambiarNum: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			numero: e.target.value,
 		})
 	},
 	cambiarPiso: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			piso: e.target.value,
 		})
 	},
 	cambiarLocal: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			localidad: e.target.value,
 		})
 	},
 	cambiarPostal: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			codpostal: e.target.value,
 		})
 	},
 	cambiarDpto: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			dpto: e.target.value,
 		})
 	},
 	cambiarNac: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			nacionalidad: e.target.value,
 		})
 	},
 	cambiarCiv: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			estadocivil: e.target.value,
 		})
 	},
 	cambiarHijos: function (e) {
-		console.log(e.target.value);
 		let hjs = e.target.value > 0 ? e.target.value.substr(0,2) : "";
 		this.setState({
 			hijos: hjs,
 		})
 	},
 	cambiarCel: function (e) {
-		console.log(e.target.value);
 		this.setState({
 			celular: e.target.value.substring(0,18),
 		})
