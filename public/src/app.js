@@ -60,7 +60,7 @@
 
 	var _CrearCV2 = _interopRequireDefault(_CrearCV);
 
-	var _Empresas = __webpack_require__(241);
+	var _Empresas = __webpack_require__(243);
 
 	var _Empresas2 = _interopRequireDefault(_Empresas);
 
@@ -27180,15 +27180,15 @@
 
 	var _InfoPersona2 = _interopRequireDefault(_InfoPersona);
 
-	var _ExpLaboral = __webpack_require__(237);
+	var _ExpLaboral = __webpack_require__(238);
 
 	var _ExpLaboral2 = _interopRequireDefault(_ExpLaboral);
 
-	var _FormAcademica = __webpack_require__(239);
+	var _FormAcademica = __webpack_require__(240);
 
 	var _FormAcademica2 = _interopRequireDefault(_FormAcademica);
 
-	var _InfoAdicional = __webpack_require__(240);
+	var _InfoAdicional = __webpack_require__(241);
 
 	var _InfoAdicional2 = _interopRequireDefault(_InfoAdicional);
 
@@ -27198,293 +27198,130 @@
 	  displayName: 'CrearCV',
 
 	  getInitialState: function getInitialState() {
-	    // hace falta agregar todos los demas estados
-	    // de la persona, como formacion academica y demas
 	    return {
-	      persona: {
-	        // informacion personal
-	        nombre: '',
-	        apellido: '',
-	        dni: '',
-	        anio: '',
-	        mes: '',
-	        dia: '',
-	        direccion: '',
-	        numero: '',
-	        piso: '',
-	        dpto: '',
-	        localidad: '',
-	        prov: '',
-	        codpostal: '',
-	        nacionalidad: '',
-	        estadocivil: '',
-	        hijos: '',
-	        celular: '',
-	        telefono: '',
-	        otrotel: '',
-	        email: '',
-	        // experiencia laboral
-	        fechaIn: '',
-	        fechaFn: '',
-	        rubro: '',
-	        puesto: '',
-	        lugar: '',
-	        nomRef: '',
-	        telRef: '',
-	        puestoRef: '',
-	        // formacion academica
-	        primIn: '',
-	        primEst: 'incompleto',
-	        primInst: '',
-	        secIn: '',
-	        secFin: '',
-	        secInst: '',
-	        secEst: '',
-	        // info adicional
-	        ingles: '',
-	        informatica: '',
-	        movA: '',
-	        movM: '',
-	        movB: '',
-	        movO: '',
-	        carnet: 0,
-	        disp: '',
-	        acla: '',
-	        foto: null
-	      }
+	      // informacion personal
+	      nombre: '',
+	      apellido: '',
+	      dni: '',
+	      anio: '',
+	      mes: '',
+	      dia: '',
+	      direccion: '',
+	      numero: '',
+	      piso: '',
+	      dpto: '',
+	      localidad: '',
+	      prov: '',
+	      codpostal: '',
+	      nacionalidad: '',
+	      estadocivil: '',
+	      hijos: '',
+	      celular: '',
+	      telefono: '',
+	      otrotel: '',
+	      email: '',
+	      // experiencia laboral
+	      fechaIn: '',
+	      fechaFn: '',
+	      rubro: '',
+	      puesto: '',
+	      lugar: '',
+	      nomRef: '',
+	      telRef: '',
+	      puestoRef: '',
+	      // formacion academica
+	      primIn: '',
+	      primEst: 'incompleto',
+	      primInst: '',
+	      secIn: '',
+	      secFin: '',
+	      secInst: '',
+	      secEst: '',
+	      // info adicional
+	      ingles: '',
+	      informatica: '',
+	      movA: '',
+	      movM: '',
+	      movB: '',
+	      movO: '',
+	      carnet: 0,
+	      disp: '',
+	      acla: '',
+	      foto: null
 	    };
 	  },
 
 	  handleInfoPersona: function handleInfoPersona(pers) {
 	    this.setState({
-	      persona: {
-	        // informacion personal
-	        nombre: pers.nombre,
-	        apellido: pers.apellido,
-	        dni: pers.dni,
-	        anio: pers.anio,
-	        mes: pers.mes,
-	        dia: pers.dia,
-	        direccion: pers.direccion,
-	        numero: pers.numero,
-	        piso: pers.piso,
-	        dpto: pers.dpto,
-	        localidad: pers.localidad,
-	        prov: pers.prov,
-	        codpostal: pers.codpostal,
-	        nacionalidad: pers.nacionalidad,
-	        estadocivil: pers.estadocivil,
-	        hijos: pers.hijos,
-	        celular: pers.celular,
-	        telefono: pers.telefono,
-	        otrotel: pers.otrotel,
-	        email: pers.email,
-	        // experiencia laboral
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        puestoRef: this.state.persona.puestoRef,
-	        telRef: this.state.persona.telRef,
-	        // formacion academica
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst,
-	        // info adicional
-	        ingles: this.state.persona.ingles,
-	        movO: this.state.persona.movO,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      // informacion personal
+	      nombre: pers.nombre,
+	      apellido: pers.apellido,
+	      dni: pers.dni,
+	      anio: pers.anio,
+	      mes: pers.mes,
+	      dia: pers.dia,
+	      direccion: pers.direccion,
+	      numero: pers.numero,
+	      piso: pers.piso,
+	      dpto: pers.dpto,
+	      localidad: pers.localidad,
+	      prov: pers.prov,
+	      codpostal: pers.codpostal,
+	      nacionalidad: pers.nacionalidad,
+	      estadocivil: pers.estadocivil,
+	      hijos: pers.hijos,
+	      celular: pers.celular,
+	      telefono: pers.telefono,
+	      otrotel: pers.otrotel,
+	      email: pers.email
 	    });
-	    console.log(this.state.persona);
 	  },
 
 	  handleExpPersona: function handleExpPersona(pers) {
 	    this.setState({
-	      persona: {
-	        // informacion personal
-	        nombre: this.state.persona.nombre,
-	        apellido: this.state.persona.apellido,
-	        dni: this.state.persona.dni,
-	        anio: this.state.persona.anio,
-	        mes: this.state.persona.mes,
-	        dia: this.state.persona.dia,
-	        direccion: this.state.persona.direccion,
-	        numero: this.state.persona.numero,
-	        piso: this.state.persona.piso,
-	        dpto: this.state.persona.dpto,
-	        localidad: this.state.persona.localidad,
-	        prov: this.state.persona.prov,
-	        codpostal: this.state.persona.codpostal,
-	        nacionalidad: this.state.persona.nacionalidad,
-	        estadocivil: this.state.persona.estadocivil,
-	        hijos: this.state.persona.hijos,
-	        celular: this.state.persona.celular,
-	        telefono: this.state.persona.telefono,
-	        otrotel: this.state.persona.otrotel,
-	        email: this.state.persona.email,
-	        // experiencia laboral
-	        fechaIn: pers.fechaIn,
-	        fechaFn: pers.fechaFn,
-	        rubro: pers.rubro,
-	        puesto: pers.puesto,
-	        lugar: pers.lugar,
-	        nomRef: pers.nomRef,
-	        puestoRef: pers.puestoRef,
-	        telRef: pers.telRef,
-	        // formacion academica
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst,
-	        // info adicional
-	        ingles: this.state.persona.ingles,
-	        movO: this.state.persona.movO,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      // experiencia laboral
+	      fechaIn: pers.fechaIn,
+	      fechaFn: pers.fechaFn,
+	      rubro: pers.rubro,
+	      puesto: pers.puesto,
+	      lugar: pers.lugar,
+	      nomRef: pers.nomRef,
+	      puestoRef: pers.puestoRef,
+	      telRef: pers.telRef
 	    });
-	    console.log(this.state.persona);
 	  },
 
 	  handleFormPersona: function handleFormPersona(pers) {
 	    this.setState({
-	      persona: {
-	        // informacion personal
-	        nombre: this.state.persona.nombre,
-	        apellido: this.state.persona.apellido,
-	        dni: this.state.persona.dni,
-	        anio: this.state.persona.anio,
-	        mes: this.state.persona.mes,
-	        dia: this.state.persona.dia,
-	        direccion: this.state.persona.direccion,
-	        numero: this.state.persona.numero,
-	        piso: this.state.persona.piso,
-	        dpto: this.state.persona.dpto,
-	        localidad: this.state.persona.localidad,
-	        prov: this.state.persona.prov,
-	        codpostal: this.state.persona.codpostal,
-	        nacionalidad: this.state.persona.nacionalidad,
-	        estadocivil: this.state.persona.estadocivil,
-	        hijos: this.state.persona.hijos,
-	        celular: this.state.persona.celular,
-	        telefono: this.state.persona.telefono,
-	        otrotel: this.state.persona.otrotel,
-	        email: this.state.persona.email,
-	        // experiencia laboral
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        puestoRef: this.state.persona.puestoRef,
-	        telRef: this.state.persona.telRef,
-	        // formacion academica
-	        primIn: pers.primIn,
-	        primEst: pers.primEst,
-	        primInst: pers.primInst,
-	        secIn: pers.secIn,
-	        secFin: pers.secFin,
-	        secInst: pers.secInst,
-	        secEst: pers.secEst,
-	        // info adicional
-	        ingles: this.state.persona.ingles,
-	        movO: this.state.persona.movO,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      // formacion academica
+	      primIn: pers.primIn,
+	      primEst: pers.primEst,
+	      primInst: pers.primInst,
+	      secIn: pers.secIn,
+	      secFin: pers.secFin,
+	      secInst: pers.secInst,
+	      secEst: pers.secEst
 	    });
-	    console.log(this.state.persona);
 	  },
 
 	  handleAdPersona: function handleAdPersona(pers) {
 	    this.setState({
-	      persona: {
-	        // informacion personal
-	        nombre: this.state.persona.nombre,
-	        apellido: this.state.persona.apellido,
-	        dni: this.state.persona.dni,
-	        anio: this.state.persona.anio,
-	        mes: this.state.persona.mes,
-	        dia: this.state.persona.dia,
-	        direccion: this.state.persona.direccion,
-	        numero: this.state.persona.numero,
-	        piso: this.state.persona.piso,
-	        dpto: this.state.persona.dpto,
-	        localidad: this.state.persona.localidad,
-	        prov: this.state.persona.prov,
-	        codpostal: this.state.persona.codpostal,
-	        nacionalidad: this.state.persona.nacionalidad,
-	        estadocivil: this.state.persona.estadocivil,
-	        hijos: this.state.persona.hijos,
-	        celular: this.state.persona.celular,
-	        telefono: this.state.persona.telefono,
-	        otrotel: this.state.persona.otrotel,
-	        email: this.state.persona.email,
-	        // experiencia laboral
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        puestoRef: this.state.persona.puestoRef,
-	        telRef: this.state.persona.telRef,
-	        // formacion academica
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst,
-	        // info adicional
-	        ingles: pers.ingles,
-	        movO: pers.movO,
-	        informatica: pers.Informatica,
-	        movA: pers.movA,
-	        movM: pers.movM,
-	        movB: pers.movB,
-	        carnet: pers.carnet,
-	        disp: pers.disp,
-	        acla: pers.acla,
-	        foto: pers.foto
-	      }
+	      // info adicional
+	      ingles: pers.ingles,
+	      movO: pers.movO,
+	      informatica: pers.Informatica,
+	      movA: pers.movA,
+	      movM: pers.movM,
+	      movB: pers.movB,
+	      carnet: pers.carnet,
+	      disp: pers.disp,
+	      acla: pers.acla,
+	      foto: pers.foto
 	    });
-	    console.log(this.state.persona);
 	  },
 
 	  handleSubmit: function handleSubmit() {
-	    console.log(this.state.persona);
+	    console.log(this.state);
 	    $.ajax({
 	      url: '/cv/crear',
 	      dataType: 'json',
@@ -27616,7 +27453,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _provincias = __webpack_require__(243);
+	var _provincias = __webpack_require__(237);
 
 	var _provincias2 = _interopRequireDefault(_provincias);
 
@@ -27627,566 +27464,144 @@
 
 		getInitialState: function getInitialState() {
 			return {
-				persona: {
-					nombre: '',
-					apellido: '',
-					dni: '',
-					anio: '',
-					mes: '',
-					dia: '',
-					direccion: '',
-					numero: '',
-					piso: '',
-					dpto: '',
-					localidad: '',
-					prov: '',
-					codpostal: '',
-					nacionalidad: '',
-					estadocivil: '',
-					hijos: '',
-					celular: '',
-					telefono: '',
-					otrotel: '',
-					email: ''
-				}
+				nombre: '',
+				apellido: '',
+				dni: '',
+				anio: '',
+				mes: '',
+				dia: '',
+				direccion: '',
+				numero: '',
+				piso: '',
+				dpto: '',
+				localidad: '',
+				prov: '',
+				codpostal: '',
+				nacionalidad: '',
+				estadocivil: '',
+				hijos: '',
+				celular: '',
+				telefono: '',
+				otrotel: '',
+				email: ''
 			};
 		},
 		cambiarInfoPersona: function cambiarInfoPersona() {
-			this.props.updatePersona(this.state.persona);
+			this.props.updatePersona(this.state);
 		},
 
 		// handlers de los inputs
 		cambiarDNI: function cambiarDNI(e) {
 			this.setState({
-				persona: {
-					dni: e.target.value.substring(0, 8),
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				dni: e.target.value.substring(0, 8)
 			});
-			// this.props.getDNI(this.state.persona.dni);
+			// this.props.getDNI(this.state.dni);
 		},
 		cambiarNombre: function cambiarNombre(e) {
 			this.setState({
-				persona: {
-					nombre: e.target.value.toUpperCase(),
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				nombre: e.target.value.toUpperCase()
 			});
 		},
 		cambiarApellido: function cambiarApellido(e) {
 			this.setState({
-				persona: {
-					apellido: e.target.value.toUpperCase(),
-					nombre: this.state.persona.nombre,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				apellido: e.target.value.toUpperCase()
 			});
 		},
 		cambiarAnio: function cambiarAnio(e) {
 			this.setState({
-				persona: {
-					anio: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				anio: e.target.value
 			});
 		},
 		cambiarMes: function cambiarMes(e) {
 			this.setState({
-				persona: {
-					mes: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				mes: e.target.value
 			});
 		},
 		cambiarDia: function cambiarDia(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					dia: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				dia: e.target.value
 			});
 		},
 		cambiarDir: function cambiarDir(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					direccion: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				direccion: e.target.value
 			});
 		},
 		cambiarNum: function cambiarNum(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					numero: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				numero: e.target.value
 			});
 		},
 		cambiarPiso: function cambiarPiso(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					piso: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				piso: e.target.value
 			});
 		},
 		cambiarLocal: function cambiarLocal(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					localidad: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					codpostal: this.state.persona.codpostal,
-					prov: this.state.persona.prov,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				localidad: e.target.value
 			});
 		},
 		cambiarPostal: function cambiarPostal(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					codpostal: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				codpostal: e.target.value
 			});
 		},
 		cambiarDpto: function cambiarDpto(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					dpto: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				dpto: e.target.value
 			});
 		},
 		cambiarNac: function cambiarNac(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					nacionalidad: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				nacionalidad: e.target.value
 			});
 		},
 		cambiarCiv: function cambiarCiv(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					estadocivil: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				estadocivil: e.target.value
 			});
 		},
 		cambiarHijos: function cambiarHijos(e) {
 			console.log(e.target.value);
 			var hjs = e.target.value > 0 ? e.target.value.substr(0, 2) : "";
 			this.setState({
-				persona: {
-					hijos: hjs,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				hijos: hjs
 			});
 		},
 		cambiarCel: function cambiarCel(e) {
 			console.log(e.target.value);
 			this.setState({
-				persona: {
-					celular: e.target.value.substring(0, 18),
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				celular: e.target.value.substring(0, 18)
 			});
 		},
 		cambiarTel: function cambiarTel(e) {
 			this.setState({
-				persona: {
-					telefono: e.target.value.substring(0, 18),
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				telefono: e.target.value.substring(0, 18)
 			});
 		},
 		cambiarEmail: function cambiarEmail(e) {
 			this.setState({
-				persona: {
-					email: e.target.value.substring(0, 50),
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel
-				}
+				email: e.target.value.substring(0, 50)
 			});
 		},
 		cambiarOTel: function cambiarOTel(e) {
 			this.setState({
-				persona: {
-					otrotel: e.target.value.substring(0, 18),
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					prov: this.state.persona.prov,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					email: this.state.persona.email
-				}
+				otrotel: e.target.value.substring(0, 18)
 			});
 		},
 		cambiarProv: function cambiarProv(e) {
 			this.setState({
-				persona: {
-					prov: e.target.value,
-					nombre: this.state.persona.nombre,
-					apellido: this.state.persona.apellido,
-					dni: this.state.persona.dni,
-					anio: this.state.persona.anio,
-					mes: this.state.persona.mes,
-					dia: this.state.persona.dia,
-					direccion: this.state.persona.direccion,
-					numero: this.state.persona.numero,
-					piso: this.state.persona.piso,
-					dpto: this.state.persona.dpto,
-					localidad: this.state.persona.localidad,
-					codpostal: this.state.persona.codpostal,
-					nacionalidad: this.state.persona.nacionalidad,
-					estadocivil: this.state.persona.estadocivil,
-					hijos: this.state.persona.hijos,
-					celular: this.state.persona.celular,
-					telefono: this.state.persona.telefono,
-					otrotel: this.state.persona.otrotel,
-					email: this.state.persona.email
-				}
+				prov: e.target.value
 			});
 		},
 		render: function render() {
@@ -28262,7 +27677,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'nombre',
 							placeholder: 'Juan',
-							value: this.state.persona.nombre,
+							value: this.state.nombre,
 							onChange: this.cambiarNombre
 						}),
 						_react2.default.createElement(
@@ -28281,7 +27696,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'apellido',
 							placeholder: 'Gonzalez',
-							value: this.state.persona.apellido,
+							value: this.state.apellido,
 							onChange: this.cambiarApellido
 						}),
 						_react2.default.createElement(
@@ -28301,7 +27716,7 @@
 							id: 'dni',
 							placeholder: '99999999',
 							ref: 'dni',
-							value: this.state.persona.dni,
+							value: this.state.dni,
 							onChange: this.cambiarDNI
 						}),
 						_react2.default.createElement(
@@ -28324,7 +27739,7 @@
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default', value: this.state.persona.dia, onChange: this.cambiarDia },
+							{ className: 'browser-default', value: this.state.dia, onChange: this.cambiarDia },
 							_react2.default.createElement(
 								'option',
 								{ disabled: true, value: '' },
@@ -28343,7 +27758,7 @@
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default', value: this.state.persona.mes, onChange: this.cambiarMes },
+							{ className: 'browser-default', value: this.state.mes, onChange: this.cambiarMes },
 							_react2.default.createElement(
 								'option',
 								{ disabled: true, value: '' },
@@ -28362,7 +27777,7 @@
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default', value: this.state.persona.anio, onChange: this.cambiarAnio },
+							{ className: 'browser-default', value: this.state.anio, onChange: this.cambiarAnio },
 							_react2.default.createElement(
 								'option',
 								{ disabled: true, value: '' },
@@ -28381,7 +27796,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'calle-dir',
 							placeholder: 'Av. San Martin',
-							value: this.state.persona.direccion,
+							value: this.state.direccion,
 							onChange: this.cambiarDir
 						}),
 						_react2.default.createElement(
@@ -28396,7 +27811,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'numero-dir',
 							placeholder: '101',
-							value: this.state.persona.numero,
+							value: this.state.numero,
 							onChange: this.cambiarNum
 						}),
 						_react2.default.createElement(
@@ -28415,7 +27830,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'piso-dir',
 							placeholder: '2',
-							value: this.state.persona.piso,
+							value: this.state.piso,
 							onChange: this.cambiarPiso
 						}),
 						_react2.default.createElement(
@@ -28430,7 +27845,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'dpto-dir',
 							placeholder: '321',
-							value: this.state.persona.dpto,
+							value: this.state.dpto,
 							onChange: this.cambiarDpto
 						}),
 						_react2.default.createElement(
@@ -28453,7 +27868,7 @@
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default', value: this.state.persona.prov, onChange: this.cambiarProv },
+							{ className: 'browser-default', value: this.state.prov, onChange: this.cambiarProv },
 							_react2.default.createElement(
 								'option',
 								{ disabled: true, value: '' },
@@ -28472,7 +27887,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'localidad-dir',
 							placeholder: 'Necochea',
-							value: this.state.persona.localidad,
+							value: this.state.localidad,
 							onChange: this.cambiarLocal
 						}),
 						_react2.default.createElement(
@@ -28487,7 +27902,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'codpost-dir',
 							placeholder: '7630',
-							value: this.state.persona.codpostal,
+							value: this.state.codpostal,
 							onChange: this.cambiarPostal
 						}),
 						_react2.default.createElement(
@@ -28510,7 +27925,7 @@
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default', value: this.state.persona.nacionalidad, onChange: this.cambiarNac },
+							{ className: 'browser-default', value: this.state.nacionalidad, onChange: this.cambiarNac },
 							_react2.default.createElement(
 								'option',
 								{ disabled: true, value: '' },
@@ -28547,7 +27962,7 @@
 						),
 						_react2.default.createElement(
 							'select',
-							{ className: 'browser-default', value: this.state.persona.estadocivil, onChange: this.cambiarCiv },
+							{ className: 'browser-default', value: this.state.estadocivil, onChange: this.cambiarCiv },
 							_react2.default.createElement(
 								'option',
 								{ disabled: true, value: '' },
@@ -28591,7 +28006,7 @@
 						_react2.default.createElement('input', { type: 'number',
 							id: 'hijos',
 							placeholder: '2',
-							value: this.state.persona.hijos,
+							value: this.state.hijos,
 							onChange: this.cambiarHijos
 						}),
 						_react2.default.createElement(
@@ -28610,7 +28025,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'tel',
 							placeholder: '2262 654321',
-							value: this.state.persona.telefono,
+							value: this.state.telefono,
 							onChange: this.cambiarTel
 						}),
 						_react2.default.createElement(
@@ -28625,7 +28040,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'cel',
 							placeholder: '2262 654321',
-							value: this.state.persona.celular,
+							value: this.state.celular,
 							onChange: this.cambiarCel
 						}),
 						_react2.default.createElement(
@@ -28640,7 +28055,7 @@
 						_react2.default.createElement('input', { type: 'text',
 							id: 'otrotel',
 							placeholder: '2262 654321',
-							value: this.state.persona.otrotel,
+							value: this.state.otrotel,
 							onChange: this.cambiarOTel
 						}),
 						_react2.default.createElement(
@@ -28659,7 +28074,7 @@
 						_react2.default.createElement('input', { type: 'email',
 							id: 'email',
 							placeholder: 'minombre@correo.com',
-							value: this.state.persona.email,
+							value: this.state.email,
 							onChange: this.cambiarEmail
 						}),
 						_react2.default.createElement(
@@ -28686,6 +28101,23 @@
 
 /***/ },
 /* 237 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var PROVINCIAS = [{ nom: 'Buenos Aires', cod: 'BA' }];
+	PROVINCIAS.push({ nom: 'Catamarca', cod: 'CAT' });
+	PROVINCIAS.push({ nom: 'Formosa', cod: 'FSA' });
+	PROVINCIAS.push({ nom: 'Mendoza', cod: 'MZA' });
+	PROVINCIAS.push({ nom: 'Salta', cod: 'SAL' });
+
+	exports.default = PROVINCIAS;
+
+/***/ },
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28698,7 +28130,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _rubros = __webpack_require__(238);
+	var _rubros = __webpack_require__(239);
 
 	var _rubros2 = _interopRequireDefault(_rubros);
 
@@ -28709,131 +28141,57 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      persona: {
-	        fechaIn: '',
-	        fechaFn: '',
-	        rubro: '',
-	        puesto: '',
-	        lugar: '',
-	        nomRef: '',
-	        telRef: '',
-	        puestoRef: ''
-	      }
+	      fechaIn: '',
+	      fechaFn: '',
+	      rubro: '',
+	      puesto: '',
+	      lugar: '',
+	      nomRef: '',
+	      telRef: '',
+	      puestoRef: ''
 	    };
 	  },
 	  cambiarInfoPersona: function cambiarInfoPersona() {
-	    this.props.updatePersona(this.state.persona);
+	    this.props.updatePersona(this.state);
 	  },
 	  cambiarInicio: function cambiarInicio(e) {
 	    this.setState({
-	      persona: {
-	        fechaIn: e.target.value,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        telRef: this.state.persona.telRef,
-	        puestoRef: this.state.persona.puestoRef
-	      }
+	      fechaIn: e.target.value
 	    });
 	  },
 	  cambiarFin: function cambiarFin(e) {
 	    this.setState({
-	      persona: {
-	        fechaFn: e.target.value,
-	        fechaIn: this.state.persona.fechaIn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        telRef: this.state.persona.telRef,
-	        puestoRef: this.state.persona.puestoRef
-	      }
+	      fechaFn: e.target.value
 	    });
 	  },
 	  cambiarRubro: function cambiarRubro(e) {
 	    this.setState({
-	      persona: {
-	        rubro: e.target.value,
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        telRef: this.state.persona.telRef,
-	        puestoRef: this.state.persona.puestoRef
-	      }
+	      rubro: e.target.value
 	    });
 	  },
 	  cambiarPuesto: function cambiarPuesto(e) {
 	    this.setState({
-	      persona: {
-	        puesto: e.target.value.substr(0, 25),
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        telRef: this.state.persona.telRef,
-	        puestoRef: this.state.persona.puestoRef
-	      }
+	      puesto: e.target.value.substr(0, 25)
 	    });
 	  },
 	  cambiarLugar: function cambiarLugar(e) {
 	    this.setState({
-	      persona: {
-	        lugar: e.target.value.substr(0, 30),
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        nomRef: this.state.persona.nomRef,
-	        telRef: this.state.persona.telRef,
-	        puestoRef: this.state.persona.puestoRef
-	      }
+	      lugar: e.target.value.substr(0, 30)
 	    });
 	  },
 	  cambiarNomRef: function cambiarNomRef(e) {
 	    this.setState({
-	      persona: {
-	        nomRef: e.target.value.substr(0, 30),
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        telRef: this.state.persona.telRef,
-	        puestoRef: this.state.persona.puestoRef
-	      }
+	      nomRef: e.target.value.substr(0, 30)
 	    });
 	  },
 	  cambiarTelRef: function cambiarTelRef(e) {
 	    this.setState({
-	      persona: {
-	        telRef: e.target.value.substr(0, 20),
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        puestoRef: this.state.persona.puestoRef
-	      }
+	      telRef: e.target.value.substr(0, 20)
 	    });
 	  },
 	  cambiarPuestoRef: function cambiarPuestoRef(e) {
 	    this.setState({
-	      persona: {
-	        puestoRef: e.target.value.substr(0, 20),
-	        fechaIn: this.state.persona.fechaIn,
-	        fechaFn: this.state.persona.fechaFn,
-	        rubro: this.state.persona.rubro,
-	        puesto: this.state.persona.puesto,
-	        lugar: this.state.persona.lugar,
-	        nomRef: this.state.persona.nomRef,
-	        telRef: this.state.persona.telRef
-	      }
+	      puestoRef: e.target.value.substr(0, 20)
 	    });
 	  },
 	  render: function render() {
@@ -28879,7 +28237,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.fechaIn, onChange: this.cambiarInicio },
+	            { className: 'browser-default', value: this.state.fechaIn, onChange: this.cambiarInicio },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -28898,7 +28256,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.fechaFn, onChange: this.cambiarFin },
+	            { className: 'browser-default', value: this.state.fechaFn, onChange: this.cambiarFin },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -28921,7 +28279,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.rubro, onChange: this.cambiarRubro },
+	            { className: 'browser-default', value: this.state.rubro, onChange: this.cambiarRubro },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -28940,7 +28298,7 @@
 	          _react2.default.createElement('input', { type: 'text',
 	            id: 'puesto',
 	            placeholder: 'cajero',
-	            value: this.state.persona.puesto,
+	            value: this.state.puesto,
 	            onChange: this.cambiarPuesto
 	          }),
 	          _react2.default.createElement(
@@ -28959,7 +28317,7 @@
 	          _react2.default.createElement('input', { type: 'text',
 	            id: 'referencia',
 	            placeholder: 'Juan Juanes',
-	            value: this.state.persona.nomRef,
+	            value: this.state.nomRef,
 	            onChange: this.cambiarNomRef
 	          }),
 	          _react2.default.createElement(
@@ -28978,7 +28336,7 @@
 	          _react2.default.createElement('input', { type: 'text',
 	            id: 'tel-ref',
 	            placeholder: '2262 665544',
-	            value: this.state.persona.telRef,
+	            value: this.state.telRef,
 	            onChange: this.cambiarTelRef
 	          }),
 	          _react2.default.createElement(
@@ -28997,7 +28355,7 @@
 	          _react2.default.createElement('input', { type: 'text',
 	            id: 'carg-ref',
 	            placeholder: 'gerente de la galaxia',
-	            value: this.state.persona.puestoRef,
+	            value: this.state.puestoRef,
 	            onChange: this.cambiarPuestoRef
 	          }),
 	          _react2.default.createElement(
@@ -29023,7 +28381,7 @@
 	exports.default = ExperienciaLaboral;
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29055,7 +28413,7 @@
 	exports.default = RUBROS;
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29075,120 +28433,55 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      persona: {
-	        primIn: '',
-	        primEst: 'incompleto',
-	        primInst: '',
-	        secIn: '',
-	        secFin: '',
-	        secInst: '',
-	        secEst: ''
-	      }
+	      primIn: '',
+	      primEst: 'incompleto',
+	      primInst: '',
+	      secIn: '',
+	      secFin: '',
+	      secInst: '',
+	      secEst: ''
 	    };
 	  },
 	  cambiarInfoPersona: function cambiarInfoPersona() {
-	    this.props.updatePersona(this.state.persona);
+	    this.props.updatePersona(this.state);
 	  },
 	  cambiarPrimIn: function cambiarPrimIn(e) {
 	    this.setState({
-	      persona: {
-	        primIn: e.target.value,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst
-	      }
+	      primIn: e.target.value
 	    });
-	    console.log(e.target.value);
 	  },
 	  cambiarPrimEst: function cambiarPrimEst(e) {
 	    this.setState({
-	      persona: {
-	        primEst: e.target.value,
-	        primIn: this.state.persona.primIn,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst
-	      }
+	      primEst: e.target.value
 	    });
-	    console.log(e.target.value);
 	  },
 	  cambiarPrimInst: function cambiarPrimInst(e) {
 	    this.setState({
-	      persona: {
-	        primInst: e.target.value,
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst
-	      }
+	      primInst: e.target.value
 	    });
-	    console.log(e.target.value);
 	  },
 	  cambiarSecIn: function cambiarSecIn(e) {
 	    this.setState({
-	      persona: {
-	        secIn: e.target.value,
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst
-	      }
+	      secIn: e.target.value
 	    });
-	    console.log(e.target.value);
 	  },
 	  cambiarSecFin: function cambiarSecFin(e) {
 	    this.setState({
-	      persona: {
-	        secFin: e.target.value,
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secInst: this.state.persona.secInst,
-	        secEst: this.state.persona.secEst
-	      }
+	      secFin: e.target.value
 	    });
-	    console.log(e.target.value);
 	  },
 	  cambiarSecEst: function cambiarSecEst(e) {
 	    this.setState({
-	      persona: {
-	        secEst: e.target.value,
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secInst: this.state.persona.secInst
-	      }
+	      secEst: e.target.value
 	    });
-	    console.log(e.target.value);
 	  },
 	  cambiarSecInst: function cambiarSecInst(e) {
 	    this.setState({
-	      persona: {
-	        secInst: e.target.value,
-	        primIn: this.state.persona.primIn,
-	        primEst: this.state.persona.primEst,
-	        primInst: this.state.persona.primInst,
-	        secIn: this.state.persona.secIn,
-	        secFin: this.state.persona.secFin,
-	        secEst: this.state.persona.secEst
-	      }
+	      secInst: e.target.value
 	    });
-	    console.log(e.target.value);
 	  },
 	  mostrar: function mostrar() {
-	    console.log(this.state.persona);
+	    console.log(this.state);
 	  },
 	  render: function render() {
 	    var anios = [1920];
@@ -29223,7 +28516,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.primIn, onChange: this.cambiarPrimIn },
+	            { className: 'browser-default', value: this.state.primIn, onChange: this.cambiarPrimIn },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29242,7 +28535,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.primEst, onChange: this.cambiarPrimEst },
+	            { className: 'browser-default', value: this.state.primEst, onChange: this.cambiarPrimEst },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29270,7 +28563,7 @@
 	          _react2.default.createElement('input', { type: 'text',
 	            id: 'nombreEscuela',
 	            placeholder: 'Escuela N\xB07',
-	            value: this.state.persona.primInst,
+	            value: this.state.primInst,
 	            onChange: this.cambiarPrimInst
 	          }),
 	          _react2.default.createElement(
@@ -29282,7 +28575,7 @@
 	      ),
 	      _react2.default.createElement(
 	        'div',
-	        { className: this.state.persona.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col m3 s4' },
@@ -29293,7 +28586,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.secIn, onChange: this.cambiarSecIn },
+	            { className: 'browser-default', value: this.state.secIn, onChange: this.cambiarSecIn },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29312,7 +28605,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.secFin, onChange: this.cambiarSecFin },
+	            { className: 'browser-default', value: this.state.secFin, onChange: this.cambiarSecFin },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29324,7 +28617,7 @@
 	      ),
 	      _react2.default.createElement(
 	        'div',
-	        { className: this.state.persona.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col m6 s4' },
@@ -29335,7 +28628,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.secEst, onChange: this.cambiarSecEst },
+	            { className: 'browser-default', value: this.state.secEst, onChange: this.cambiarSecEst },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29356,14 +28649,14 @@
 	      ),
 	      _react2.default.createElement(
 	        'div',
-	        { className: this.state.persona.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'input-field col s6' },
 	          _react2.default.createElement('input', { type: 'text',
 	            id: 'nombreSecundaria',
 	            placeholder: 'E.E.S.T. N\xB03',
-	            value: this.state.persona.secInst,
+	            value: this.state.secInst,
 	            onChange: this.cambiarSecInst
 	          }),
 	          _react2.default.createElement(
@@ -29389,7 +28682,7 @@
 	exports.default = FormacionAcademica;
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29408,208 +28701,85 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 	var InfoAdicional = _react2.default.createClass({
 	  displayName: 'InfoAdicional',
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      persona: {
-	        ingles: '',
-	        informatica: '',
-	        movA: '',
-	        movM: '',
-	        movB: '',
-	        movO: '',
-	        carnet: 0,
-	        disp: '',
-	        acla: '',
-	        foto: null
-	      }
+	      ingles: '',
+	      informatica: '',
+	      movA: '',
+	      movM: '',
+	      movB: '',
+	      movO: '',
+	      carnet: 0,
+	      disp: '',
+	      acla: '',
+	      foto: null
 	    };
 	  },
 	  cambiarInfoPersona: function cambiarInfoPersona() {
-	    this.props.updatePersona(this.state.persona);
+	    this.props.updatePersona(this.state);
 	  },
 	  cambiarIngles: function cambiarIngles(e) {
-	    console.log(e.target.value);
 	    this.setState({
-	      persona: {
-	        ingles: e.target.value,
-	        movO: this.state.persona.movO,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      ingles: e.target.value
 	    });
 	  },
 	  cambiarInform: function cambiarInform(e) {
-	    console.log(e.target.value);
 	    this.setState({
-	      persona: {
-	        informatica: e.target.value,
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      informatica: e.target.value
 	    });
 	  },
 	  cambiarCarnet: function cambiarCarnet(e) {
 	    var evento = e.target.checked;
 	    var val = evento ? 1 : 0;
-	    console.log(val);
 	    this.setState({
-	      persona: {
-	        carnet: val,
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      carnet: val
 	    });
 	  },
 	  cambiarDisp: function cambiarDisp(e) {
-	    console.log(e.target.value);
 	    this.setState({
-	      persona: {
-	        disp: e.target.value,
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      disp: e.target.value
 	    });
 	  },
 	  cambiarAuto: function cambiarAuto(e) {
 	    var evento = e.target.checked;
 	    var val = evento ? 'auto' : '';
-	    console.log(val);
 	    this.setState({
-	      persona: {
-	        movA: val,
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      movA: val
 	    });
 	  },
 	  cambiarMoto: function cambiarMoto(e) {
 	    var evento = e.target.checked;
 	    var val = evento ? 'moto' : '';
-	    console.log(val);
 	    this.setState({
-	      persona: {
-	        movM: val,
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      movM: val
 	    });
 	  },
 	  cambiarTicla: function cambiarTicla(e) {
 	    var evento = e.target.checked;
 	    var val = evento ? 'bicicleta' : '';
-	    console.log(val);
 	    this.setState({
-	      persona: {
-	        movB: val,
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }
+	      movB: val
 	    });
 	  },
 	  cambiarOtro: function cambiarOtro(e) {
 	    var evento = e.target.checked;
 	    var val = evento ? 'otro' : '';
-	    console.log(val);
 	    this.setState({
-	      persona: _defineProperty({
-	        movO: val,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        acla: this.state.persona.acla,
-	        foto: this.state.persona.foto
-	      }, 'foto', this.state.persona.foto)
+	      movO: val
 	    });
 	  },
 	  cambiarAcla: function cambiarAcla(e) {
-	    console.log(e.target.value);
 	    this.setState({
-	      persona: {
-	        acla: e.target.value.substr(0, 120),
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        foto: this.state.persona.foto
-	      }
+	      acla: e.target.value.substr(0, 120)
 	    });
 	  },
 	  cambiarFoto: function cambiarFoto() {
 	    var foto = this.refs.webcam.getScreenshot();
 	    this.setState({
-	      persona: {
-	        acla: this.state.persona.acla,
-	        movO: this.state.persona.movO,
-	        ingles: this.state.persona.ingles,
-	        informatica: this.state.persona.informatica,
-	        movA: this.state.persona.movA,
-	        movM: this.state.persona.movM,
-	        movB: this.state.persona.movB,
-	        carnet: this.state.persona.carnet,
-	        disp: this.state.persona.disp,
-	        foto: foto
-	      }
+	      foto: foto
 	    });
 	  },
 	  render: function render() {
@@ -29634,7 +28804,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.ingles, onChange: this.cambiarIngles },
+	            { className: 'browser-default', value: this.state.ingles, onChange: this.cambiarIngles },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29671,7 +28841,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.informatica, onChange: this.cambiarInform },
+	            { className: 'browser-default', value: this.state.informatica, onChange: this.cambiarInform },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29722,7 +28892,7 @@
 	          ),
 	          _react2.default.createElement(
 	            'select',
-	            { className: 'browser-default', value: this.state.persona.disp, onChange: this.cambiarDisp },
+	            { className: 'browser-default', value: this.state.disp, onChange: this.cambiarDisp },
 	            _react2.default.createElement(
 	              'option',
 	              { disabled: true, value: '' },
@@ -29812,7 +28982,7 @@
 	          { className: 'input-field col s12' },
 	          _react2.default.createElement('textarea', { id: 'aclaracion',
 	            className: 'materialize-textarea',
-	            value: this.state.persona.acla,
+	            value: this.state.acla,
 	            onChange: this.cambiarAcla
 	          }),
 	          _react2.default.createElement(
@@ -29841,7 +29011,7 @@
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'row' },
-	        this.state.persona.foto ? _react2.default.createElement('img', { src: this.state.persona.foto }) : null
+	        this.state.foto ? _react2.default.createElement('img', { src: this.state.foto }) : null
 	      ),
 	      _react2.default.createElement(
 	        'div',
@@ -29857,70 +29027,6 @@
 	});
 
 	exports.default = InfoAdicional;
-
-/***/ },
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(34);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var BuscadorOficio = _react2.default.createClass({
-	  displayName: 'BuscadorOficio',
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'input-field col s6' },
-	      _react2.default.createElement('input', { type: 'text', id: 'buscador' }),
-	      _react2.default.createElement(
-	        'label',
-	        { htmlFor: 'buscador' },
-	        'Buscar por oficio'
-	      )
-	    );
-	  }
-	});
-
-	var Empresas = _react2.default.createClass({
-	  displayName: 'Empresas',
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'container' },
-	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        'Empresas'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'row' },
-	        _react2.default.createElement(
-	          'form',
-	          { className: 'col s12' },
-	          _react2.default.createElement(BuscadorOficio, null)
-	        )
-	      )
-	    );
-	  }
-	});
-
-	exports.default = Empresas;
 
 /***/ },
 /* 242 */
@@ -30264,20 +29370,67 @@
 
 /***/ },
 /* 243 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var PROVINCIAS = [{ nom: 'Buenos Aires', cod: 'BA' }];
-	PROVINCIAS.push({ nom: 'Catamarca', cod: 'CAT' });
-	PROVINCIAS.push({ nom: 'Formosa', cod: 'FSA' });
-	PROVINCIAS.push({ nom: 'Mendoza', cod: 'MZA' });
-	PROVINCIAS.push({ nom: 'Salta', cod: 'SAL' });
 
-	exports.default = PROVINCIAS;
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var BuscadorOficio = _react2.default.createClass({
+	  displayName: 'BuscadorOficio',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'input-field col s6' },
+	      _react2.default.createElement('input', { type: 'text', id: 'buscador' }),
+	      _react2.default.createElement(
+	        'label',
+	        { htmlFor: 'buscador' },
+	        'Buscar por oficio'
+	      )
+	    );
+	  }
+	});
+
+	var Empresas = _react2.default.createClass({
+	  displayName: 'Empresas',
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'container' },
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Empresas'
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'form',
+	          { className: 'col s12' },
+	          _react2.default.createElement(BuscadorOficio, null)
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Empresas;
 
 /***/ }
 /******/ ]);

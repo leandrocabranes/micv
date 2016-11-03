@@ -4,202 +4,80 @@ import Webcam from 'react-webcam';
 let InfoAdicional = React.createClass({
   getInitialState: function () {
     return {
-      persona: {
-        ingles: '',
-        informatica: '',
-        movA: '',
-        movM: '',
-        movB: '',
-        movO: '',
-        carnet: 0,
-        disp: '',
-        acla: '',
-        foto: null
-      }
+      ingles: '',
+      informatica: '',
+      movA: '',
+      movM: '',
+      movB: '',
+      movO: '',
+      carnet: 0,
+      disp: '',
+      acla: '',
+      foto: null
     }
   },
   cambiarInfoPersona: function () {
-    this.props.updatePersona(this.state.persona);
+    this.props.updatePersona(this.state);
   },
   cambiarIngles: function (e) {
-    console.log(e.target.value);
     this.setState({
-      persona: {
-        ingles: e.target.value,
-        movO: this.state.persona.movO,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto
-      }
+      ingles: e.target.value,
     })
   },
   cambiarInform: function (e) {
-    console.log(e.target.value);
     this.setState({
-      persona: {
-        informatica: e.target.value,
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto
-      }
+      informatica: e.target.value,
     })
   },
   cambiarCarnet: function (e) {
     let evento = e.target.checked;
     let val = (evento) ? 1 : 0;
-    console.log(val);
     this.setState({
-      persona: {
-        carnet: val,
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        disp: this.state.persona.disp,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto
-      }
+      carnet: val,
     })
   },
   cambiarDisp: function (e) {
-    console.log(e.target.value);
     this.setState({
-      persona: {
-        disp: e.target.value,
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto
-      }
+      disp: e.target.value,
     })
   },
   cambiarAuto: function (e) {
     let evento = e.target.checked;
     let val = (evento) ? 'auto' : '';
-    console.log(val);
     this.setState({
-      persona: {
-        movA: val,
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto
-      }
+      movA: val,
     })
   },
   cambiarMoto: function (e) {
     let evento = e.target.checked;
     let val = (evento) ? 'moto' : '';
-    console.log(val);
     this.setState({
-      persona: {
-        movM: val,
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto
-      }
+      movM: val,
     })
   },
   cambiarTicla: function (e) {
     let evento = e.target.checked;
     let val = (evento) ? 'bicicleta' : '';
-    console.log(val);
     this.setState({
-      persona: {
-        movB: val,
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto
-      }
+      movB: val,
     })
   },
   cambiarOtro: function (e) {
     let evento = e.target.checked;
     let val = (evento) ? 'otro' : '';
-    console.log(val);
     this.setState({
-      persona: {
-        movO: val,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        acla: this.state.persona.acla,
-        foto: this.state.persona.foto,
-        foto: this.state.persona.foto
-      }
+      movO: val,
     })
   },
   cambiarAcla: function (e) {
-    console.log(e.target.value);
     this.setState({
-      persona: {
-        acla: e.target.value.substr(0,120),
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        foto: this.state.persona.foto
-      }
+      acla: e.target.value.substr(0,120),
     })
   },
   cambiarFoto: function () {
     let foto = this.refs.webcam.getScreenshot();
     this.setState({
-      persona: {
-        acla: this.state.persona.acla,
-        movO: this.state.persona.movO,
-        ingles: this.state.persona.ingles,
-        informatica: this.state.persona.informatica,
-        movA: this.state.persona.movA,
-        movM: this.state.persona.movM,
-        movB: this.state.persona.movB,
-        carnet: this.state.persona.carnet,
-        disp: this.state.persona.disp,
-        foto: foto
-      }
+      foto: foto
     })
   },
   render: function () {
@@ -209,7 +87,7 @@ let InfoAdicional = React.createClass({
         <div className="row">
           <div className="col m6 s4">
             <label>Nivel de Inglés</label>
-            <select className="browser-default" value={this.state.persona.ingles} onChange={this.cambiarIngles}>
+            <select className="browser-default" value={this.state.ingles} onChange={this.cambiarIngles}>
               <option disabled value="">Elija su nivel</option>
               <option value="basico">Básico</option>
               <option value="intermedio">Intermedio</option>
@@ -220,7 +98,7 @@ let InfoAdicional = React.createClass({
         <div className="row">
           <div className="col m6 s4">
             <label>Manejo de computadora</label>
-            <select className="browser-default" value={this.state.persona.informatica} onChange={this.cambiarInform}>
+            <select className="browser-default" value={this.state.informatica} onChange={this.cambiarInform}>
               <option disabled value="">Elija su nivel</option>
               <option value="basico">Básico</option>
               <option value="intermedio">Intermedio</option>
@@ -237,7 +115,7 @@ let InfoAdicional = React.createClass({
         <div className="row">
           <div className="col m6 s4">
             <label>Disponibilidad horaria</label>
-            <select className="browser-default" value={this.state.persona.disp} onChange={this.cambiarDisp}>
+            <select className="browser-default" value={this.state.disp} onChange={this.cambiarDisp}>
               <option disabled value="">Elija su turno</option>
               <option value="matutino">Matutino</option>
               <option value="vespertino">Vespertino</option>
@@ -271,7 +149,7 @@ let InfoAdicional = React.createClass({
           <div className="input-field col s12">
             <textarea id="aclaracion"
               className="materialize-textarea"
-              value={this.state.persona.acla}
+              value={this.state.acla}
               onChange={this.cambiarAcla}
             ></textarea>
           <label htmlFor="aclaracion">Aclaraciones e información horaria (máximo 120 caracteres)</label>
@@ -288,7 +166,7 @@ let InfoAdicional = React.createClass({
           <div className="btn" onClick={this.cambiarFoto}>Tomar foto</div>
         </div>
         <div className="row">
-          {this.state.persona.foto ? <img src={this.state.persona.foto}/> : null}
+          {this.state.foto ? <img src={this.state.foto}/> : null}
         </div>
         <div className="row">
           <div className="btn-large" onClick={this.cambiarInfoPersona}>veamos</div>

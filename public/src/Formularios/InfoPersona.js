@@ -5,566 +5,144 @@ import PROVINCIAS from './variables/provincias.js';
 let InformacionPersona = React.createClass({
 	getInitialState: function () {
 		return {
-			persona: {
-				nombre: '',
-				apellido: '',
-				dni: '',
-				anio: '',
-				mes: '',
-				dia: '',
-				direccion: '',
-				numero: '',
-				piso: '',
-				dpto: '',
-				localidad: '',
-				prov: '',
-				codpostal: '',
-				nacionalidad: '',
-				estadocivil: '',
-				hijos: '',
-				celular: '',
-				telefono: '',
-				otrotel: '',
-				email: ''
-			}
+			nombre: '',
+			apellido: '',
+			dni: '',
+			anio: '',
+			mes: '',
+			dia: '',
+			direccion: '',
+			numero: '',
+			piso: '',
+			dpto: '',
+			localidad: '',
+			prov: '',
+			codpostal: '',
+			nacionalidad: '',
+			estadocivil: '',
+			hijos: '',
+			celular: '',
+			telefono: '',
+			otrotel: '',
+			email: ''
 		}
 	},
 	cambiarInfoPersona: function () {
-		this.props.updatePersona(this.state.persona);
+		this.props.updatePersona(this.state);
 	},
 
 	// handlers de los inputs
 	cambiarDNI: function (e) {
 		this.setState({
-			persona: {
-				dni: e.target.value.substring(0,8),
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			dni: e.target.value.substring(0,8),
 		});
-		// this.props.getDNI(this.state.persona.dni);
+		// this.props.getDNI(this.state.dni);
 	},
 	cambiarNombre: function (e) {
 		this.setState({
-			persona: {
-				nombre: e.target.value.toUpperCase(),
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			nombre: e.target.value.toUpperCase(),
 		});
 	},
 	cambiarApellido: function (e) {
 		this.setState({
-			persona: {
-				apellido: e.target.value.toUpperCase(),
-				nombre: this.state.persona.nombre,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			apellido: e.target.value.toUpperCase(),
 		})
 	},
 	cambiarAnio: function (e) {
 		this.setState({
-			persona: {
-				anio: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			anio: e.target.value,
 		})
 	},
 	cambiarMes: function (e) {
 		this.setState({
-			persona: {
-				mes: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			mes: e.target.value,
 		})
 	},
 	cambiarDia: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				dia: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			dia: e.target.value,
 		})
 	},
 	cambiarDir: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				direccion: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			direccion: e.target.value,
 		})
 	},
 	cambiarNum: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				numero: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			numero: e.target.value,
 		})
 	},
 	cambiarPiso: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				piso: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			piso: e.target.value,
 		})
 	},
 	cambiarLocal: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				localidad: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				codpostal: this.state.persona.codpostal,
-				prov: this.state.persona.prov,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			localidad: e.target.value,
 		})
 	},
 	cambiarPostal: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				codpostal: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			codpostal: e.target.value,
 		})
 	},
 	cambiarDpto: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				dpto: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			dpto: e.target.value,
 		})
 	},
 	cambiarNac: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				nacionalidad: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			nacionalidad: e.target.value,
 		})
 	},
 	cambiarCiv: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				estadocivil: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			estadocivil: e.target.value,
 		})
 	},
 	cambiarHijos: function (e) {
 		console.log(e.target.value);
 		let hjs = e.target.value > 0 ? e.target.value.substr(0,2) : "";
 		this.setState({
-			persona: {
-				hijos: hjs,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			hijos: hjs,
 		})
 	},
 	cambiarCel: function (e) {
 		console.log(e.target.value);
 		this.setState({
-			persona: {
-				celular: e.target.value.substring(0,18),
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			celular: e.target.value.substring(0,18),
 		})
 	},
 	cambiarTel: function (e) {
 		this.setState({
-			persona: {
-				telefono: e.target.value.substring(0,18),
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			telefono: e.target.value.substring(0,18),
 		})
 	},
 	cambiarEmail: function (e) {
 		this.setState({
-			persona: {
-				email: e.target.value.substring(0,50),
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-			}
+			email: e.target.value.substring(0,50),
 		})
 	},
 	cambiarOTel: function (e) {
 		this.setState({
-			persona: {
-				otrotel: e.target.value.substring(0,18),
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				prov: this.state.persona.prov,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				email: this.state.persona.email
-			}
+			otrotel: e.target.value.substring(0,18),
 		})
 	},
 	cambiarProv: function (e) {
 		this.setState({
-			persona: {
-				prov: e.target.value,
-				nombre: this.state.persona.nombre,
-				apellido: this.state.persona.apellido,
-				dni: this.state.persona.dni,
-				anio: this.state.persona.anio,
-				mes: this.state.persona.mes,
-				dia: this.state.persona.dia,
-				direccion: this.state.persona.direccion,
-				numero: this.state.persona.numero,
-				piso: this.state.persona.piso,
-				dpto: this.state.persona.dpto,
-				localidad: this.state.persona.localidad,
-				codpostal: this.state.persona.codpostal,
-				nacionalidad: this.state.persona.nacionalidad,
-				estadocivil: this.state.persona.estadocivil,
-				hijos: this.state.persona.hijos,
-				celular: this.state.persona.celular,
-				telefono: this.state.persona.telefono,
-				otrotel: this.state.persona.otrotel,
-				email: this.state.persona.email
-			}
+			prov: e.target.value,
 		})
 	},
 	render: function () {
@@ -615,7 +193,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="nombre"
 							placeholder="Juan"
-							value={this.state.persona.nombre}
+							value={this.state.nombre}
 							onChange={this.cambiarNombre}
 						/>
 						<label htmlFor="nombre">Nombre</label>
@@ -626,7 +204,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="apellido"
 							placeholder="Gonzalez"
-							value={this.state.persona.apellido}
+							value={this.state.apellido}
 							onChange={this.cambiarApellido}
 						/>
 						<label htmlFor="apellido">Apellido</label>
@@ -638,7 +216,7 @@ let InformacionPersona = React.createClass({
 							id="dni"
 							placeholder="99999999"
 							ref="dni"
-							value={this.state.persona.dni}
+							value={this.state.dni}
 							onChange={this.cambiarDNI}
 						/>
 						<label htmlFor="dni">DNI</label>
@@ -647,21 +225,21 @@ let InformacionPersona = React.createClass({
 				<div className="row">
 					<div className="col m2 s4">
 						<label>Día en que nació</label>
-						<select className="browser-default" value={this.state.persona.dia} onChange={this.cambiarDia}>
+						<select className="browser-default" value={this.state.dia} onChange={this.cambiarDia}>
 							<option disabled value="">Elija el día</option>
 							{fechaNacimientoD}
 						</select>
 					</div>
 					<div className="col m2 s4">
 						<label>Mes en que nació</label>
-						<select className="browser-default" value={this.state.persona.mes} onChange={this.cambiarMes}>
+						<select className="browser-default" value={this.state.mes} onChange={this.cambiarMes}>
 							<option disabled value="">Elija el mes</option>
 							{fechaNacimientoM}
 						</select>
 					</div>
 					<div className="col m2 s4">
 						<label>Año en que nació</label>
-						<select className="browser-default" value={this.state.persona.anio} onChange={this.cambiarAnio}>
+						<select className="browser-default" value={this.state.anio} onChange={this.cambiarAnio}>
 							<option disabled value="">Elija el año</option>
 							{fechaNacimientoA}
 						</select>
@@ -672,7 +250,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="calle-dir"
 							placeholder="Av. San Martin"
-							value={this.state.persona.direccion}
+							value={this.state.direccion}
 							onChange={this.cambiarDir}
 						/>
 						<label htmlFor="calle-dir">Calle</label>
@@ -681,7 +259,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="numero-dir"
 							placeholder="101"
-							value={this.state.persona.numero}
+							value={this.state.numero}
 							onChange={this.cambiarNum}
 						/>
 						<label htmlFor="numero-dir">Número</label>
@@ -692,7 +270,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="piso-dir"
 							placeholder="2"
-							value={this.state.persona.piso}
+							value={this.state.piso}
 							onChange={this.cambiarPiso}
 						/>
 					<label htmlFor="piso-dir">Piso (en caso de vivir en departamento)</label>
@@ -701,7 +279,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="dpto-dir"
 							placeholder="321"
-							value={this.state.persona.dpto}
+							value={this.state.dpto}
 							onChange={this.cambiarDpto}
 						/>
 						<label htmlFor="dpto-dir">Número del departamento (en caso de vivir en departamento)</label>
@@ -710,7 +288,7 @@ let InformacionPersona = React.createClass({
 				<div className="row">
 					<div className="col m6 s6">
 						<label>Provincia en la que reside</label>
-						<select className="browser-default" value={this.state.persona.prov} onChange={this.cambiarProv}>
+						<select className="browser-default" value={this.state.prov} onChange={this.cambiarProv}>
 							<option disabled value="">Elija una opción</option>
 							{provincias}
 						</select>
@@ -721,7 +299,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="localidad-dir"
 							placeholder="Necochea"
-							value={this.state.persona.localidad}
+							value={this.state.localidad}
 							onChange={this.cambiarLocal}
 						/>
 						<label htmlFor="localidad-dir">Nombre de la ciudad</label>
@@ -730,7 +308,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="codpost-dir"
 							placeholder="7630"
-							value={this.state.persona.codpostal}
+							value={this.state.codpostal}
 							onChange={this.cambiarPostal}
 						/>
 						<label htmlFor="codpost-dir">Código postal</label>
@@ -739,7 +317,7 @@ let InformacionPersona = React.createClass({
 				<div className="row">
 					<div className="col m4 s6">
 						<label>Nacionalidad</label>
-						<select className="browser-default" value={this.state.persona.nacionalidad} onChange={this.cambiarNac}>
+						<select className="browser-default" value={this.state.nacionalidad} onChange={this.cambiarNac}>
 							<option disabled value="">Elija una opción</option>
 							<option value="sin especificar">Sin especificar</option>
 							<option value="argentina">Argentina</option>
@@ -750,7 +328,7 @@ let InformacionPersona = React.createClass({
 				<div className="row">
 					<div className="col m4 s6">
 						<label>Estado civil</label>
-						<select className="browser-default" value={this.state.persona.estadocivil} onChange={this.cambiarCiv}>
+						<select className="browser-default" value={this.state.estadocivil} onChange={this.cambiarCiv}>
 							<option disabled value="">Elija una opción</option>
 							<option value="0">Hij@</option>
 							<option value="1">Padre/Madre</option>
@@ -764,7 +342,7 @@ let InformacionPersona = React.createClass({
 						<input type="number"
 							id="hijos"
 							placeholder="2"
-							value={this.state.persona.hijos}
+							value={this.state.hijos}
 							onChange={this.cambiarHijos}
 						/>
 					<label htmlFor="hijos">Cantidad de hijos</label>
@@ -775,7 +353,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="tel"
 							placeholder="2262 654321"
-							value={this.state.persona.telefono}
+							value={this.state.telefono}
 							onChange={this.cambiarTel}
 						/>
 					<label htmlFor="tel">Número de teléfono</label>
@@ -784,7 +362,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="cel"
 							placeholder="2262 654321"
-							value={this.state.persona.celular}
+							value={this.state.celular}
 							onChange={this.cambiarCel}
 						/>
 					<label htmlFor="cel">Número de celular</label>
@@ -793,7 +371,7 @@ let InformacionPersona = React.createClass({
 						<input type="text"
 							id="otrotel"
 							placeholder="2262 654321"
-							value={this.state.persona.otrotel}
+							value={this.state.otrotel}
 							onChange={this.cambiarOTel}
 						/>
 					<label htmlFor="otrotel">Otro número de teléfono</label>
@@ -804,7 +382,7 @@ let InformacionPersona = React.createClass({
 						<input type="email"
 							id="email"
 							placeholder="minombre@correo.com"
-							value={this.state.persona.email}
+							value={this.state.email}
 							onChange={this.cambiarEmail}
 						/>
 					<label htmlFor="email">Correo electrónico</label>
