@@ -28476,7 +28476,13 @@
 	      secIn: '',
 	      secFin: '',
 	      secInst: '',
-	      secEst: ''
+	      secEst: '',
+	      oeIn: '',
+	      oeFn: '',
+	      oeTit: '',
+	      oeEst: '',
+	      oeInst: '',
+	      oeTipo: ''
 	    };
 	  },
 	  cambiarInfoPersona: function cambiarInfoPersona() {
@@ -28515,6 +28521,36 @@
 	  cambiarSecInst: function cambiarSecInst(e) {
 	    this.setState({
 	      secInst: e.target.value
+	    });
+	  },
+	  cambiarOEIn: function cambiarOEIn(e) {
+	    this.setState({
+	      oeIn: e.target.value
+	    });
+	  },
+	  cambiarOEFn: function cambiarOEFn(e) {
+	    this.setState({
+	      oeFn: e.target.value
+	    });
+	  },
+	  cambiarOETit: function cambiarOETit(e) {
+	    this.setState({
+	      oeTit: e.target.value
+	    });
+	  },
+	  cambiarOEInst: function cambiarOEInst(e) {
+	    this.setState({
+	      oeInst: e.target.value
+	    });
+	  },
+	  cambiarOEEst: function cambiarOEEst(e) {
+	    this.setState({
+	      oeEst: e.target.value
+	    });
+	  },
+	  cambiarOETipo: function cambiarOETipo(e) {
+	    this.setState({
+	      oeTipo: e.target.value
 	    });
 	  },
 	  mostrar: function mostrar() {
@@ -28700,6 +28736,160 @@
 	            'label',
 	            { htmlFor: 'nombreSecundaria' },
 	            'Nombre de la escuela secundaria'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m3 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'A\xF1o de inicio de otra educaci\xF3n'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.oeIn, onChange: this.cambiarOEIn },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el a\xF1o'
+	            ),
+	            aniosEd
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m3 s4' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'A\xF1o de finalizaci\xF3n de otra educaci\xF3n'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.oeFn, onChange: this.cambiarOEFin },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija el a\xF1o'
+	            ),
+	            aniosEd
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m6 s12' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Estado de su otra educaci\xF3n'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.oeEst, onChange: this.cambiarOEEst },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija su estado'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'completo' },
+	              'Completo'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'incompleto' },
+	              'Incompleto'
+	            )
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'nombreinstoe',
+	            placeholder: 'Instituto Mariano Moreno',
+	            value: this.state.oeInst,
+	            onChange: this.cambiarOEInst
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'nombreinstoe' },
+	            'Nombre de la instituci\xF3n'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
+	            id: 'titoe',
+	            placeholder: 'Piloto de avi\xF3n',
+	            value: this.state.oeTit,
+	            onChange: this.cambiarOETit
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'titoe' },
+	            'T\xEDtulo por estudios'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: this.state.primEst != 'incompleto' ? 'row' : 'row hide' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m6 s12' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Tipo de su otra educaci\xF3n'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.oeTipo, onChange: this.cambiarOETipo },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija su estado'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'terciario' },
+	              'terciario'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'universitario' },
+	              'universitario'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'maestrado' },
+	              'maestrado'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'doctorado' },
+	              'doctorado'
+	            )
 	          )
 	        )
 	      ),
