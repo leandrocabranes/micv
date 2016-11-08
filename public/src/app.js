@@ -27202,6 +27202,7 @@
 	      // informacion personal
 	      nombre: "",
 	      apellido: "",
+	      sexo: "",
 	      dni: "",
 	      anio: "",
 	      mes: "",
@@ -27237,6 +27238,12 @@
 	      secFin: "",
 	      secInst: "",
 	      secEst: "",
+	      oeIn: "",
+	      oeFn: "",
+	      oeTit: "",
+	      oeEst: "",
+	      oeInst: "",
+	      oeTipo: "",
 	      // info adicional
 	      ingles: "",
 	      informatica: "",
@@ -27256,6 +27263,7 @@
 	      // informacion personal
 	      nombre: pers.nombre,
 	      apellido: pers.apellido,
+	      sexo: pers.sexo,
 	      dni: pers.dni,
 	      anio: pers.anio,
 	      mes: pers.mes,
@@ -27300,7 +27308,13 @@
 	      secIn: pers.secIn,
 	      secFin: pers.secFin,
 	      secInst: pers.secInst,
-	      secEst: pers.secEst
+	      secEst: pers.secEst,
+	      oeIn: pers.oeIn,
+	      oeFn: pers.oeFn,
+	      oeTit: pers.oeTit,
+	      oeEst: pers.oeEst,
+	      oeInst: pers.oeInst,
+	      oeTipo: pers.oeTipo
 	    });
 	  },
 
@@ -27309,7 +27323,7 @@
 	      // info adicional
 	      ingles: pers.ingles,
 	      movO: pers.movO,
-	      informatica: pers.Informatica,
+	      informatica: pers.informatica,
 	      movA: pers.movA,
 	      movM: pers.movM,
 	      movB: pers.movB,
@@ -27340,6 +27354,7 @@
 	    this.handleSubmit({
 	      nombre: this.state.nombre,
 	      apellido: this.state.apellido,
+	      sexo: this.state.sexo,
 	      dni: this.state.dni,
 	      anio: this.state.anio,
 	      mes: this.state.mes,
@@ -27375,6 +27390,12 @@
 	      secFin: this.state.secFin,
 	      secInst: this.state.secInst,
 	      secEst: this.state.secEst,
+	      oeIn: this.state.oeIn,
+	      oeFn: this.state.oeFn,
+	      oeTit: this.state.oeTit,
+	      oeEst: this.state.oeEst,
+	      oeInst: this.state.oeInst,
+	      oeTipo: this.state.oeTipo,
 	      // info adicional
 	      ingles: this.state.ingles,
 	      informatica: this.state.informatica,
@@ -27515,6 +27536,7 @@
 			return {
 				nombre: '',
 				apellido: '',
+				sexo: '',
 				dni: '',
 				anio: '',
 				mes: '',
@@ -27553,6 +27575,11 @@
 		cambiarApellido: function cambiarApellido(e) {
 			this.setState({
 				apellido: e.target.value.toUpperCase()
+			});
+		},
+		cambiarSexo: function cambiarSexo(e) {
+			this.setState({
+				sexo: e.target.value
 			});
 		},
 		cambiarAnio: function cambiarAnio(e) {
@@ -27740,6 +27767,38 @@
 							'label',
 							{ htmlFor: 'apellido' },
 							'Apellido'
+						)
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col m6 s6' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'Sexo'
+						),
+						_react2.default.createElement(
+							'select',
+							{ className: 'browser-default', value: this.state.sexo, onChange: this.cambiarSexo },
+							_react2.default.createElement(
+								'option',
+								{ disabled: true, value: '' },
+								'Elija una opci\xF3n'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '1' },
+								'Mujer'
+							),
+							_react2.default.createElement(
+								'option',
+								{ value: '2' },
+								'Hombre'
+							)
 						)
 					)
 				),
@@ -28352,6 +28411,25 @@
 	          'div',
 	          { className: 'input-field col s6' },
 	          _react2.default.createElement('input', { type: 'text',
+	            id: 'lugar',
+	            placeholder: 'Emporio del alba\xF1ol',
+	            value: this.state.lugar,
+	            onChange: this.cambiarLugar
+	          }),
+	          _react2.default.createElement(
+	            'label',
+	            { htmlFor: 'lugar' },
+	            'Puesto'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-field col s6' },
+	          _react2.default.createElement('input', { type: 'text',
 	            id: 'referencia',
 	            placeholder: 'Juan Juanes',
 	            value: this.state.nomRef,
@@ -28528,7 +28606,7 @@
 	      oeIn: e.target.value
 	    });
 	  },
-	  cambiarOEFn: function cambiarOEFn(e) {
+	  cambiarOEFin: function cambiarOEFin(e) {
 	    this.setState({
 	      oeFn: e.target.value
 	    });

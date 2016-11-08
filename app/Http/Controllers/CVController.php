@@ -58,7 +58,7 @@ class CVController extends Controller
           mail_p, completo, fotourl, clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
           ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
           [
-            $cvP['dni'], $cvP['apellido'], $cvP['nombre'], 2, '', $fecha,
+            $cvP['dni'], $cvP['apellido'], $cvP['nombre'], $cvP['sexo'], '', $fecha,
             $cvP['dia'], $cvP['mes'], $cvP['anio'], $cvP['direccion'], $cvP['numero'],
             $cvP['piso'], $cvP['dpto'], $cvP['nacionalidad'], $cvP['prov'], $cvP['localidad'],
             $cvP['codpostal'], $cvP['estadocivil'], $cvP['hijos'], $cvP['telefono'], $cvP['celular'],
@@ -69,11 +69,11 @@ class CVController extends Controller
         // ---
         // exp laboral
         // ---
-        app('db')->insert("INSERT INTO expriencia_laboral
-          (el_dni, el_ini, el_fin, el_rubro, el_lug, el_refnom, el_reftelf,
-          el_refcarg, completo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        app('db')->insert("INSERT INTO experiencia_laboral
+          (el_dni, el_ini, el_fin, el_rub, el_puesto, el_lug, el_refnom, el_reftelf,
+          el_refcarg, completo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
           [
-            $cvP['dni'], $cvP['fechaIn'], $cvP['fechaFn'], $cvP['rubro'],
+            $cvP['dni'], $cvP['fechaIn'], $cvP['fechaFn'], $cvP['rubro'], $cvP['puesto'],
             $cvP['lugar'], $cvP['nomRef'], $cvP['telRef'], $cvP['puestoRef'], 1
           ]
         );
@@ -83,10 +83,13 @@ class CVController extends Controller
         // ---
         app('db')->insert("INSERT INTO formacion_academica
           (dnip, prim_fin, prim_insti, prim_est, secu_ini, secu_fin, secu_insti,
-          secu_est, completo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+          secu_est, oe_ini, oe_fin, oe_estr, oe_est, oe_insti, oe_tipo, completo)
+					VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
           [
-            $cvP['dni'], $cvp['primIn'], $cvp['primInst'], $cvp['primEst'],
-            $cvp['secIn'], $cvp['secFin'], $cvp['secInst'], $cvp['secEst'], 1
+            $cvP['dni'], $cvP['primIn'], $cvP['primInst'], $cvP['primEst'],
+            $cvP['secIn'], $cvP['secFin'], $cvP['secInst'], $cvP['secEst'],
+						$cvP['oeIn'], $cvP['oeFn'], $cvP['oeTit'], $cvP['oeEst'], $cvP['oeInst'],
+						$cvP['oeTipo'], 1
           ]
         );
 
@@ -94,11 +97,11 @@ class CVController extends Controller
         // informacion adicional
         // ---
         app('db')->insert("INSERT INTO informacion_adicional
-          (dni, idiomas_i, informatica_i, movilidad_i, carnet_i, disponibilidad_i,
+          (dni, idiomas_i, informactica_i, movilidad_i, carnet_i, disponibilidad_i,
           acla, completo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
           [
-            $cvP['dni'], $cvp['ingles'], $cvp['informatica'], $mov, $cvP['carnet'],
-            $cvp['disp'], $cvp['acla'], 1
+            $cvP['dni'], $cvP['ingles'], $cvP['informatica'], $mov, $cvP['carnet'],
+            $cvP['disp'], $cvP['acla'], 1
           ]
         );
 

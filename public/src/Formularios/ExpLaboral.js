@@ -114,6 +114,17 @@ let ExperienciaLaboral = React.createClass({
         <div className="row">
           <div className="input-field col s6">
 						<input type="text"
+							id="lugar"
+							placeholder="Emporio del albañol"
+							value={this.state.lugar}
+							onChange={this.cambiarLugar}
+						/>
+            <label htmlFor="lugar">Puesto</label>
+					</div>
+        </div>
+        <div className="row">
+          <div className="input-field col s6">
+						<input type="text"
 							id="referencia"
 							placeholder="Juan Juanes"
 							value={this.state.nomRef}

@@ -11,6 +11,7 @@ let CrearCV = React.createClass({
       // informacion personal
       nombre: "",
 			apellido: "",
+      sexo: "",
 			dni: "",
 			anio: "",
 			mes: "",
@@ -46,6 +47,12 @@ let CrearCV = React.createClass({
       secFin: "",
       secInst: "",
       secEst: "",
+      oeIn: "",
+      oeFn: "",
+      oeTit: "",
+      oeEst: "",
+      oeInst: "",
+      oeTipo: "",
       // info adicional
       ingles: "",
       informatica: "",
@@ -65,6 +72,7 @@ let CrearCV = React.createClass({
       // informacion personal
       nombre: pers.nombre,
 			apellido: pers.apellido,
+      sexo: pers.sexo,
 			dni: pers.dni,
 			anio: pers.anio,
 			mes: pers.mes,
@@ -109,7 +117,13 @@ let CrearCV = React.createClass({
       secIn: pers.secIn,
       secFin: pers.secFin,
       secInst: pers.secInst,
-      secEst: pers.secEst
+      secEst: pers.secEst,
+      oeIn: pers.oeIn,
+      oeFn: pers.oeFn,
+      oeTit: pers.oeTit,
+      oeEst: pers.oeEst,
+      oeInst: pers.oeInst,
+      oeTipo: pers.oeTipo
     });
   },
 
@@ -118,7 +132,7 @@ let CrearCV = React.createClass({
       // info adicional
       ingles: pers.ingles,
       movO: pers.movO,
-      informatica: pers.Informatica,
+      informatica: pers.informatica,
       movA: pers.movA,
       movM: pers.movM,
       movB: pers.movB,
@@ -149,6 +163,7 @@ let CrearCV = React.createClass({
     this.handleSubmit({
       nombre: this.state.nombre,
 			apellido: this.state.apellido,
+      sexo: this.state.sexo,
 			dni: this.state.dni,
 			anio: this.state.anio,
 			mes: this.state.mes,
@@ -184,6 +199,12 @@ let CrearCV = React.createClass({
       secFin: this.state.secFin,
       secInst: this.state.secInst,
       secEst: this.state.secEst,
+      oeIn: this.state.oeIn,
+      oeFn: this.state.oeFn,
+      oeTit: this.state.oeTit,
+      oeEst: this.state.oeEst,
+      oeInst: this.state.oeInst,
+      oeTipo: this.state.oeTipo,
       // info adicional
       ingles: this.state.ingles,
       informatica: this.state.informatica,

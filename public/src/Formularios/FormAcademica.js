@@ -61,7 +61,7 @@ let FormacionAcademica = React.createClass({
       oeIn: e.target.value,
     });
   },
-  cambiarOEFn: function (e) {
+  cambiarOEFin: function (e) {
     this.setState({
       oeFn: e.target.value,
     });
@@ -188,6 +188,7 @@ let FormacionAcademica = React.createClass({
               <option disabled value="">Elija su estado</option>
               <option value="completo">Completo</option>
               <option value="incompleto">Incompleto</option>
+              <option value="encurso">En curso</option>
             </select>
           </div>
         </div>

@@ -7,6 +7,7 @@ let InformacionPersona = React.createClass({
 		return {
 			nombre: '',
 			apellido: '',
+			sexo: '',
 			dni: '',
 			anio: '',
 			mes: '',
@@ -45,6 +46,11 @@ let InformacionPersona = React.createClass({
 	cambiarApellido: function (e) {
 		this.setState({
 			apellido: e.target.value.toUpperCase(),
+		})
+	},
+	cambiarSexo: function (e) {
+		this.setState({
+			sexo: e.target.value,
 		})
 	},
 	cambiarAnio: function (e) {
@@ -196,6 +202,16 @@ let InformacionPersona = React.createClass({
 							onChange={this.cambiarApellido}
 						/>
 						<label htmlFor="apellido">Apellido</label>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col m6 s6">
+						<label>Sexo</label>
+						<select className="browser-default" value={this.state.sexo} onChange={this.cambiarSexo}>
+							<option disabled value="">Elija una opción</option>
+							<option value="1">Mujer</option>
+							<option value="2">Hombre</option>
+						</select>
 					</div>
 				</div>
 				<div className="row">
