@@ -28437,7 +28437,7 @@
 	          _react2.default.createElement(
 	            'label',
 	            { htmlFor: 'lugar' },
-	            'Puesto'
+	            'Lugar'
 	          )
 	        )
 	      ),

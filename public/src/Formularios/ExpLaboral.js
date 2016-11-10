@@ -119,7 +119,7 @@ let ExperienciaLaboral = React.createClass({
 							value={this.state.lugar}
 							onChange={this.cambiarLugar}
 						/>
-            <label htmlFor="lugar">Puesto</label>
+          <label htmlFor="lugar">Lugar</label>
 					</div>
         </div>
         <div className="row">
