@@ -227,7 +227,7 @@ let FormacionAcademica = React.createClass({
           </div>
         </div>
         <div className="row">
-          <div className="btn-large" onClick={this.cambiarInfoPersona}>Siguiente</div>
+          <a href="#"><div className="btn-large" onClick={this.cambiarInfoPersona}>Siguiente</div></a>
         </div>
       </div>
     );

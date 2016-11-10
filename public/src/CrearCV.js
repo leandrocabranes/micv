@@ -222,10 +222,14 @@ let CrearCV = React.createClass({
   render: function () {
 		let texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
 		texto += "deberá seguir todos los pasos hasta el último de ellos. No podrá saltar ningún procedimiendo";
+    let texto2 = "Una vez que haya dado click al boton de siguiente al final de todo formulario, deberá";
+    texto2 += " hacer click en la siguiente pestaña para continuar con la creación de su CV."
+
     return (
       <div className="container">
         <h2>¡Crear mi CV!</h2>
 				<p>{texto}</p>
+        <p>{texto2}</p>
         <div className="row">
           <form className="col s12" onSubmit={this.handleFormularioSubmit}>
             <ul className="tabs">
@@ -245,6 +249,7 @@ let CrearCV = React.createClass({
             </div>
           </form>
         </div>
+        {$('ul.tabs').tabs()}
       </div>
     );
   }

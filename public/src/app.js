@@ -64,6 +64,10 @@
 
 	var _Empresas2 = _interopRequireDefault(_Empresas);
 
+	var _Persona = __webpack_require__(244);
+
+	var _Persona2 = _interopRequireDefault(_Persona);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Navbar = _react2.default.createClass({
@@ -139,7 +143,8 @@
 	    _reactRouter.Route,
 	    { path: '/', component: Layout },
 	    _react2.default.createElement(_reactRouter.Route, { path: '/crear_cv', component: _CrearCV2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/empresas', component: _Empresas2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: '/empresas', component: _Empresas2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/:id', component: _Persona2.default })
 	  )
 	), app);
 
@@ -27413,6 +27418,9 @@
 	  render: function render() {
 	    var texto = "Importante: una vez que comienze a llenar la información para crear su CV ";
 	    texto += "deberá seguir todos los pasos hasta el último de ellos. No podrá saltar ningún procedimiendo";
+	    var texto2 = "Una vez que haya dado click al boton de siguiente al final de todo formulario, deberá";
+	    texto2 += " hacer click en la siguiente pestaña para continuar con la creación de su CV.";
+
 	    return _react2.default.createElement(
 	      "div",
 	      { className: "container" },
@@ -27425,6 +27433,11 @@
 	        "p",
 	        null,
 	        texto
+	      ),
+	      _react2.default.createElement(
+	        "p",
+	        null,
+	        texto2
 	      ),
 	      _react2.default.createElement(
 	        "div",
@@ -27502,7 +27515,8 @@
 	            )
 	          )
 	        )
-	      )
+	      ),
+	      $('ul.tabs').tabs()
 	    );
 	  }
 	});
@@ -28184,9 +28198,13 @@
 					'div',
 					{ className: 'row' },
 					_react2.default.createElement(
-						'div',
-						{ className: 'btn-large', onClick: this.cambiarInfoPersona },
-						'Siguiente'
+						'a',
+						{ href: '#' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'btn-large', onClick: this.cambiarInfoPersona },
+							'Siguiente'
+						)
 					)
 				)
 			);
@@ -28484,9 +28502,13 @@
 	        'div',
 	        { className: 'row' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'btn-large', onClick: this.cambiarInfoPersona },
-	          'Siguiente'
+	          'a',
+	          { href: '#' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'btn-large', onClick: this.cambiarInfoPersona },
+	            'Siguiente'
+	          )
 	        )
 	      )
 	    );
@@ -28887,6 +28909,11 @@
 	              'option',
 	              { value: 'incompleto' },
 	              'Incompleto'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: 'encurso' },
+	              'En curso'
 	            )
 	          )
 	        )
@@ -28975,9 +29002,13 @@
 	        'div',
 	        { className: 'row' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'btn-large', onClick: this.cambiarInfoPersona },
-	          'Siguiente'
+	          'a',
+	          { href: '#' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'btn-large', onClick: this.cambiarInfoPersona },
+	            'Siguiente'
+	          )
 	        )
 	      )
 	    );
@@ -29687,9 +29718,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(34);
+	var _reactRouter = __webpack_require__(172);
 
-	var _reactDom2 = _interopRequireDefault(_reactDom);
+	var _rubros = __webpack_require__(239);
+
+	var _rubros2 = _interopRequireDefault(_rubros);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29710,9 +29743,120 @@
 	  }
 	});
 
+	var Persona = _react2.default.createClass({
+	  displayName: 'Persona',
+
+	  render: function render() {
+	    var perLink = '/' + this.props.id;
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'col m4' },
+	        _react2.default.createElement(
+	          _reactRouter.Link,
+	          { to: perLink },
+	          this.props.nombre
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'col m4' },
+	        this.props.dni
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'col m4' },
+	        this.props.fechaNac
+	      )
+	    );
+	  }
+	});
+
+	var ListaCurriculums = _react2.default.createClass({
+	  displayName: 'ListaCurriculums',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      filtro: ''
+	    };
+	  },
+	  updateFiltro: function updateFiltro(e) {
+	    this.setState({
+	      filtro: e.target.value
+	    });
+	  },
+	  render: function render() {
+	    // filtramos los cv con un option
+	    var filteredCV = this.props.personas;
+	    filteredCV = filteredCV.filter(function (cv) {
+	      return cv.el_rub.indexOf(this.state.filtro) !== -1;
+	    }.bind(this));
+	    // mostramos los cv filtrados
+	    var handleCurriculums = filteredCV.map(function (per) {
+	      return _react2.default.createElement(Persona, { key: per.id_p, nombre: per.nombre_p, dni: per.dni_p,
+	        fechaNac: per.fecha_p, id: per.id_p });
+	    });
+	    // contenido de rubros del filtro
+	    var rubExp = _rubros2.default.map(function (rb) {
+	      return _react2.default.createElement(
+	        'option',
+	        { key: rb.num, value: rb.num },
+	        rb.rub
+	      );
+	    });
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col m6' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Filtrar por campo de experiencia'
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { className: 'browser-default', value: this.state.filtro, onChange: this.updateFiltro },
+	            _react2.default.createElement(
+	              'option',
+	              { disabled: true, value: '' },
+	              'Elija campo'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              { value: '' },
+	              'Todos'
+	            ),
+	            rubExp
+	          )
+	        )
+	      ),
+	      handleCurriculums
+	    );
+	  }
+	});
+
 	var Empresas = _react2.default.createClass({
 	  displayName: 'Empresas',
 
+	  getInitialState: function getInitialState() {
+	    return {
+	      todosCV: []
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    $.get('/cv/todos', function (data) {
+	      this.setState({
+	        todosCV: data
+	      });
+	    }.bind(this));
+	  },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
@@ -29726,16 +29870,318 @@
 	        'div',
 	        { className: 'row' },
 	        _react2.default.createElement(
-	          'form',
-	          { className: 'col s12' },
-	          _react2.default.createElement(BuscadorOficio, null)
-	        )
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col m4' },
+	            _react2.default.createElement(
+	              'h5',
+	              null,
+	              'Nombre'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col m4' },
+	            _react2.default.createElement(
+	              'h5',
+	              null,
+	              'DNI'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col m4' },
+	            _react2.default.createElement(
+	              'h5',
+	              null,
+	              'Fecha de nacimiento'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(ListaCurriculums, { personas: this.state.todosCV })
 	      )
 	    );
 	  }
 	});
 
 	exports.default = Empresas;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _rubros = __webpack_require__(239);
+
+	var _rubros2 = _interopRequireDefault(_rubros);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var InfoPersona = _react2.default.createClass({
+	  displayName: 'InfoPersona',
+
+	  render: function render() {
+	    var rubExp = '';
+	    for (var i = 0; i < _rubros2.default.length; i++) {
+	      if (this.props.info.el_rub == _rubros2.default[i].num) {
+	        rubExp = _rubros2.default[i].rub;
+	      }
+	    }
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement('br', null),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          _react2.default.createElement('img', { src: this.props.info.fotourl })
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          _react2.default.createElement(
+	            'h5',
+	            null,
+	            'Info Personal'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Nombre: ',
+	          this.props.info.nombre_p
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Apellido: ',
+	          this.props.info.apellido_p
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'DNI: ',
+	          this.props.info.dni_p
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Fecha de nacimiento: ',
+	          this.props.info.fecha_p
+	        )
+	      ),
+	      _react2.default.createElement('div', { className: 'divider' }),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          _react2.default.createElement(
+	            'h5',
+	            null,
+	            'Formacion academica'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Estado de Secundario: ',
+	          this.props.info.secu_est
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Culminacion de Secundario: ',
+	          this.props.info.secu_fin
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Instituci\xF3n de formaci\xF3n secundaria: ',
+	          this.props.info.secu_insti
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Otra educaci\xF3n'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Instituci\xF3n: ',
+	          this.props.info.oe_insti
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Estado: ',
+	          this.props.info.oe_est
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Nivel: ',
+	          this.props.info.oe_tipo
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'T\xEDtulo: ',
+	          this.props.info.oe_estr
+	        )
+	      ),
+	      _react2.default.createElement('div', { className: 'divider' }),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          _react2.default.createElement(
+	            'h5',
+	            null,
+	            'Experiencia laboral'
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Per\xEDodo: ',
+	          this.props.info.el_ini,
+	          ' - ',
+	          this.props.info.el_fin
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Rubro: ',
+	          rubExp
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Puesto: ',
+	          this.props.info.el_puesto
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col s12' },
+	          'Lugar: ',
+	          this.props.info.el_lug
+	        )
+	      )
+	    );
+	  }
+	});
+
+	var Persona = _react2.default.createClass({
+	  displayName: 'Persona',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      persona: ''
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var ruta = '/cv/' + this.props.params.id;
+	    $.get(ruta, function (data) {
+	      this.setState({ persona: data[0] });
+	      console.log(data[0]);
+	    }.bind(this));
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'container' },
+	      _react2.default.createElement(InfoPersona, { info: this.state.persona })
+	    );
+	  }
+	});
+
+	exports.default = Persona;
 
 /***/ }
 /******/ ]);

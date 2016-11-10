@@ -18,8 +18,25 @@ class CVController extends Controller
     // }
 
     //
-		public function dar_todos() {
-			$resultado = app('db')->select("SELECT * FROM curriculums");
+		public function dar_todos () {
+			$resultado = app('db')->select("SELECT * FROM datos_personales
+			LEFT JOIN experiencia_laboral
+			ON datos_personales.dni_p=experiencia_laboral.el_dni");
+			return $resultado;
+		}
+
+		public function unico_cv (Request $request, $id) {
+			$dni = app('db')->select("SELECT dni_p FROM datos_personales WHERE id_p = :id", ['id' => $id]);
+			// $dni0 = $dni[1];
+			$resultado = app('db')->select("SELECT * FROM datos_personales
+			LEFT JOIN experiencia_laboral
+			ON datos_personales.dni_p=experiencia_laboral.el_dni
+			LEFT JOIN formacion_academica
+			ON datos_personales.dni_p=formacion_academica.dnip
+			LEFT JOIN informacion_adicional
+			ON datos_personales.dni_p=informacion_adicional.dni
+			WHERE datos_personales.id_p=:dni",
+			['dni' => $id]);
 			return $resultado;
 		}
 
@@ -33,14 +50,21 @@ class CVController extends Controller
       *
       */
 
-
-
       // Falta poner el nombre de las variables con los datos a insertar
       $cvP = $request->all();
       if (!empty($cvP)) {
+				define('UPLOAD_DIR', 'imagenes/');
+				$imagen = $cvP['foto'];
+				$imagen = str_replace('data:image/jpeg;base64,', '', $imagen);
+				$imagen = str_replace(' ', '+', $imagen);
+				$data = base64_decode($imagen);
+				$archivo = UPLOAD_DIR . uniqid() . '.jpeg';
+				$exito = file_put_contents($archivo, $data);
+
+
         // procesamos nuestros datos para ingresarlos
         $fecha = $cvP['dia'] . '/' . $cvP['mes'] . '/' . $cvP['anio'];
-        $foto = 'falta hacer la foro';
+
         $mov = $cvP['movA'] != '' ? $cvP['movA'] . ';' : '';
         $mov .= $cvP['movM'] != '' ? $cvP['movM'] . ';' : '';
         $mov .= $cvP['movB'] != '' ? $cvP['movB'] . ';' : '';
@@ -62,7 +86,7 @@ class CVController extends Controller
             $cvP['dia'], $cvP['mes'], $cvP['anio'], $cvP['direccion'], $cvP['numero'],
             $cvP['piso'], $cvP['dpto'], $cvP['nacionalidad'], $cvP['prov'], $cvP['localidad'],
             $cvP['codpostal'], $cvP['estadocivil'], $cvP['hijos'], $cvP['telefono'], $cvP['celular'],
-            $cvP['otrotel'], $cvP['email'], 1, $foto, '1234'
+            $cvP['otrotel'], $cvP['email'], 1, $archivo, '1234'
           ]
         );
 

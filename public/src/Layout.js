@@ -4,6 +4,7 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 
 import CrearCV from './CrearCV.js';
 import Empresas from './Empresas.js';
+import Persona from './Persona.js';
 
 const Navbar = React.createClass({
   render: function () {
@@ -40,6 +41,7 @@ ReactDOM.render((
     <Route path="/" component={Layout}>
       <Route path="/crear_cv" component={CrearCV}/>
       <Route path="/empresas" component={Empresas}/>
+      <Route path="/:id" component={Persona}/>
     </Route>
   </Router>
 ), app);
