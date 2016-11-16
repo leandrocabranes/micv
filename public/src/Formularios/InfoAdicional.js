@@ -169,7 +169,9 @@ let InfoAdicional = React.createClass({
           {this.state.foto ? <img src={this.state.foto}/> : null}
         </div>
         <div className="row">
-          <div className="btn-large" onClick={this.cambiarInfoPersona}>veamos</div>
+          <div className="col s12">
+            <input type="submit" className="btn-large green accent-3" onClick={this.cambiarInfoPersona} value="Crear mi CV" />
+          </div>
         </div>
       </div>
     );

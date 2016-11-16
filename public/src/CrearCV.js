@@ -233,20 +233,15 @@ let CrearCV = React.createClass({
         <div className="row">
           <form className="col s12" onSubmit={this.handleFormularioSubmit}>
             <ul className="tabs">
-              <li className="tab col s3"><a href="#form1" className="active">Info</a></li>
-              <li className="tab col s3"><a href="#form2">Exp</a></li>
-              <li className="tab col s3"><a href="#form3">Form</a></li>
-              <li className="tab col s3"><a href="#form4">Ad</a></li>
+              <li className="tab col s3"><a href="#form1" className="active">Informacion Personal</a></li>
+              <li className="tab col s3"><a href="#form2">Experiencia Laboral</a></li>
+              <li className="tab col s3"><a href="#form3">Formacion Académica</a></li>
+              <li className="tab col s3"><a href="#form4">Información Adicional</a></li>
             </ul>
 						<div id="form1"><InformacionPersona updatePersona={this.handleInfoPersona}/></div>
             <div id="form2"><ExperienciaLaboral updatePersona={this.handleExpPersona} /></div>
             <div id="form3"><FormacionAcademica updatePersona={this.handleFormPersona}/></div>
             <div id="form4"><InfoAdicional updatePersona={this.handleAdPersona}/></div>
-            <div className="row">
-              <div className="col s12">
-                <input type="submit" className="btn-large green accent-3" value="Crear mi CV" />
-              </div>
-            </div>
           </form>
         </div>
         {$('ul.tabs').tabs()}

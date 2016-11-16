@@ -11,7 +11,7 @@ const Navbar = React.createClass({
     return (
       <nav>
         <div className="nav-wrapper indigo darken-3">
-          <a href="#" className="brand-logo right">Mi CV</a>
+          <a href="#" className="brand-logo right">Un CV para vos</a>
           <ul id="nav-mobile" className="left hide-on-med-and-down">
             <li><Link to="/">Inicio</Link></li>
             <li><Link to="/crear_cv">Crear mi CV</Link></li>

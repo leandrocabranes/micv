@@ -83,7 +83,7 @@
 	        _react2.default.createElement(
 	          'a',
 	          { href: '#', className: 'brand-logo right' },
-	          'Mi CV'
+	          'Un CV para vos'
 	        ),
 	        _react2.default.createElement(
 	          'ul',
@@ -27454,7 +27454,7 @@
 	              _react2.default.createElement(
 	                "a",
 	                { href: "#form1", className: "active" },
-	                "Info"
+	                "Informacion Personal"
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -27463,7 +27463,7 @@
 	              _react2.default.createElement(
 	                "a",
 	                { href: "#form2" },
-	                "Exp"
+	                "Experiencia Laboral"
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -27472,7 +27472,7 @@
 	              _react2.default.createElement(
 	                "a",
 	                { href: "#form3" },
-	                "Form"
+	                "Formacion Acad\xE9mica"
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -27481,7 +27481,7 @@
 	              _react2.default.createElement(
 	                "a",
 	                { href: "#form4" },
-	                "Ad"
+	                "Informaci\xF3n Adicional"
 	              )
 	            )
 	          ),
@@ -27504,15 +27504,6 @@
 	            "div",
 	            { id: "form4" },
 	            _react2.default.createElement(_InfoAdicional2.default, { updatePersona: this.handleAdPersona })
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "row" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "col s12" },
-	              _react2.default.createElement("input", { type: "submit", className: "btn-large green accent-3", value: "Crear mi CV" })
-	            )
 	          )
 	        )
 	      ),
@@ -29354,8 +29345,8 @@
 	        { className: 'row' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'btn-large', onClick: this.cambiarInfoPersona },
-	          'veamos'
+	          { className: 'col s12' },
+	          _react2.default.createElement('input', { type: 'submit', className: 'btn-large green accent-3', onClick: this.cambiarInfoPersona, value: 'Crear mi CV' })
 	        )
 	      )
 	    );
